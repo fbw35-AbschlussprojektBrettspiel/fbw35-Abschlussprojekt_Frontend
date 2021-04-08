@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Startseite from './components/Startseite';
 import Spielseite from './components/Spielseite';
 
