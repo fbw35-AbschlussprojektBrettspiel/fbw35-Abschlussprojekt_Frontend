@@ -17,10 +17,10 @@ const Spielseite = props => {
       )}
 
 
-      <h1>Lasst uns Spielen!</h1>
+      {/* <h1>Lasst uns Spielen!</h1>
       <button onClick={() => props.setPage('startseite')}>
         Gehe zurück zum Start!
-      </button>
+      </button> */}
     </div>
   );
 };

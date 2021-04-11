@@ -1,47 +1,47 @@
 .spielfeld-0 {
-  grid-area: 0 / 0 / 1 / 1;
+  grid-area: 1 / 1 / span 1 / span 1;
 }
 
 .spielfeld-1 {
-  grid-area: 1 / 0 / 2 / 1;
+  grid-area: 1 / 2 / span 1 / span 1;
 }
 
 .spielfeld-2 {
-  grid-area: 2 / 0 / 3 / 1;
+  grid-area: 1 / 3 / span 1 / span 1;
 }
 
 .spielfeld-3 {
-  grid-area: 3 / 0 / 4 / 1;
+  grid-area: 1 / 4 / span 1 / span 1;
 }
 
 .spielfeld-4 {
-  grid-area: 3 / 1 / 4 / 2;
+  grid-area: 2 / 4 / span 1 / span 1;
 }
 
 .spielfeld-5 {
-  grid-area: 3 / 2 / 4 / 3;
+  grid-area: 3 / 4 / span 1 / span 1;
 }
 
 .spielfeld-6 {
-  grid-area: 3 / 3 / 4 / 4;
+  grid-area: 4 / 4 / span 1 / span 1;
 }
 
 .spielfeld-7 {
-  grid-area: 2 / 3 / 3 / 4;
+  grid-area: 4 / 3 / span 1 / span 1;
 }
 
 .spielfeld-8 {
-  grid-area: 1 / 3 / 2 / 4;
+  grid-area: 4 / 2 / span 1 / span 1;
 }
 
 .spielfeld-9 {
-  grid-area: 0 / 3 / 1 / 4;
+  grid-area: 4 / 1 / span 1 / span 1;
 }
 
 .spielfeld-10 {
-  grid-area: 0 / 2 / 1 / 3;
+  grid-area: 3 / 1 / span 1 / span 1;
 }
 
 .spielfeld-11 {
-  grid-area: 0 / 1 / 1 / 2;
+  grid-area: 2 / 1 / span 1 / span 1;
 }
