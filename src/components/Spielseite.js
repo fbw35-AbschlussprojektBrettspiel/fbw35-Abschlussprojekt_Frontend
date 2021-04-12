@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Spielfeld from './Spielfeld';
 import './Spielseite.css';
 import AufrufAmZug from './AufrufAmZug';
+import SpielZuEnde from './SpielZuEnde';
 
 const Spielseite = props => {
   // Spielfelder-Array.
@@ -20,15 +21,15 @@ const Spielseite = props => {
         />
       )}
 
-      <AufrufAmZug
-        spielfigurPosition={spielfigurPosition}
-        setSpielfigurPosition={setSpielfigurPosition}
-      />
-
-      {/* <h1>Lasst uns Spielen!</h1>
-      <button onClick={() => props.setPage('startseite')}>
-        Gehe zurück zum Start!
-      </button> */}
+      {spielfigurPosition < spielfeldArray.length ?
+        <AufrufAmZug
+          spielfigurPosition={spielfigurPosition}
+          setSpielfigurPosition={setSpielfigurPosition}
+        /> :
+        <SpielZuEnde
+          setPage={props.setPage}
+        />
+      }
     </div>
   );
 };

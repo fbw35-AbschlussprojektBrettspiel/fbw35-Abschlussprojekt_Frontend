@@ -11,7 +11,9 @@ function App() {
   return (
     <div className="App">
       {page === 'startseite' ?
-        <Startseite setPage={setPage}/> : <Spielseite setPage={setPage}/>}
+        <Startseite setPage={setPage}/> :
+        <Spielseite setPage={setPage}/>
+      }
     </div>
   );
 }
