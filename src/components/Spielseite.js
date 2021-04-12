@@ -28,6 +28,9 @@ const Spielseite = props => {
         /> :
         <SpielZuEnde
           setPage={props.setPage}
+          spielfigurPosition={spielfigurPosition}
+          setSpielfigurPosition={setSpielfigurPosition}
+          spielfeldgroesse={spielfeldArray.length}
         />
       }
     </div>
