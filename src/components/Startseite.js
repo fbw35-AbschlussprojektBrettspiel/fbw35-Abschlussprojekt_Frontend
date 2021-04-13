@@ -1,3 +1,5 @@
+import Spielanleitung from './Spielanleitung'
+
 const Startseite = props => {
   return (
     <div>
@@ -5,6 +7,7 @@ const Startseite = props => {
       <button onClick={() => props.setPage('spielseite')}>
         Gehe zum Spiel!
       </button>
+      <Spielanleitung />
     </div>
   );
 }
