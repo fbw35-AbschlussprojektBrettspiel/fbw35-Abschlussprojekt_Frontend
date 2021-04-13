@@ -17,8 +17,18 @@ const SpielZuEnde = props => {
                 </Modal.Body>
                 <Modal.Footer centered>
                 <Modal.Close>
-                  <Button primary   onClick={() => props.setSpielfigurPosition(props.spielfigurPosition - props.spielfeldgroesse)} >Weiterspielen</Button>
-                  <Button secondary onClick={() => {props.setPage('startseite'); props.setSpielfigurPosition(0);}} >Zurück zur Startseite</Button>
+                  <Button
+                  primary
+                  onClick={() => {
+                    props.setSpielfigurPosition(props.spielfigurPosition - props.spielfeldgroesse);
+                    props.setPopup('aufruf');
+                  }}
+                  >
+                    Weiterspielen
+                  </Button>
+                  <Button secondary onClick={() => {props.setPage('startseite'); 
+                  // props.setSpielfigurPosition(0);
+                  }} >Zurück zur Startseite</Button>
                   </Modal.Close>
                 </Modal.Footer>
               </Modal.Content>
