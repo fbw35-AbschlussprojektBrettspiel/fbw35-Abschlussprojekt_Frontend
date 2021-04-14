@@ -9,6 +9,7 @@ const AufrufAmZug = props => {
         onClick={() => {
           const neuePosition = props.spielfigurPosition + gewuerfelt;
           props.setSpielfigurPosition(neuePosition);
+          props.setGewuerfelteZahl(gewuerfelt);
           if (neuePosition >= props.spielfeldgroesse) {
             props.setPopup('ende');
           } else {

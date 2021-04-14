@@ -10,8 +10,13 @@ const QuizFrage = props => {
         {props.fragenThema1[0].antworten.map((element, index) =>
           <QuizAntwort
             key={index}
+            index={index}
             antwort={element}
+            indexRichtigeAntwort={props.fragenThema1[0].indexRichtigeAntwort}
             setPopup={props.setPopup}
+            spielfigurPosition={props.spielfigurPosition}
+            setSpielfigurPosition={props.setSpielfigurPosition}
+            gewuerfelteZahl={props.gewuerfelteZahl}
           />
         )}
       </ul>
