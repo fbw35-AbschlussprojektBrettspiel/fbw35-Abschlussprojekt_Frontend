@@ -6,7 +6,18 @@ const AufrufAmZug = props => {
     <section className="am-zug">
       <p>Bitte einen Zug machen! (würfle 1-6)</p>
       <button
-        onClick={() => props.setSpielfigurPosition(props.spielfigurPosition + gewuerfelt )}
+        onClick={() => {
+          const neuePosition = props.spielfigurPosition + gewuerfelt;
+          props.setSpielfigurPosition(neuePosition);
+          if (neuePosition >= props.spielfeldgroesse) {
+            props.setPopup('ende');
+          } else {
+            // Später soll hier anhand der neuen Spielerposition
+            // und des SpielfeldArrays ermittelt werden,
+            // welches Popup folgen soll
+            props.setPopup('quizfrage');
+          }
+        }}
       >
         gehe {gewuerfelt} Felder vor
       </button>

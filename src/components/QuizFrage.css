@@ -1,0 +1,7 @@
+.quizfrage {
+  grid-area: 3 / 2 / span 1 / span 1;
+}
+
+.quizfrage li {
+  cursor: pointer;
+}
