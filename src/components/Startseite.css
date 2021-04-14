@@ -1,1 +1,6 @@
 .modal-backdrop { background-color: transparent }
+
+.modal-content {
+border: 8px double gray;
+margin-bottom: 20%;
+}

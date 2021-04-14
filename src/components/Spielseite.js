@@ -72,6 +72,13 @@ const Spielseite = props => {
         />
       )}
 
+      <button className="SpielBeenden" onClick={() => {
+            props.setPage('startseite')
+            setSpielfigurPosition(0)
+            }}>
+        Spiel beenden
+        </button>
+
       {
         // Das Objekt imitiert ein switch-case
         {
