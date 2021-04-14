@@ -15,7 +15,7 @@ const QuizFrage = props => {
 <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
 <Modal.Header>
-  <Modal.Title><p>{props.fragenThema1[0].thema}</p></Modal.Title>
+  <Modal.Title><p>{props.fragenThema1[0].frage}</p></Modal.Title>
 </Modal.Header>
 
 <Modal.Body>
