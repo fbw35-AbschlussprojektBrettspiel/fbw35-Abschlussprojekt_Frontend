@@ -1,6 +1,9 @@
+import './QuizAntwort.css';
+
 const QuizAntwort = props => {
   return (
     <li
+      className="quizantwort"
       onClick={() => {
         // Hier wird geprüft, ob die angeklickte Antwort falsch ist.
         // Dann wird die Spielfigur zurückgesetzt

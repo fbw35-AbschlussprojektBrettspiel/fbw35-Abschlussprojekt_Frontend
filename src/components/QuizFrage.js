@@ -1,6 +1,5 @@
-import './QuizFrage.css';
-import './AufrufAmZug.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './QuizFrage.css';
 import { Modal, Button } from 'react-bootstrap'
 import { useState } from 'react';
 import QuizAntwort from './QuizAntwort';
