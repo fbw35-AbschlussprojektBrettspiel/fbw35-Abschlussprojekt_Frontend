@@ -1,21 +1,27 @@
-import { Modal } from 'bootstrap-4-react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal, Button } from 'react-bootstrap'
+import { useState } from 'react';
 
 const Spielanleitung = props => {
+  
+    const [show, setShow] = useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
     return (
-          <div class="spielanleitung">
-            <button primary data-toggle="modal" data-target="#spielanleitung">Spielanleitung</button>
-            {/* Modal */}
-            <Modal id="spielanleitung" fade>
-              <Modal.Dialog centered>
-                <Modal.Content>
-                  <Modal.Header>
-                    <Modal.Title>Einleitung und Spielregeln:</Modal.Title>
-                    <Modal.Close>
-                  <span aria-hidden="true">&times;</span>
-                </Modal.Close>
-                  </Modal.Header>
-                  <Modal.Body>
-                  
+      <div div class="spielanleitung">
+        <Button variant="primary" onClick={handleShow}>
+         Spielanleitung
+        </Button>
+  
+        <Modal show={show} onHide={handleClose}>
+  
+          <Modal.Header closeButton>
+            <Modal.Title>Einleitung und Spielregeln:</Modal.Title>
+          </Modal.Header>
+  
+          <Modal.Body>
 <p>Vielen dank und Spaß an unserem Quiz-Game,
 es wird euch bestimmt helfen etwas zu lernen oder lange vergessenes
 wieder aufzufrischen.</p>
@@ -71,12 +77,16 @@ jeder der lernen und etwas Spass haben möchte kann natürlich mitmachen,
 in dem Fall wird für euren Benutzernamen jedoch "guest_" angefügt, um
 keine Verwechslungen zu schaffen. Spaß macht es aber sogar so.
 </p>
-                  </Modal.Body>
-                </Modal.Content>
-              </Modal.Dialog>
-            </Modal>
-          </div>
-        );
-  };
-
+          </Modal.Body>
+  
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>Close</Button>
+          </Modal.Footer>
+  
+        </Modal>
+  
+      </div>
+    );
+  }
+  
   export default Spielanleitung;
