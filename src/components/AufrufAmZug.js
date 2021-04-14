@@ -11,7 +11,7 @@ const AufrufAmZug = props => {
   let gewuerfelt = Math.floor((Math.random() * 6) + 1)
   return (
 
-<div className="am-zug">
+<section className="am-zug">
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
         <Modal.Header>
@@ -36,7 +36,7 @@ const AufrufAmZug = props => {
         </Modal.Footer>
 
       </Modal>
-    </div>
+    </section>
   );
 };
 
