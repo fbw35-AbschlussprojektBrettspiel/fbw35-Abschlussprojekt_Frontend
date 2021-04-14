@@ -13,6 +13,8 @@ const Spielseite = props => {
   const [spielfigurPosition, setSpielfigurPosition] = useState(0);
   // Die Variable legt fest, welches Popup gerendert wird (außer SpielZuEnde)
   const [popup, setPopup] = useState('aufruf');
+  // Die gewürfelte Zahl
+  const [gewuerfelteZahl, setGewuerfelteZahl] = useState(0);
   // Später sollen die Fragen beim erstmaligen Rendern aus der DB geholt werden
   const [fragenThema1, setfragenThema1] = useState(
     [
@@ -65,17 +67,21 @@ const Spielseite = props => {
       {
         // Das Objekt imitiert ein switch-case
         {
-          'aufruf': <AufrufAmZug
+          aufruf: <AufrufAmZug
             spielfigurPosition={spielfigurPosition}
             setSpielfigurPosition={setSpielfigurPosition}
             setPopup={setPopup}
             spielfeldgroesse={spielfeldArray.length}
+            setGewuerfelteZahl={setGewuerfelteZahl}
           />,
-          'quizfrage': <QuizFrage
+          quizfrage: <QuizFrage
             fragenThema1={fragenThema1}
             setPopup={setPopup}
+            spielfigurPosition={spielfigurPosition}
+            setSpielfigurPosition={setSpielfigurPosition}
+            gewuerfelteZahl={gewuerfelteZahl}
           />,
-          'ende': <SpielZuEnde
+          ende: <SpielZuEnde
             setPage={props.setPage}
             spielfigurPosition={spielfigurPosition}
             setSpielfigurPosition={setSpielfigurPosition}
