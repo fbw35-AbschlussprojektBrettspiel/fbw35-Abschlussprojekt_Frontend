@@ -8,7 +8,15 @@ import QuizFrage from './QuizFrage';
 const Spielseite = props => {
   // Spielfelder-Array.
   // Später könnte drin die Feldtypen sein, z.B. Thema1, Thema2, Aktion
-  const [spielfeldArray, setSpielfeldArray] = useState([null, null, null, null, null, null, null, null, null, null, null, null]);
+  const [spielfeldArray, setSpielfeldArray] = useState(
+    [null, null, null, null, null, null, null, null, null, null,
+     null, null, null, null, null, null, null, null, null, null,
+     null, null, null, null, null, null, null, null, null, null,
+     null, null, null, null, null, null, null, null, null, null,
+     null, null, null, null, null, null, null, null, null, null,
+     null, null, null, null, null, null, null, null, null, null,
+     null
+    ]);
   // Eine Zahl, die dem Index von spielfeldArray entspricht und die Position von Spielfigur angibt.
   const [spielfigurPosition, setSpielfigurPosition] = useState(0);
   // Die Variable legt fest, welches Popup gerendert wird (außer SpielZuEnde)

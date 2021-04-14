@@ -1,17 +1,17 @@
 .spielfeld-0 {
-  grid-area: 1 / 1 / span 1 / span 1;
+  grid-area: 6 / 1 / span 1 / span 2;
 }
 
 .spielfeld-1 {
-  grid-area: 1 / 2 / span 1 / span 1;
+  grid-area: 5 / 2 / span 1 / span 1;
 }
 
 .spielfeld-2 {
-  grid-area: 1 / 3 / span 1 / span 1;
+  grid-area: 4 / 3 / span 1 / span 1;
 }
 
 .spielfeld-3 {
-  grid-area: 1 / 4 / span 1 / span 1;
+  grid-area: 3 / 4 / span 1 / span 1;
 }
 
 .spielfeld-4 {
@@ -19,29 +19,225 @@
 }
 
 .spielfeld-5 {
-  grid-area: 3 / 4 / span 1 / span 1;
+  grid-area: 1 / 4 / span 1 / span 1;
 }
 
 .spielfeld-6 {
-  grid-area: 4 / 4 / span 1 / span 1;
+  grid-area: 1 / 5 / span 1 / span 1;
 }
 
 .spielfeld-7 {
-  grid-area: 4 / 3 / span 1 / span 1;
+  grid-area: 1 / 6 / span 1 / span 1;
 }
 
 .spielfeld-8 {
-  grid-area: 4 / 2 / span 1 / span 1;
+  grid-area: 1 / 7 / span 1 / span 1;
 }
 
 .spielfeld-9 {
-  grid-area: 4 / 1 / span 1 / span 1;
+  grid-area: 2 / 8 / span 1 / span 1;
 }
 
 .spielfeld-10 {
-  grid-area: 3 / 1 / span 1 / span 1;
+  grid-area: 1 / 9 / span 1 / span 1;
 }
 
 .spielfeld-11 {
-  grid-area: 2 / 1 / span 1 / span 1;
+  grid-area: 1 / 10 / span 1 / span 1;
+}
+
+.spielfeld-12 {
+  grid-area: 1 / 11 / span 1 / span 1;
+}
+
+.spielfeld-13 {
+  grid-area: 2 / 12 / span 1 / span 1;
+}
+
+.spielfeld-14 {
+  grid-area: 2 / 13 / span 1 / span 1;
+}
+
+.spielfeld-15 {
+  grid-area: 2 / 14 / span 1 / span 1;
+}
+
+.spielfeld-16 {
+  grid-area: 2 / 15 / span 1 / span 1;
+}
+
+.spielfeld-17 {
+  grid-area: 1 / 15 / span 1 / span 1;
+}
+
+.spielfeld-18 {
+  grid-area: 1 / 16 / span 1 / span 1;
+}
+
+.spielfeld-19 {
+  grid-area: 1 / 17 / span 1 / span 1;
+}
+
+.spielfeld-20 {
+  grid-area: 1 / 18 / span 1 / span 1;
+}
+
+.spielfeld-21 {
+  grid-area: 2 / 19 / span 1 / span 1;
+}
+
+.spielfeld-22 {
+  grid-area: 3 / 20 / span 1 / span 1;
+}
+
+.spielfeld-23 {
+  grid-area: 3 / 21 / span 1 / span 1;
+}
+
+.spielfeld-24 {
+  grid-area: 3 / 22 / span 1 / span 1;
+}
+
+.spielfeld-25 {
+  grid-area: 4 / 22 / span 1 / span 1;
+}
+
+.spielfeld-26 {
+  grid-area: 5 / 22 / span 1 / span 1;
+}
+
+.spielfeld-27 {
+  grid-area: 6 / 22 / span 1 / span 1;
+}
+
+.spielfeld-28 {
+  grid-area: 7 / 22 / span 1 / span 1;
+}
+
+.spielfeld-29 {
+  grid-area: 8 / 22 / span 1 / span 1;
+}
+
+.spielfeld-30 {
+  grid-area: 9 / 22 / span 1 / span 1;
+}
+
+.spielfeld-31 {
+  grid-area: 10 / 22 / span 1 / span 1;
+}
+
+.spielfeld-32 {
+  grid-area: 11 / 21 / span 1 / span 1;
+}
+
+.spielfeld-33 {
+  grid-area: 12 / 20 / span 1 / span 1;
+}
+
+.spielfeld-34 {
+  grid-area: 11 / 19 / span 1 / span 1;
+}
+
+.spielfeld-35 {
+  grid-area: 10 / 19 / span 1 / span 1;
+}
+
+.spielfeld-36 {
+  grid-area: 9 / 19 / span 1 / span 1;
+}
+
+.spielfeld-37 {
+  grid-area: 10 / 18 / span 1 / span 1;
+}
+
+.spielfeld-38 {
+  grid-area: 11 / 17 / span 1 / span 1;
+}
+
+.spielfeld-39 {
+  grid-area: 12 / 17 / span 1 / span 1;
+}
+
+.spielfeld-40 {
+  grid-area: 12 / 16 / span 1 / span 1;
+}
+
+.spielfeld-41 {
+  grid-area: 12 / 15 / span 1 / span 1;
+}
+
+.spielfeld-42 {
+  grid-area: 12 / 14 / span 1 / span 1;
+}
+
+.spielfeld-43 {
+  grid-area: 12 / 13 / span 1 / span 1;
+}
+
+.spielfeld-44 {
+  grid-area: 12 / 12 / span 1 / span 1;
+}
+
+.spielfeld-45 {
+  grid-area: 12 / 11 / span 1 / span 1;
+}
+
+.spielfeld-46 {
+  grid-area: 12 / 10 / span 1 / span 1;
+}
+
+.spielfeld-47 {
+  grid-area: 11 / 9 / span 1 / span 1;
+}
+
+.spielfeld-48 {
+  grid-area: 10 / 8 / span 1 / span 1;
+}
+
+.spielfeld-49 {
+  grid-area: 10 / 7 / span 1 / span 1;
+}
+
+.spielfeld-50 {
+  grid-area: 11 / 6 / span 1 / span 1;
+}
+
+.spielfeld-51 {
+  grid-area: 11 / 5 / span 1 / span 1;
+}
+
+.spielfeld-52 {
+  grid-area: 12 / 4 / span 1 / span 1;
+}
+
+.spielfeld-53 {
+  grid-area: 12 / 3 / span 1 / span 1;
+}
+
+.spielfeld-54 {
+  grid-area: 12 / 2 / span 1 / span 1;
+}
+
+.spielfeld-55 {
+  grid-area: 11 / 2 / span 1 / span 1;
+}
+
+.spielfeld-56 {
+  grid-area: 10 / 3 / span 1 / span 1;
+}
+
+.spielfeld-57 {
+  grid-area: 9 / 4 / span 1 / span 1;
+}
+
+.spielfeld-58 {
+  grid-area: 8 / 3 / span 1 / span 1;
+}
+
+.spielfeld-59 {
+  grid-area: 8 / 2 / span 1 / span 1;
+}
+
+.spielfeld-60 {
+  grid-area: 7 / 1 / span 1 / span 1;
 }
