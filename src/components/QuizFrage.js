@@ -9,33 +9,35 @@ const QuizFrage = props => {
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
+  const zufaelligeFrage = props.fragenThema1[Math.floor(Math.random() * props.fragenThema1.length)];
+
   return (
     <section className="quizfrage">
 
-<Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
+      <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
-<Modal.Header>
-  <Modal.Title><p>{props.fragenThema1[0].thema}</p></Modal.Title>
-</Modal.Header>
+        <Modal.Header>
+          <Modal.Title><p>{zufaelligeFrage.frage}</p></Modal.Title>
+        </Modal.Header>
 
-<Modal.Body>
-<ul>
-        {props.fragenThema1[0].antworten.map((element, index) =>
-          <QuizAntwort
-            key={index}
-            index={index}
-            antwort={element}
-            indexRichtigeAntwort={props.fragenThema1[0].indexRichtigeAntwort}
-            setPopup={props.setPopup}
-            spielfigurPosition={props.spielfigurPosition}
-            setSpielfigurPosition={props.setSpielfigurPosition}
-            gewuerfelteZahl={props.gewuerfelteZahl}
-          />
-        )}
-      </ul>
-</Modal.Body>
+        <Modal.Body>
+          <ul>
+            {zufaelligeFrage.antworten.map((element, index) =>
+              <QuizAntwort
+                key={index}
+                index={index}
+                antwort={element}
+                indexRichtigeAntwort={zufaelligeFrage.indexRichtigeAntwort}
+                setPopup={props.setPopup}
+                spielfigurPosition={props.spielfigurPosition}
+                setSpielfigurPosition={props.setSpielfigurPosition}
+                gewuerfelteZahl={props.gewuerfelteZahl}
+              />
+            )}
+          </ul>
+        </Modal.Body>
 
-</Modal>
+      </Modal>
 
     </section>
   );
