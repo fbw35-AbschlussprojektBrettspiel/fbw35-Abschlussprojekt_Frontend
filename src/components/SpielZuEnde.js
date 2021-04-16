@@ -2,11 +2,14 @@ import './SpielZuEnde.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap'
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setPage } from '../thunks/thunks';
 
 const SpielZuEnde = props => {
 
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
+  const dispatch = useDispatch();
 
   return (
 
@@ -27,7 +30,7 @@ const SpielZuEnde = props => {
 
           <Button variant="secondary" onClick={() => {
             handleClose()
-            props.setPage('startseite')
+            dispatch(setPage('startseite'));
             props.setSpielfigurPosition(0)
             }}>Zurück zur Startseite</Button>
         </Modal.Footer>

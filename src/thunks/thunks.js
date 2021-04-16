@@ -1,5 +1,5 @@
 import {
-  actionTogglePage,
+  actionSetPage,
   actionSetSpielfigurPosition,
   actionSetPopup,
   actionSetGewuerfelteZahl,
@@ -10,7 +10,7 @@ import axios from 'axios';
 
 const URL = 'http://localhost:3050/'
 
-export const togglePage = () => dispatch => dispatch(actionTogglePage());
+export const setPage = page => dispatch => dispatch(actionSetPage(page));
 
 export const setSpielfigurPosition = position => dispatch => dispatch(actionSetSpielfigurPosition(position));
 

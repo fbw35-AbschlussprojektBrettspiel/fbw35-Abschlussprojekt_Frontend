@@ -5,6 +5,8 @@ import AufrufAmZug from './AufrufAmZug';
 import SpielZuEnde from './SpielZuEnde';
 import QuizFrage from './QuizFrage';
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { setPage } from '../thunks/thunks';
 
 const Spielseite = props => {
   const URL = 'http://localhost:3050/fragen/'
@@ -43,6 +45,8 @@ const Spielseite = props => {
     fetchData();
   }, []);
 
+  const dispatch = useDispatch();
+
   return (
     <div className="grid-container">
       {spielfeldArray.map((element, index) =>
@@ -54,7 +58,7 @@ const Spielseite = props => {
       )}
 
       <button className="SpielBeenden" onClick={() => {
-        props.setPage('startseite')
+        dispatch(setPage('startseite'));
         setSpielfigurPosition(0)
       }}>
         Spiel beenden

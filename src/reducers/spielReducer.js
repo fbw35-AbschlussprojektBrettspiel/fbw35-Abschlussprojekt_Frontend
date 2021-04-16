@@ -1,5 +1,5 @@
 import {
-  TOGGLE_PAGE,
+  SET_PAGE,
   SET_SPIELFIGUR_POSITION,
   SET_POPUP,
   SET_GEWUERFELTE_ZAHL,
@@ -7,6 +7,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
+  // page legt fest, welche Seite ganz oben im App gerendert wird
   page: 'startseite',
   spielfeldArray: Array(60).fill(null),
   spielfigurPosition: 0,
@@ -17,7 +18,7 @@ const initialState = {
 
 const spielReducer = (state = initialState, action) => {
   switch(action.type) {
-    case TOGGLE_PAGE:
+    case SET_PAGE:
       return {...state, page: action.payload};
     case SET_SPIELFIGUR_POSITION:
       return {...state, spielfigurPosition: action.payload};

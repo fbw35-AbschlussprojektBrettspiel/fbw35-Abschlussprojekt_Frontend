@@ -1,13 +1,14 @@
 import {
-  TOGGLE_PAGE,
+  SET_PAGE,
   SET_SPIELFIGUR_POSITION,
   SET_POPUP,
   SET_GEWUERFELTE_ZAHL,
   FETCH_FRAGEN
 } from './types';
 
-export const actionTogglePage = () => ({
-  type: TOGGLE_PAGE
+export const actionSetPage = page => ({
+  type: SET_PAGE,
+  payload: page
 });
 
 export const actionSetSpielfigurPosition = position => ({
