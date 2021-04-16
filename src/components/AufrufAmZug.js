@@ -2,16 +2,26 @@ import './AufrufAmZug.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap'
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  setSpielfigurPosition,
+  setGewuerfelteZahl,
+  setPopup
+} from '../thunks/thunks';
 
-const AufrufAmZug = props => {
+const AufrufAmZug = () => {
+  const spielfigurPosition = useSelector(state => state.spielfigurPosition);
+  const spielfeldArray = useSelector(state => state.spielfeldArray);
+
+  const dispatch = useDispatch();
 
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
-  let gewuerfelt = Math.floor((Math.random() * 6) + 1)
-  return (
+  const gewuerfelt = Math.floor((Math.random() * 6) + 1);
 
-<section className="am-zug">
+  return (
+    <section className="am-zug">
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
         <Modal.Header>
@@ -21,19 +31,24 @@ const AufrufAmZug = props => {
         <Modal.Body>Du hast {gewuerfelt} gewuerfelt</Modal.Body>
 
         <Modal.Footer>
-          <Button variant="primary" onClick={() => {
-          const neuePosition = props.spielfigurPosition + gewuerfelt;
-          props.setSpielfigurPosition(neuePosition);
-          props.setGewuerfelteZahl(gewuerfelt);
-          if (neuePosition >= props.spielfeldgroesse) {
-            props.setPopup('ende');
-          } else {
-            // Später soll hier anhand der neuen Spielerposition
-            // und des SpielfeldArrays ermittelt werden,
-            // welches Popup folgen soll
-            props.setPopup('quizfrage');
-          }
-        }}>gehe weiter vor</Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              const neuePosition = spielfigurPosition + gewuerfelt;
+              dispatch(setSpielfigurPosition(neuePosition));
+              dispatch(setGewuerfelteZahl(gewuerfelt));
+              if (neuePosition >= spielfeldArray.length) {
+                dispatch(setPopup('ende'));
+              } else {
+                // Später soll hier anhand der neuen Spielerposition
+                // und des SpielfeldArrays ermittelt werden,
+                // welches Popup folgen soll
+                dispatch(setPopup('quizfrage'));
+              }
+            }}
+          >
+            gehe weiter vor
+          </Button>
         </Modal.Footer>
 
       </Modal>

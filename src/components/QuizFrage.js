@@ -1,15 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './QuizFrage.css';
-import { Modal, Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import { useState } from 'react';
 import QuizAntwort from './QuizAntwort';
+import { useSelector } from 'react-redux';
 
-const QuizFrage = props => {
+const QuizFrage = () => {
 
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
-  const zufaelligeFrage = props.fragenThema1[Math.floor(Math.random() * props.fragenThema1.length)];
+  const fragen = useSelector(state => state.fragen);
+
+  const zufaelligeFrage = fragen[Math.floor(Math.random() * fragen.length)];
 
   return (
     <section className="quizfrage">
@@ -28,10 +31,6 @@ const QuizFrage = props => {
                 index={index}
                 antwort={element}
                 indexRichtigeAntwort={zufaelligeFrage.indexRichtigeAntwort}
-                setPopup={props.setPopup}
-                spielfigurPosition={props.spielfigurPosition}
-                setSpielfigurPosition={props.setSpielfigurPosition}
-                gewuerfelteZahl={props.gewuerfelteZahl}
               />
             )}
           </ul>

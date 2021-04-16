@@ -3,8 +3,9 @@ import './Startseite.css'
 import { useDispatch } from 'react-redux';
 import { setPage } from '../thunks/thunks';
 
-const Startseite = props => {
+const Startseite = () => {
   const dispatch = useDispatch();
+
   return (
     <div className="Startseite">
       <h1>Willkommen auf die Startseite!</h1>

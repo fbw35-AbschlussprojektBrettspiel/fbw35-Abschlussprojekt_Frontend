@@ -9,10 +9,16 @@ import {
 const initialState = {
   // page legt fest, welche Seite ganz oben im App gerendert wird
   page: 'startseite',
+  // Spielfelder-Array.
+  // Später könnte drin die Feldtypen sein, z.B. Thema1, Thema2, Aktion
   spielfeldArray: Array(60).fill(null),
+  // Eine Zahl, die dem Index von spielfeldArray entspricht und die Position von Spielfigur angibt.
   spielfigurPosition: 0,
+  // Die Variable legt fest, welches Popup gerendert wird.
   popup: 'aufruf',
+  // Die zuletzt gewürfelte Zahl. Sie wird gebraucht, um die Spielfigur zurückzusetzen.
   gewuerfelteZahl: 0,
+  // Fragen-Array
   fragen: []
 };
 
