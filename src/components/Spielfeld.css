@@ -1,3 +1,7 @@
+.spielfigur {
+  z-index: 10;
+}
+
 .spielfeld-0 {
   grid-area: 6 / 1 / span 1 / span 2;
 }
@@ -241,3 +245,4 @@
 .spielfeld-60 {
   grid-area: 7 / 1 / span 1 / span 1;
 }
+/* Es gibt kein spielfeld-60 */

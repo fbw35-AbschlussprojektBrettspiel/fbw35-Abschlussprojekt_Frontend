@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Spielfeld from './Spielfeld';
+import Spielfigur from './Spielfigur';
 import './Spielseite.css';
 import AufrufAmZug from './AufrufAmZug';
 import SpielZuEnde from './SpielZuEnde';
@@ -29,12 +30,17 @@ const Spielseite = () => {
         />
       )}
 
-      <button className="SpielBeenden" onClick={() => {
-        dispatch(setPage('startseite'));
-        dispatch(setSpielfigurPosition(0));
-      }}>
+      <Spielfigur />
+
+      <button
+        className="SpielBeenden"
+        onClick={() => {
+          dispatch(setPage('startseite'));
+          dispatch(setSpielfigurPosition(0));
+        }}
+      >
         Spiel beenden
-        </button>
+      </button>
 
       {
         // Das Objekt imitiert ein switch-case
