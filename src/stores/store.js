@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension'; // die Zeile kann weg für Deployment
 import thunk from 'redux-thunk';
-import reducer from '../reducers/reducer';
+import spielReducer from '../reducers/spielReducer';
 
 const middleware = [thunk];
 
@@ -10,6 +10,6 @@ const middleware = [thunk];
 
 const composedEnhancer = composeWithDevTools(applyMiddleware(...middleware));
 
-const store = createStore(reducer, composedEnhancer);
+const store = createStore(spielReducer, composedEnhancer);
 
 export default store;
