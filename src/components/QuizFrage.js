@@ -12,7 +12,16 @@ const QuizFrage = () => {
 
   const fragen = useSelector(state => state.fragen);
 
-  const zufaelligeFrage = fragen[Math.floor(Math.random() * fragen.length)];
+  const spielfigurPosition = useSelector(state => state.spielfigurPosition);
+
+  // Thema anhand der Spielfigurposition ermitteln
+  const thema = spielfigurPosition % 3 === 0 ? 'html' :
+    spielfigurPosition % 3 === 1 ? 'css' :
+    'javascript';
+
+  const fragenEinesThemas = fragen.filter(element => element.thema === thema);
+
+  const zufaelligeFrage = fragenEinesThemas[Math.floor(Math.random() * fragenEinesThemas.length)];
 
   return (
     <section className="quizfrage">
