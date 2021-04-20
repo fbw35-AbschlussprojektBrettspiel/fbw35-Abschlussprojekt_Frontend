@@ -11,13 +11,11 @@ const QuizFrage = () => {
   const handleClose = () => setShow(false);
 
   const fragen = useSelector(state => state.fragen);
-
   const spielfigurPosition = useSelector(state => state.spielfigurPosition);
+  const spielfeldArray = useSelector(state => state.spielfeldArray);
 
   // Thema anhand der Spielfigurposition ermitteln
-  const thema = spielfigurPosition % 3 === 0 ? 'html' :
-    spielfigurPosition % 3 === 1 ? 'css' :
-    'javascript';
+  const thema = spielfeldArray[spielfigurPosition];
 
   const fragenEinesThemas = fragen.filter(element => element.thema === thema);
 
