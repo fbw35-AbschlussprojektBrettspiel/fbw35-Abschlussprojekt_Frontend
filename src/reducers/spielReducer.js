@@ -9,9 +9,10 @@ import {
 const initialState = {
   // page legt fest, welche Seite ganz oben im App gerendert wird
   page: 'startseite',
-  // Spielfelder-Array.
-  // Später könnte drin die Feldtypen sein, z.B. Thema1, Thema2, Aktion
-  spielfeldArray: Array(60).fill(null),
+  // Spielfelder-Array. Die Elemente repräsentieren die Feldtypen
+  spielfeldArray: Array(60).fill(null).map((element, index) => index % 3 === 0 ? 'html' :
+    index % 3 === 1 ? 'css' :
+    'javascript'),
   // Eine Zahl, die dem Index von spielfeldArray entspricht und die Position von Spielfigur angibt.
   spielfigurPosition: 0,
   // Die Variable legt fest, welches Popup gerendert wird.
