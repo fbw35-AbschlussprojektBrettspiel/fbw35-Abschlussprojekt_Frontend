@@ -1,13 +1,10 @@
 import './Spielfeld.css';
-import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileCode } from '@fortawesome/free-regular-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCss3, faJs } from '@fortawesome/free-brands-svg-icons';
 
 const Spielfeld = props => {
-  const spielfeldArray = useSelector(state => state.spielfeldArray);
-
   return (
     <div className={`spielfeld-${props.order}`}>
       {
@@ -24,7 +21,7 @@ const Spielfeld = props => {
             <FontAwesomeIcon icon={faCircle} style={{ color: "orange" }} />
             <FontAwesomeIcon icon={faJs} inverse transform="shrink-6" />
           </span>
-        }[spielfeldArray[props.order]]
+        }[props.feldtyp]
       }
     </div>
   );
