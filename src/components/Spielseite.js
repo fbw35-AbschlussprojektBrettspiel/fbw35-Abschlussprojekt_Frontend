@@ -27,6 +27,7 @@ const Spielseite = () => {
         <Spielfeld
           key={index}
           order={index}
+          feldtyp={element}
         />
       )}
 
