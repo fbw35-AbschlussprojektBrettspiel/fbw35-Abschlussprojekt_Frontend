@@ -11,6 +11,7 @@ import axios from 'axios';
 
 const URL = 'http://localhost:3050/';
 const WEBSOCKET_URL = 'ws://localhost:3050';
+const ws = new WebSocket(WEBSOCKET_URL);
 
 export const setPage = page => dispatch => dispatch(actionSetPage(page));
 
@@ -31,12 +32,26 @@ export const fetchFragen = () => dispatch => axios.get(URL + 'fragen/')
 // websocket
 
 export const connectWebsocket = () => dispatch => {
-  const ws = new WebSocket(WEBSOCKET_URL);
   ws.onmessage = message => {
     const response = JSON.parse(message.data);
     console.log(response);
+
+    // connect
     if (response.method === 'connect') {
       dispatch(actionSetClientId(response.clientId));
     }
+
+    // create
+    if (response.method === 'create') {
+      console.log('Spiel erfolgreich erstellt.');
+    }
   };
+};
+
+export const createSpiel = clientId => dispatch => {
+  const payload = {
+    method: 'create',
+    clientId
+  };
+  ws.send(JSON.stringify(payload));
 };
