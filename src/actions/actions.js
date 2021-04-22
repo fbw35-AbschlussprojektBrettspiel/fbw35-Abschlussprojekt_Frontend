@@ -3,7 +3,8 @@ import {
   SET_SPIELFIGUR_POSITION,
   SET_POPUP,
   SET_GEWUERFELTE_ZAHL,
-  FETCH_FRAGEN
+  FETCH_FRAGEN,
+  SET_CLIENT_ID
 } from './types';
 
 export const actionSetPage = page => ({
@@ -29,4 +30,9 @@ export const actionSetGewuerfelteZahl = zahl => ({
 export const actionFetchFragen = fragen => ({
   type: FETCH_FRAGEN,
   payload: fragen
+});
+
+export const actionSetClientId = id => ({
+  type: SET_CLIENT_ID,
+  payload: id
 });

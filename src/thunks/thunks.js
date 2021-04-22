@@ -3,7 +3,8 @@ import {
   actionSetSpielfigurPosition,
   actionSetPopup,
   actionSetGewuerfelteZahl,
-  actionFetchFragen
+  actionFetchFragen,
+  actionSetClientId
 } from '../actions/actions';
 
 import axios from 'axios';
@@ -19,6 +20,8 @@ export const setPopup = popup => dispatch => dispatch(actionSetPopup(popup));
 
 export const setGewuerfelteZahl = zahl => dispatch => dispatch(actionSetGewuerfelteZahl(zahl));
 
+// export const setClientId = id => dispatch => dispatch(actionSetClientId(id));
+
 // fragen werden hier mit einer GET-Anfrage vom Server geholt
 
 export const fetchFragen = () => dispatch => axios.get(URL + 'fragen/')
@@ -32,5 +35,8 @@ export const connectWebsocket = () => dispatch => {
   ws.onmessage = message => {
     const response = JSON.parse(message.data);
     console.log(response);
+    if (response.method === 'connect') {
+      dispatch(actionSetClientId(response.clientId));
+    }
   };
 };

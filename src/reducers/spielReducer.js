@@ -3,7 +3,8 @@ import {
   SET_SPIELFIGUR_POSITION,
   SET_POPUP,
   SET_GEWUERFELTE_ZAHL,
-  FETCH_FRAGEN
+  FETCH_FRAGEN,
+  SET_CLIENT_ID
 } from '../actions/types';
 
 const initialState = {
@@ -21,7 +22,9 @@ const initialState = {
   // Die zuletzt gewürfelte Zahl. Sie wird gebraucht, um die Spielfigur zurückzusetzen.
   gewuerfelteZahl: 0,
   // Fragen-Array
-  fragen: []
+  fragen: [],
+  // lokale Klient-Id
+  clientId: null
 };
 
 const spielReducer = (state = initialState, action) => {
@@ -39,6 +42,8 @@ const spielReducer = (state = initialState, action) => {
         ...state.fragen,
         ...action.payload
       ]};
+    case SET_CLIENT_ID:
+      return {...state, clientId: action.payload};
     default:
       return state;
   }
