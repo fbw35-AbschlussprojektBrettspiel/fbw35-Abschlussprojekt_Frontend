@@ -8,7 +8,8 @@ import {
 
 import axios from 'axios';
 
-const URL = 'http://localhost:3050/'
+const URL = 'http://localhost:3050/';
+const WEBSOCKET_URL = 'ws://localhost:3050';
 
 export const setPage = page => dispatch => dispatch(actionSetPage(page));
 
@@ -23,3 +24,13 @@ export const setGewuerfelteZahl = zahl => dispatch => dispatch(actionSetGewuerfe
 export const fetchFragen = () => dispatch => axios.get(URL + 'fragen/')
 .then(response => dispatch(actionFetchFragen(response.data)))
 .catch(error => console.error(error));
+
+// websocket
+
+export const connectWebsocket = () => dispatch => {
+  const ws = new WebSocket(WEBSOCKET_URL);
+  ws.onmessage = message => {
+    const response = JSON.parse(message.data);
+    console.log(response);
+  };
+};
