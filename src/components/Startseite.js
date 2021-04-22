@@ -1,10 +1,16 @@
 import Spielanleitung from './Spielanleitung'
 import './Startseite.css'
 import { useDispatch } from 'react-redux';
-import { setPage } from '../thunks/thunks';
+import { useEffect } from 'react';
+import {
+  setPage,
+  connectWebsocket
+} from '../thunks/thunks';
 
 const Startseite = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => dispatch(connectWebsocket()), [dispatch]);
 
   return (
     <div className="Startseite">
