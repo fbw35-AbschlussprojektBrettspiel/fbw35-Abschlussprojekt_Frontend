@@ -4,7 +4,8 @@ import {
   SET_POPUP,
   SET_GEWUERFELTE_ZAHL,
   FETCH_FRAGEN,
-  SET_CLIENT_ID
+  SET_CLIENT_ID,
+  SET_SPIEL_ID
 } from '../actions/types';
 
 const initialState = {
@@ -24,7 +25,9 @@ const initialState = {
   // Fragen-Array
   fragen: [],
   // lokale Klient-Id
-  clientId: null
+  clientId: null,
+  // Spiel-Id
+  spielId: null
 };
 
 const spielReducer = (state = initialState, action) => {
@@ -44,6 +47,8 @@ const spielReducer = (state = initialState, action) => {
       ]};
     case SET_CLIENT_ID:
       return {...state, clientId: action.payload};
+    case SET_SPIEL_ID:
+      return {...state, spielId: action.payload};
     default:
       return state;
   }

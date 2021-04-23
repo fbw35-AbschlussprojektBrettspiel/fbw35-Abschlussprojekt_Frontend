@@ -4,7 +4,8 @@ import {
   actionSetPopup,
   actionSetGewuerfelteZahl,
   actionFetchFragen,
-  actionSetClientId
+  actionSetClientId,
+  actionSetSpielId
 } from '../actions/actions';
 
 import axios from 'axios';
@@ -22,6 +23,8 @@ export const setPopup = popup => dispatch => dispatch(actionSetPopup(popup));
 export const setGewuerfelteZahl = zahl => dispatch => dispatch(actionSetGewuerfelteZahl(zahl));
 
 // export const setClientId = id => dispatch => dispatch(actionSetClientId(id));
+
+// export const setSpielId = id => dispatch => dispatch(actionSetSpielId(id));
 
 // fragen werden hier mit einer GET-Anfrage vom Server geholt
 
@@ -43,7 +46,14 @@ export const connectWebsocket = () => dispatch => {
 
     // create
     if (response.method === 'create') {
+      dispatch(actionSetSpielId(response.spiel.id));
       console.log('Spiel erfolgreich erstellt.');
+    }
+
+    // join
+    if (response.method === 'join') {
+      dispatch(actionSetSpielId(response.spiel.id));
+      console.log('Spiel erfolgreich beitetreten');
     }
   };
 };
@@ -52,6 +62,15 @@ export const createSpiel = clientId => dispatch => {
   const payload = {
     method: 'create',
     clientId
+  };
+  ws.send(JSON.stringify(payload));
+};
+
+export const joinSpiel = (clientId, spielId) => dispatch => {
+  const payload = {
+    method: 'join',
+    clientId,
+    spielId
   };
   ws.send(JSON.stringify(payload));
 };

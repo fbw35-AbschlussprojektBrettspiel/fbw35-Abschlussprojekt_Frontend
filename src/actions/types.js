@@ -4,3 +4,4 @@ export const SET_POPUP = 'SET_POPUP';
 export const SET_GEWUERFELTE_ZAHL = 'SET_GEWUERFELTE_ZAHL';
 export const FETCH_FRAGEN = 'FETCH_FRAGEN';
 export const SET_CLIENT_ID = 'SET_CLIENT_ID';
+export const SET_SPIEL_ID = 'SET_SPIEL_ID';

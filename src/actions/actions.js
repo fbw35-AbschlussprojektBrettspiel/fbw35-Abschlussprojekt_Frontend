@@ -4,7 +4,8 @@ import {
   SET_POPUP,
   SET_GEWUERFELTE_ZAHL,
   FETCH_FRAGEN,
-  SET_CLIENT_ID
+  SET_CLIENT_ID,
+  SET_SPIEL_ID
 } from './types';
 
 export const actionSetPage = page => ({
@@ -34,5 +35,10 @@ export const actionFetchFragen = fragen => ({
 
 export const actionSetClientId = id => ({
   type: SET_CLIENT_ID,
+  payload: id
+});
+
+export const actionSetSpielId = id => ({
+  type: SET_SPIEL_ID,
   payload: id
 });
