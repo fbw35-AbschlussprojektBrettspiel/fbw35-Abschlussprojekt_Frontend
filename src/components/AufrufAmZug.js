@@ -37,6 +37,7 @@ const AufrufAmZug = () => {
         <Modal.Footer>
           <Button
             variant="success"
+            disabled={!!gewuerfelteZahl}
             onClick={() => {
               dispatch(wuerfeln(clientId, spielId));
             }}
