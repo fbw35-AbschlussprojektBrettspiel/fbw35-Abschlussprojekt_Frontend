@@ -7,7 +7,8 @@ import {
   setSpielfigurPosition,
   setGewuerfelteZahl,
   setPopup,
-  wuerfeln
+  wuerfeln,
+  macheZug
 } from '../thunks/thunks';
 
 const AufrufAmZug = () => {
@@ -47,19 +48,11 @@ const AufrufAmZug = () => {
 
           <Button
             variant="primary"
-            // onClick={() => {
-            //   const neuePosition = spielfigurPosition + gewuerfelt;
-            //   dispatch(setSpielfigurPosition(neuePosition));
-            //   dispatch(setGewuerfelteZahl(gewuerfelt));
-            //   if (neuePosition >= spielfeldArray.length) {
-            //     dispatch(setPopup('ende'));
-            //   } else {
-            //     // Später soll hier anhand der neuen Spielerposition
-            //     // und des SpielfeldArrays ermittelt werden,
-            //     // welches Popup folgen soll
-            //     dispatch(setPopup('quizfrage'));
-            //   }
-            // }}
+            disabled={!gewuerfelteZahl}
+            onClick={() => {
+              const neuePosition = spielfigurPosition + gewuerfelteZahl;
+              dispatch(macheZug(clientId, spielId, neuePosition));
+            }}
           >
             gehe weiter vor
           </Button>

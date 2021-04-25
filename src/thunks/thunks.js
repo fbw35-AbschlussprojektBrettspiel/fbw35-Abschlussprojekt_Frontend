@@ -67,6 +67,16 @@ export const connectWebsocket = () => dispatch => {
       dispatch(actionSetGewuerfelteZahl(response.gewuerfelteZahl));
       console.log('Erfolgreich gewürfelt');
     }
+
+    // macheZug
+    if (response.method === 'macheZug') {
+      dispatch(actionSetSpielfigurPosition(response.neuePosition));
+      console.log('Einen Zug erfolgreich gemacht');
+      // später soll hier ermittelt werden, ob quizfrage- oder
+      // aktion-popup angezeigt werden soll
+      dispatch(actionSetPopup('quizfrage'));
+    }
+
   };
 };
 
@@ -101,6 +111,16 @@ export const wuerfeln = (clientId, spielId) => dispatch => {
     method: 'wuerfeln',
     clientId,
     spielId
+  };
+  ws.send(JSON.stringify(payload));
+};
+
+export const macheZug = (clientId, spielId, neuePosition) => dispatch => {
+  const payload = {
+    method: 'macheZug',
+    clientId,
+    spielId,
+    neuePosition
   };
   ws.send(JSON.stringify(payload));
 };
