@@ -5,7 +5,8 @@ import {
   actionSetGewuerfelteZahl,
   actionFetchFragen,
   actionSetClientId,
-  actionSetSpielId
+  actionSetSpielId,
+  actionSetSpielfeldArray
 } from '../actions/actions';
 
 import axios from 'axios';
@@ -25,6 +26,8 @@ export const setGewuerfelteZahl = zahl => dispatch => dispatch(actionSetGewuerfe
 // export const setClientId = id => dispatch => dispatch(actionSetClientId(id));
 
 // export const setSpielId = id => dispatch => dispatch(actionSetSpielId(id));
+
+// export const setSpielfeldArray = array => dispatch => dispatch(actionSetSpielfeldArray(array));
 
 // fragen werden hier mit einer GET-Anfrage vom Server geholt
 
@@ -58,6 +61,7 @@ export const connectWebsocket = () => dispatch => {
 
     // start
     if (response.method === 'start') {
+      dispatch(actionSetSpielfeldArray(response.spielfeldArray));
       dispatch(actionSetPage('spielseite'));
       console.log('Spiel erfolgreich gestartet');
     }
@@ -70,7 +74,8 @@ export const connectWebsocket = () => dispatch => {
 
     // macheZug
     if (response.method === 'macheZug') {
-      dispatch(actionSetSpielfigurPosition(response.neuePosition));
+      const neuePosition = response.neuePosition;
+      dispatch(actionSetSpielfigurPosition(neuePosition));
       console.log('Einen Zug erfolgreich gemacht');
       // später soll hier ermittelt werden, ob quizfrage- oder
       // aktion-popup angezeigt werden soll
