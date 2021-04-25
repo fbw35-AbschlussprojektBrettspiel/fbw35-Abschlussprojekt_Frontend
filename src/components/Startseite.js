@@ -6,7 +6,8 @@ import {
   setPage,
   connectWebsocket,
   createSpiel,
-  joinSpiel
+  joinSpiel,
+  startSpiel
 } from '../thunks/thunks';
 
 const Startseite = () => {
@@ -38,10 +39,13 @@ const Startseite = () => {
         placeholder="spiel-id"
         value={textInput}
         onChange={event => setTextInput(event.target.value)}
-      />
+      /><br/>
+      <button onClick={() => dispatch(startSpiel(clientId, spielId))}>
+        Spiel starten
+      </button>
       <Spielanleitung />
     </div>
   );
-}
+};
 
 export default Startseite;

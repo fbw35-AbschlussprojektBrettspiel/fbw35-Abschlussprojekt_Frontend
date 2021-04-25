@@ -55,6 +55,12 @@ export const connectWebsocket = () => dispatch => {
       dispatch(actionSetSpielId(response.spiel.id));
       console.log('Spiel erfolgreich beitetreten');
     }
+
+    // start
+    if (response.method === 'start') {
+      dispatch(actionSetPage('spielseite'));
+      console.log('Spiel erfolgreich gestartet');
+    }
   };
 };
 
@@ -69,6 +75,15 @@ export const createSpiel = clientId => dispatch => {
 export const joinSpiel = (clientId, spielId) => dispatch => {
   const payload = {
     method: 'join',
+    clientId,
+    spielId
+  };
+  ws.send(JSON.stringify(payload));
+};
+
+export const startSpiel = (clientId, spielId) => dispatch => {
+  const payload = {
+    method: 'start',
     clientId,
     spielId
   };
