@@ -75,6 +75,8 @@ export const connectWebsocket = () => dispatch => {
     // macheZug
     if (response.method === 'macheZug') {
       const neuePosition = response.neuePosition;
+      const frage = response.frage;
+      console.log(frage);
       dispatch(actionSetSpielfigurPosition(neuePosition));
       console.log('Einen Zug erfolgreich gemacht');
       // später soll hier ermittelt werden, ob quizfrage- oder
