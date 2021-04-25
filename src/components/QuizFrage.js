@@ -10,16 +10,7 @@ const QuizFrage = () => {
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
-  const fragen = useSelector(state => state.fragen);
-  const spielfigurPosition = useSelector(state => state.spielfigurPosition);
-  const spielfeldArray = useSelector(state => state.spielfeldArray);
-
-  // Thema anhand der Spielfigurposition ermitteln
-  const thema = spielfeldArray[spielfigurPosition];
-
-  const fragenEinesThemas = fragen.filter(element => element.thema === thema);
-
-  const zufaelligeFrage = fragenEinesThemas[Math.floor(Math.random() * fragenEinesThemas.length)];
+  const frage = useSelector(state => state.frage);
 
   return (
     <section className="quizfrage">
@@ -27,17 +18,17 @@ const QuizFrage = () => {
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
         <Modal.Header>
-          <Modal.Title><p>{zufaelligeFrage.frage}</p></Modal.Title>
+          <Modal.Title><p>{frage.frage}</p></Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
           <ul>
-            {zufaelligeFrage.antworten.map((element, index) =>
+            {frage.antworten.map((element, index) =>
               <QuizAntwort
                 key={index}
                 index={index}
                 antwort={element}
-                indexRichtigeAntwort={zufaelligeFrage.indexRichtigeAntwort}
+                indexRichtigeAntwort={frage.indexRichtigeAntwort}
               />
             )}
           </ul>

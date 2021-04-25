@@ -6,7 +6,8 @@ import {
   FETCH_FRAGEN,
   SET_CLIENT_ID,
   SET_SPIEL_ID,
-  SET_SPIELFELD_ARRAY
+  SET_SPIELFELD_ARRAY,
+  SET_FRAGE
 } from './types';
 
 export const actionSetPage = page => ({
@@ -47,4 +48,9 @@ export const actionSetSpielId = id => ({
 export const actionSetSpielfeldArray = array => ({
   type: SET_SPIELFELD_ARRAY,
   payload: array
+});
+
+export const actionSetFrage = frage => ({
+  type: SET_FRAGE,
+  payload: frage
 });

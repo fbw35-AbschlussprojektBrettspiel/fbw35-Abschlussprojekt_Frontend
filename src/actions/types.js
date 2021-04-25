@@ -6,3 +6,4 @@ export const FETCH_FRAGEN = 'FETCH_FRAGEN';
 export const SET_CLIENT_ID = 'SET_CLIENT_ID';
 export const SET_SPIEL_ID = 'SET_SPIEL_ID';
 export const SET_SPIELFELD_ARRAY = 'SET_SPIELFELD_ARRAY';
+export const SET_FRAGE = 'SET_FRAGE';

@@ -6,7 +6,8 @@ import {
   FETCH_FRAGEN,
   SET_CLIENT_ID,
   SET_SPIEL_ID,
-  SET_SPIELFELD_ARRAY
+  SET_SPIELFELD_ARRAY,
+  SET_FRAGE
 } from '../actions/types';
 
 const initialState = {
@@ -22,6 +23,8 @@ const initialState = {
   gewuerfelteZahl: 0,
   // Fragen-Array
   fragen: [],
+  // Frage
+  frage: {},
   // lokale Klient-Id
   clientId: null,
   // Spiel-Id
@@ -49,6 +52,8 @@ const spielReducer = (state = initialState, action) => {
       return {...state, spielId: action.payload};
     case SET_SPIELFELD_ARRAY:
       return {...state, spielfeldArray: action.payload};
+    case SET_FRAGE:
+      return {...state, frage: action.payload};
     default:
       return state;
   }

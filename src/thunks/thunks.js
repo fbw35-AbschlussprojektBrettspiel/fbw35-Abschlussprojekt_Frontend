@@ -6,7 +6,8 @@ import {
   actionFetchFragen,
   actionSetClientId,
   actionSetSpielId,
-  actionSetSpielfeldArray
+  actionSetSpielfeldArray,
+  actionSetFrage
 } from '../actions/actions';
 
 import axios from 'axios';
@@ -76,8 +77,8 @@ export const connectWebsocket = () => dispatch => {
     if (response.method === 'macheZug') {
       const neuePosition = response.neuePosition;
       const frage = response.frage;
-      console.log(frage);
       dispatch(actionSetSpielfigurPosition(neuePosition));
+      dispatch(actionSetFrage(frage));
       console.log('Einen Zug erfolgreich gemacht');
       // später soll hier ermittelt werden, ob quizfrage- oder
       // aktion-popup angezeigt werden soll
