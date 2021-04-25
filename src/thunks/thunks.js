@@ -61,6 +61,12 @@ export const connectWebsocket = () => dispatch => {
       dispatch(actionSetPage('spielseite'));
       console.log('Spiel erfolgreich gestartet');
     }
+
+    // wuerfeln
+    if (response.method === 'wuerfeln') {
+      dispatch(actionSetGewuerfelteZahl(response.gewuerfelteZahl));
+      console.log('Erfolgreich gewürfelt');
+    }
   };
 };
 
@@ -84,6 +90,15 @@ export const joinSpiel = (clientId, spielId) => dispatch => {
 export const startSpiel = (clientId, spielId) => dispatch => {
   const payload = {
     method: 'start',
+    clientId,
+    spielId
+  };
+  ws.send(JSON.stringify(payload));
+};
+
+export const wuerfeln = (clientId, spielId) => dispatch => {
+  const payload = {
+    method: 'wuerfeln',
     clientId,
     spielId
   };
