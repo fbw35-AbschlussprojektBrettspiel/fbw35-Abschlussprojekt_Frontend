@@ -1,7 +1,7 @@
 import './AufrufAmZug.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   setSpielfigurPosition,
@@ -20,6 +20,8 @@ const AufrufAmZug = () => {
 
   const dispatch = useDispatch();
 
+  useEffect(() => dispatch(setGewuerfelteZahl(0)), [dispatch]);
+
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
@@ -30,10 +32,10 @@ const AufrufAmZug = () => {
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
         <Modal.Header>
-          <Modal.Title>Bitte einen Zug machen! (würfle 1-6)</Modal.Title>
+          <Modal.Title>Bitte einen Zug machen!</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body>gewuerfelte Zahl: {gewuerfelteZahl}</Modal.Body>
+        <Modal.Body>{!gewuerfelteZahl ? 'Würfeln Sie 1-6' : `Sie haben ${gewuerfelteZahl} gewürfelt!`}</Modal.Body>
 
         <Modal.Footer>
           <Button
