@@ -17,9 +17,13 @@ const AufrufAmZug = () => {
   const gewuerfelteZahl = useSelector(state => state.gewuerfelteZahl);
   const clientId = useSelector(state => state.clientId);
   const spielId = useSelector(state => state.spielId);
+  const spielfigurPositionen = useSelector(state => state.spielfigurPositionen);
+  const werIstDran = useSelector(state => state.werIstDran);
+
 
   const dispatch = useDispatch();
 
+  // Beim Mounten (Aufruf) des components wird gewuerfelteZahl auf 0 zurückgesetzt
   useEffect(() => dispatch(setGewuerfelteZahl(0)), [dispatch]);
 
   const [show, setShow] = useState(true);
@@ -32,7 +36,7 @@ const AufrufAmZug = () => {
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
         <Modal.Header>
-          <Modal.Title>Bitte einen Zug machen!</Modal.Title>
+          <Modal.Title>{werIstDran}. Spieler, bitte einen Zug machen!</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>{!gewuerfelteZahl ? 'Würfeln Sie 1-6' : `Sie haben ${gewuerfelteZahl} gewürfelt!`}</Modal.Body>
@@ -52,7 +56,7 @@ const AufrufAmZug = () => {
             variant="primary"
             disabled={!gewuerfelteZahl}
             onClick={() => {
-              const neuePosition = spielfigurPosition + gewuerfelteZahl;
+              const neuePosition = spielfigurPositionen[werIstDran] + gewuerfelteZahl;
               dispatch(macheZug(clientId, spielId, neuePosition));
             }}
           >

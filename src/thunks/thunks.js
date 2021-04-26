@@ -7,7 +7,10 @@ import {
   actionSetClientId,
   actionSetSpielId,
   actionSetSpielfeldArray,
-  actionSetFrage
+  actionSetFrage,
+  actionSetClients,
+  actionSetWerIstDran,
+  actionSetSpielfigurPositionen
 } from '../actions/actions';
 
 import axios from 'axios';
@@ -23,6 +26,8 @@ export const setSpielfigurPosition = position => dispatch => dispatch(actionSetS
 export const setPopup = popup => dispatch => dispatch(actionSetPopup(popup));
 
 export const setGewuerfelteZahl = zahl => dispatch => dispatch(actionSetGewuerfelteZahl(zahl));
+
+export const setSpielfigurPositionen = object => dispatch => dispatch(actionSetSpielfigurPositionen(object));
 
 // export const setClientId = id => dispatch => dispatch(actionSetClientId(id));
 
@@ -57,12 +62,14 @@ export const connectWebsocket = () => dispatch => {
     // join
     if (response.method === 'join') {
       dispatch(actionSetSpielId(response.spiel.id));
+      dispatch(actionSetClients(response.spiel.clients));
       console.log('Spiel erfolgreich beitetreten');
     }
 
     // start
     if (response.method === 'start') {
       dispatch(actionSetSpielfeldArray(response.spielfeldArray));
+      dispatch(actionSetSpielfigurPositionen(response.initialPositionen));
       dispatch(actionSetPage('spielseite'));
       console.log('Spiel erfolgreich gestartet');
     }
@@ -76,7 +83,11 @@ export const connectWebsocket = () => dispatch => {
     // macheZug
     if (response.method === 'macheZug') {
       const neuePosition = response.neuePosition;
-      dispatch(actionSetSpielfigurPosition(neuePosition));
+      const werIstDran = response.werIstDran;
+      const positionObjekt = {};
+      positionObjekt[werIstDran] = neuePosition;
+      console.log('zusammengebasteltes positionObjekt', positionObjekt);
+      dispatch(actionSetSpielfigurPositionen(positionObjekt));
       if (response.ende) {
         dispatch(actionSetPopup('ende'));
         console.log('Spielende erfolgreich übermittelt');
@@ -92,12 +103,17 @@ export const connectWebsocket = () => dispatch => {
 
     // verschieben
     if (response.method === 'verschieben') {
-      dispatch(actionSetSpielfigurPosition(response.neuePosition));
+      const neuePosition = response.neuePosition;
+      const werIstDran = response.werIstDran;
+      const positionObjekt = {};
+      positionObjekt[werIstDran] = neuePosition;
+      dispatch(actionSetSpielfigurPositionen(positionObjekt));
       console.log('Spielfigur erfolgreich verschoben');
     }
 
     // naechsterZug
     if (response.method === 'naechsterZug') {
+      dispatch(actionSetWerIstDran(response.werIstDran));
       dispatch(actionSetPopup('aufruf'));
       console.log('Nächster Zug erfolgreich eingeleitet');
     }

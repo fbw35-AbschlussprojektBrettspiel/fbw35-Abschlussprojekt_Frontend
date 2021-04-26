@@ -7,7 +7,10 @@ import {
   SET_CLIENT_ID,
   SET_SPIEL_ID,
   SET_SPIELFELD_ARRAY,
-  SET_FRAGE
+  SET_FRAGE,
+  SET_CLIENTS,
+  SET_WER_IST_DRAN,
+  SET_SPIELFIGUR_POSITIONEN
 } from './types';
 
 export const actionSetPage = page => ({
@@ -53,4 +56,19 @@ export const actionSetSpielfeldArray = array => ({
 export const actionSetFrage = frage => ({
   type: SET_FRAGE,
   payload: frage
+});
+
+export const actionSetClients = clients => ({
+  type: SET_CLIENTS,
+  payload: clients
+});
+
+export const actionSetWerIstDran = order => ({
+  type: SET_WER_IST_DRAN,
+  payload: order
+});
+
+export const actionSetSpielfigurPositionen = object => ({
+  type: SET_SPIELFIGUR_POSITIONEN,
+  payload: object
 });

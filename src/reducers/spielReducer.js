@@ -7,7 +7,10 @@ import {
   SET_CLIENT_ID,
   SET_SPIEL_ID,
   SET_SPIELFELD_ARRAY,
-  SET_FRAGE
+  SET_FRAGE,
+  SET_CLIENTS,
+  SET_WER_IST_DRAN,
+  SET_SPIELFIGUR_POSITIONEN
 } from '../actions/types';
 
 const initialState = {
@@ -17,6 +20,8 @@ const initialState = {
   spielfeldArray: [],
   // Eine Zahl, die dem Index von spielfeldArray entspricht und die Position von Spielfigur angibt.
   spielfigurPosition: 0,
+  // Positionen der Spielfiguren, die dem Index von spielfeldArray entsprechen
+  spielfigurPositionen: {},
   // Die Variable legt fest, welches Popup gerendert wird.
   popup: 'aufruf',
   // Die zuletzt gewürfelte Zahl. Sie wird gebraucht, um die Spielfigur zurückzusetzen.
@@ -28,7 +33,11 @@ const initialState = {
   // lokale Klient-Id
   clientId: null,
   // Spiel-Id
-  spielId: null
+  spielId: null,
+  // array aus clients des Spiels, jeder client ist ein Objekt aus clientId und order
+  clients: [],
+  // wer (anhand von order) ist dran
+  werIstDran: 0
 };
 
 const spielReducer = (state = initialState, action) => {
@@ -54,6 +63,15 @@ const spielReducer = (state = initialState, action) => {
       return {...state, spielfeldArray: action.payload};
     case SET_FRAGE:
       return {...state, frage: action.payload};
+    case SET_CLIENTS:
+      return {...state, clients: action.payload};
+    case SET_WER_IST_DRAN:
+      return {...state, werIstDran: action.payload};
+    case SET_SPIELFIGUR_POSITIONEN:
+      return {...state, spielfigurPositionen: {
+        ...state.spielfigurPositionen,
+        ...action.payload
+      }};
     default:
       return state;
   }
