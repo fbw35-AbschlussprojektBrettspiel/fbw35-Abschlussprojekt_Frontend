@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   setSpielfigurPosition,
   setPopup,
-  verschiebeSpielfigur
+  verschiebeSpielfigur,
+  naechsterZug
 } from '../thunks/thunks';
 
 const QuizAntwort = props => {
@@ -24,7 +25,7 @@ const QuizAntwort = props => {
         }
         // unabhängig davon, ob die Antwort richtig oder falsch war,
         // wird als nächstes aufruf-popup angezeigt.
-        dispatch(setPopup('aufruf'));
+        dispatch(naechsterZug(clientId, spielId));
       }}
     >
       {props.antwort}

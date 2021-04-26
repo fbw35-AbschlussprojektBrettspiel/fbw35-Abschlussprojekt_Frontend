@@ -91,6 +91,12 @@ export const connectWebsocket = () => dispatch => {
       console.log('Spielfigur erfolgreich verschoben');
     }
 
+    // naechsterZug
+    if (response.method === 'naechsterZug') {
+      dispatch(actionSetPopup('aufruf'));
+      console.log('Nächster Zug erfolgreich eingeleitet');
+    }
+
   };
 };
 
@@ -145,6 +151,15 @@ export const verschiebeSpielfigur = (clientId, spielId, neuePosition) => dispatc
     clientId,
     spielId,
     neuePosition
+  };
+  ws.send(JSON.stringify(payload));
+};
+
+export const naechsterZug = (clientId, spielId) => dispatch => {
+  const payload = {
+    method: 'naechsterZug',
+    clientId,
+    spielId
   };
   ws.send(JSON.stringify(payload));
 };
