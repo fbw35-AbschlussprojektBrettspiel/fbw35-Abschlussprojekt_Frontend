@@ -6,7 +6,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   setPage,
   setPopup,
-  setSpielfigurPosition
+  setSpielfigurPosition,
+  beendeSpiel
 } from '../thunks/thunks';
 
 const SpielZuEnde = () => {
@@ -16,6 +17,8 @@ const SpielZuEnde = () => {
 
   const spielfigurPosition = useSelector(state => state.spielfigurPosition);
   const spielfeldArray = useSelector(state => state.spielfeldArray);
+  const clientId = useSelector(state => state.clientId);
+  const spielId = useSelector(state => state.spielId);
   const dispatch = useDispatch();
 
   return (
@@ -27,7 +30,7 @@ const SpielZuEnde = () => {
           <Modal.Title>Herzlichen Glückwunsch!!</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body>Du hast die Runde beendet, möchtest du auf diesem Spielfeld weiter üben?</Modal.Body>
+        {/* <Modal.Body>Du hast die Runde beendet, möchtest du auf diesem Spielfeld weiter üben?</Modal.Body>
 
         <Modal.Footer>
           <Button
@@ -47,6 +50,21 @@ const SpielZuEnde = () => {
               handleClose();
               dispatch(setPage('startseite'));
               dispatch(setSpielfigurPosition(0));
+            }}
+          >
+            Zurück zur Startseite
+          </Button>
+        </Modal.Footer> */}
+
+        <Modal.Body>Du hast das Ziel erreicht!</Modal.Body>
+
+        <Modal.Footer>
+
+          <Button
+            variant="primary"
+            onClick={() => {
+              handleClose();
+              dispatch(beendeSpiel(clientId, spielId));
             }}
           >
             Zurück zur Startseite

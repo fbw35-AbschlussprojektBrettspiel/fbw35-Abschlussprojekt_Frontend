@@ -9,17 +9,26 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   setPage,
   fetchFragen,
-  setSpielfigurPosition
+  setSpielfigurPosition,
+  setSpielfigurPositionen
 } from '../thunks/thunks';
 
 const Spielseite = () => {
   const spielfeldArray = useSelector(state => state.spielfeldArray);
   const popup = useSelector(state => state.popup);
+  const clients = useSelector(state => state.clients);
 
   const dispatch = useDispatch();
 
   // Hier werden die Fragen einmalig beim Mounten des components geholt.
-  useEffect(() => dispatch(fetchFragen()), [dispatch]);
+  // useEffect(() => dispatch(fetchFragen()), [dispatch]);
+
+  // spielfigurPositionen werden einmalig beim Mounten des components auf 0 gesetzt.
+  // useEffect(() => {
+  //   const initialPositionen = {};
+  //   clients.forEach(client => initialPositionen[client.order] = 0);
+  //   dispatch(setSpielfigurPositionen(initialPositionen), [dispatch]);
+  // });
 
   return (
     <div className="grid-container">
@@ -31,13 +40,17 @@ const Spielseite = () => {
         />
       )}
 
-      <Spielfigur />
+      {clients.map((element, index) =>
+        <Spielfigur
+          key={index}
+          order={element.order}
+        />
+      )}
 
       <button
         className="SpielBeenden"
         onClick={() => {
           dispatch(setPage('startseite'));
-          dispatch(setSpielfigurPosition(0));
         }}
       >
         Spiel beenden

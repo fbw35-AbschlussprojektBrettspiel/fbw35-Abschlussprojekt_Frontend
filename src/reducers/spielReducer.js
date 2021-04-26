@@ -3,25 +3,41 @@ import {
   SET_SPIELFIGUR_POSITION,
   SET_POPUP,
   SET_GEWUERFELTE_ZAHL,
-  FETCH_FRAGEN
+  FETCH_FRAGEN,
+  SET_CLIENT_ID,
+  SET_SPIEL_ID,
+  SET_SPIELFELD_ARRAY,
+  SET_FRAGE,
+  SET_CLIENTS,
+  SET_WER_IST_DRAN,
+  SET_SPIELFIGUR_POSITIONEN
 } from '../actions/types';
 
 const initialState = {
   // page legt fest, welche Seite ganz oben im App gerendert wird
   page: 'startseite',
   // Spielfelder-Array. Die Elemente repräsentieren die Feldtypen
-  spielfeldArray: Array(60).fill(null).map((element, index) => index % 4 === 0 ? 'html' :
-    index % 4 === 1 ? 'css' :
-    index % 4 === 2 ? 'javascript' :
-    'aktion'),
+  spielfeldArray: [],
   // Eine Zahl, die dem Index von spielfeldArray entspricht und die Position von Spielfigur angibt.
   spielfigurPosition: 0,
+  // Positionen der Spielfiguren, die dem Index von spielfeldArray entsprechen
+  spielfigurPositionen: {},
   // Die Variable legt fest, welches Popup gerendert wird.
   popup: 'aufruf',
   // Die zuletzt gewürfelte Zahl. Sie wird gebraucht, um die Spielfigur zurückzusetzen.
   gewuerfelteZahl: 0,
   // Fragen-Array
-  fragen: []
+  fragen: [],
+  // Frage
+  frage: {},
+  // lokale Klient-Id
+  clientId: null,
+  // Spiel-Id
+  spielId: null,
+  // array aus clients des Spiels, jeder client ist ein Objekt aus clientId und order
+  clients: [],
+  // wer (anhand von order) ist dran
+  werIstDran: 0
 };
 
 const spielReducer = (state = initialState, action) => {
@@ -39,6 +55,23 @@ const spielReducer = (state = initialState, action) => {
         ...state.fragen,
         ...action.payload
       ]};
+    case SET_CLIENT_ID:
+      return {...state, clientId: action.payload};
+    case SET_SPIEL_ID:
+      return {...state, spielId: action.payload};
+    case SET_SPIELFELD_ARRAY:
+      return {...state, spielfeldArray: action.payload};
+    case SET_FRAGE:
+      return {...state, frage: action.payload};
+    case SET_CLIENTS:
+      return {...state, clients: action.payload};
+    case SET_WER_IST_DRAN:
+      return {...state, werIstDran: action.payload};
+    case SET_SPIELFIGUR_POSITIONEN:
+      return {...state, spielfigurPositionen: {
+        ...state.spielfigurPositionen,
+        ...action.payload
+      }};
     default:
       return state;
   }

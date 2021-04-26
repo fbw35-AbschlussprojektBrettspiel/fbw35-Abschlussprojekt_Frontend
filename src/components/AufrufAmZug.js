@@ -1,50 +1,63 @@
 import './AufrufAmZug.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   setSpielfigurPosition,
   setGewuerfelteZahl,
-  setPopup
+  setPopup,
+  wuerfeln,
+  macheZug
 } from '../thunks/thunks';
 
 const AufrufAmZug = () => {
   const spielfigurPosition = useSelector(state => state.spielfigurPosition);
   const spielfeldArray = useSelector(state => state.spielfeldArray);
+  const gewuerfelteZahl = useSelector(state => state.gewuerfelteZahl);
+  const clientId = useSelector(state => state.clientId);
+  const spielId = useSelector(state => state.spielId);
+  const spielfigurPositionen = useSelector(state => state.spielfigurPositionen);
+  const werIstDran = useSelector(state => state.werIstDran);
+
 
   const dispatch = useDispatch();
+
+  // Beim Mounten (Aufruf) des components wird gewuerfelteZahl auf 0 zurückgesetzt
+  useEffect(() => dispatch(setGewuerfelteZahl(0)), [dispatch]);
 
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
-  const gewuerfelt = Math.floor((Math.random() * 6) + 1);
+  // const gewuerfelt = Math.floor((Math.random() * 6) + 1);
 
   return (
     <section className="am-zug">
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
         <Modal.Header>
-          <Modal.Title>Bitte einen Zug machen! (würfle 1-6)</Modal.Title>
+          <Modal.Title>{werIstDran}. Spieler, bitte einen Zug machen!</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body>Du hast {gewuerfelt} gewuerfelt</Modal.Body>
+        <Modal.Body>{!gewuerfelteZahl ? 'Würfeln Sie 1-6' : `Sie haben ${gewuerfelteZahl} gewürfelt!`}</Modal.Body>
 
         <Modal.Footer>
           <Button
-            variant="primary"
+            variant="success"
+            disabled={!!gewuerfelteZahl}
             onClick={() => {
-              const neuePosition = spielfigurPosition + gewuerfelt;
-              dispatch(setSpielfigurPosition(neuePosition));
-              dispatch(setGewuerfelteZahl(gewuerfelt));
-              if (neuePosition >= spielfeldArray.length) {
-                dispatch(setPopup('ende'));
-              } else {
-                // Später soll hier anhand der neuen Spielerposition
-                // und des SpielfeldArrays ermittelt werden,
-                // welches Popup folgen soll
-                dispatch(setPopup('quizfrage'));
-              }
+              dispatch(wuerfeln(clientId, spielId));
+            }}
+          >
+            Würfeln
+          </Button>
+
+          <Button
+            variant="primary"
+            disabled={!gewuerfelteZahl}
+            onClick={() => {
+              const neuePosition = spielfigurPositionen[werIstDran] + gewuerfelteZahl;
+              dispatch(macheZug(clientId, spielId, neuePosition));
             }}
           >
             gehe weiter vor

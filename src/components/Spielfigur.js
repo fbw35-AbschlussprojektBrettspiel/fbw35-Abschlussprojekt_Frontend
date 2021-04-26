@@ -1,12 +1,13 @@
 import './Spielfeld.css';
 import { useSelector } from 'react-redux';
 
-const Spielfigur = () => {
-  const spielfigurPosition = useSelector(state => state.spielfigurPosition);
+const Spielfigur = props => {
+  const spielfigurPositionen = useSelector(state => state.spielfigurPositionen);
+  const werIstDran = useSelector(state => state.werIstDran);
 
   return (
-    <div className={`spielfeld-${spielfigurPosition} spielfigur`}>
-      ♟️
+    <div className={`spielfeld-${spielfigurPositionen[props.order]} spielfigur spielfigur-${props.order}`}>
+      X
     </div>
   )
 };
