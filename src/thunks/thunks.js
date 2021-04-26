@@ -76,13 +76,18 @@ export const connectWebsocket = () => dispatch => {
     // macheZug
     if (response.method === 'macheZug') {
       const neuePosition = response.neuePosition;
-      const frage = response.frage;
       dispatch(actionSetSpielfigurPosition(neuePosition));
-      dispatch(actionSetFrage(frage));
-      console.log('Einen Zug erfolgreich gemacht');
-      // später soll hier ermittelt werden, ob quizfrage- oder
-      // aktion-popup angezeigt werden soll
+      if (response.ende) {
+        dispatch(actionSetPopup('ende'));
+        console.log('Spielende erfolgreich übermittelt');
+      } else {
+        const frage = response.frage;
+        dispatch(actionSetFrage(frage));
+        console.log('Einen Zug erfolgreich gemacht');
+        // später soll hier ermittelt werden, ob quizfrage- oder
+        // aktion-popup angezeigt werden soll
       dispatch(actionSetPopup('quizfrage'));
+      }
     }
 
     // verschieben
@@ -95,6 +100,12 @@ export const connectWebsocket = () => dispatch => {
     if (response.method === 'naechsterZug') {
       dispatch(actionSetPopup('aufruf'));
       console.log('Nächster Zug erfolgreich eingeleitet');
+    }
+
+    // beenden
+    if (response.method === 'beenden') {
+      dispatch(setPage('startseite'));
+      console.log('Spiel erfolgreich beendet');
     }
 
   };
@@ -158,6 +169,15 @@ export const verschiebeSpielfigur = (clientId, spielId, neuePosition) => dispatc
 export const naechsterZug = (clientId, spielId) => dispatch => {
   const payload = {
     method: 'naechsterZug',
+    clientId,
+    spielId
+  };
+  ws.send(JSON.stringify(payload));
+};
+
+export const beendeSpiel = (clientId, spielId) => dispatch => {
+  const payload = {
+    method: 'beenden',
     clientId,
     spielId
   };

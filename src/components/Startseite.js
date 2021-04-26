@@ -23,9 +23,9 @@ const Startseite = () => {
   return (
     <div className="Startseite">
       <h1>Willkommen auf die Startseite!</h1>
-      <button onClick={() => dispatch(setPage('spielseite'))}>
+      {/* <button onClick={() => dispatch(setPage('spielseite'))}>
         Gehe zum Spiel!
-      </button><br/>
+      </button><br/> */}
       <button onClick={() => dispatch(createSpiel(clientId))}>
         Neues Spiel erstellen
       </button><br/>
