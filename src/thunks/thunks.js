@@ -85,6 +85,12 @@ export const connectWebsocket = () => dispatch => {
       dispatch(actionSetPopup('quizfrage'));
     }
 
+    // verschieben
+    if (response.method === 'verschieben') {
+      dispatch(actionSetSpielfigurPosition(response.neuePosition));
+      console.log('Spielfigur erfolgreich verschoben');
+    }
+
   };
 };
 
@@ -126,6 +132,16 @@ export const wuerfeln = (clientId, spielId) => dispatch => {
 export const macheZug = (clientId, spielId, neuePosition) => dispatch => {
   const payload = {
     method: 'macheZug',
+    clientId,
+    spielId,
+    neuePosition
+  };
+  ws.send(JSON.stringify(payload));
+};
+
+export const verschiebeSpielfigur = (clientId, spielId, neuePosition) => dispatch => {
+  const payload = {
+    method: 'verschieben',
     clientId,
     spielId,
     neuePosition
