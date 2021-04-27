@@ -3,23 +3,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap'
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  setPage,
-  setPopup,
-  setSpielfigurPosition,
-  beendeSpiel
-} from '../thunks/thunks';
+import { beendeSpiel } from '../thunks/thunks';
 
 const SpielZuEnde = () => {
 
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
-  const spielfigurPosition = useSelector(state => state.spielfigurPosition);
-  const spielfeldArray = useSelector(state => state.spielfeldArray);
   const clientId = useSelector(state => state.clientId);
   const spielId = useSelector(state => state.spielId);
   const dispatch = useDispatch();
+  const werIstDran = useSelector(state => state.werIstDran);
 
   return (
 
@@ -56,7 +50,7 @@ const SpielZuEnde = () => {
           </Button>
         </Modal.Footer> */}
 
-        <Modal.Body>Du hast das Ziel erreicht!</Modal.Body>
+        <Modal.Body>{werIstDran}. Spieler hat das Ziel erreicht, Gratulation!</Modal.Body>
 
         <Modal.Footer>
 
