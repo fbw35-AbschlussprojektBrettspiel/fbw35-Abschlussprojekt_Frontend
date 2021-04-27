@@ -3,7 +3,6 @@ import './Startseite.css'
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import {
-  setPage,
   connectWebsocket,
   createSpiel,
   joinSpiel,
@@ -19,6 +18,8 @@ const Startseite = () => {
 
   const clientId = useSelector(state => state.clientId);
   const spielId = useSelector(state => state.spielId);
+
+  useEffect(() => setTextInput(spielId), [spielId]);
 
   return (
     <div className="Startseite">
