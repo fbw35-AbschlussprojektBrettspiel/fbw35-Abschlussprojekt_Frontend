@@ -17,7 +17,10 @@ const Aktion = () => {
   const werIstDran = useSelector(state => state.werIstDran);
   const spielId = useSelector(state => state.spielId);
   const clientId = useSelector(state => state.clientId);
+  const clients = useSelector(state => state.clients);
   const dispatch = useDispatch();
+
+  const istClientDran = clients.find(client => client.clientId === clientId).order === werIstDran;
 
   return (
     <section className="aktion">
@@ -35,8 +38,10 @@ const Aktion = () => {
           <Button
             variant="primary"
             onClick={() => {
-              dispatch(verschiebeSpielfigur(clientId, spielId, spielfigurPositionen[werIstDran] + aktion.positionsAenderung));
-              dispatch(naechsterZug(clientId, spielId));
+              if (istClientDran) {
+                dispatch(verschiebeSpielfigur(clientId, spielId, spielfigurPositionen[werIstDran] + aktion.positionsAenderung));
+                dispatch(naechsterZug(clientId, spielId));
+              }
             }}
           >
             OK
