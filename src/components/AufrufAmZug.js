@@ -4,21 +4,20 @@ import { Modal, Button } from 'react-bootstrap'
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  setSpielfigurPosition,
   setGewuerfelteZahl,
-  setPopup,
   wuerfeln,
   macheZug
 } from '../thunks/thunks';
 
 const AufrufAmZug = () => {
-  const spielfigurPosition = useSelector(state => state.spielfigurPosition);
-  const spielfeldArray = useSelector(state => state.spielfeldArray);
   const gewuerfelteZahl = useSelector(state => state.gewuerfelteZahl);
   const clientId = useSelector(state => state.clientId);
   const spielId = useSelector(state => state.spielId);
   const spielfigurPositionen = useSelector(state => state.spielfigurPositionen);
   const werIstDran = useSelector(state => state.werIstDran);
+  const clients = useSelector(state => state.clients);
+
+  const istClientDran = clients.find(client => client.clientId === clientId).order === werIstDran;
 
 
   const dispatch = useDispatch();
@@ -28,8 +27,6 @@ const AufrufAmZug = () => {
 
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
-
-  // const gewuerfelt = Math.floor((Math.random() * 6) + 1);
 
   return (
     <section className="am-zug">
@@ -46,7 +43,9 @@ const AufrufAmZug = () => {
             variant="success"
             disabled={!!gewuerfelteZahl}
             onClick={() => {
-              dispatch(wuerfeln(clientId, spielId));
+              if (istClientDran) {
+                dispatch(wuerfeln(clientId, spielId));
+              }
             }}
           >
             Würfeln
@@ -56,8 +55,10 @@ const AufrufAmZug = () => {
             variant="primary"
             disabled={!gewuerfelteZahl}
             onClick={() => {
-              const neuePosition = spielfigurPositionen[werIstDran] + gewuerfelteZahl;
-              dispatch(macheZug(clientId, spielId, neuePosition));
+              if (istClientDran) {
+                const neuePosition = spielfigurPositionen[werIstDran] + gewuerfelteZahl;
+                dispatch(macheZug(clientId, spielId, neuePosition));
+              }
             }}
           >
             gehe weiter vor
