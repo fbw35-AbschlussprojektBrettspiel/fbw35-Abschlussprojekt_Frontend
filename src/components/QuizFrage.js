@@ -28,12 +28,12 @@ const QuizFrage = () => {
           let QuizFrageTimer = setTimeout(() => {
             setTimer(true)
             console.log("ich habe 10 sek gewartet...du musst zurück")
-            setModalHeaderInhalt("sorry! Zeit ist abgelaufen :(")
+            setModalHeaderInhalt("in 3 Sekunden ist die Zeit vorbei!!")
             setTimeout(() => {
               dispatch(verschiebeSpielfigur(clientId, spielId, spielfigurPosition - gewuerfelteZahl));
               dispatch(naechsterZug(clientId, spielId));
-            }, 2000);
-          }, 10000);
+            }, 3000);
+          }, 12000);
           return () => {
             clearTimeout(QuizFrageTimer);
           };
