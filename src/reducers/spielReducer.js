@@ -34,9 +34,9 @@ const initialState = {
   // zufällige Aktion vom Server
   aktion: {},
   // lokale Klient-Id
-  clientId: null,
+  clientId: '',
   // Spiel-Id
-  spielId: null,
+  spielId: '',
   // array aus clients des Spiels, jeder client ist ein Objekt aus clientId und order
   clients: [],
   // wer (anhand von order) ist dran
