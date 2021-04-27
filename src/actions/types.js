@@ -10,3 +10,4 @@ export const SET_FRAGE = 'SET_FRAGE';
 export const SET_CLIENTS = 'SET_CLIENTS';
 export const SET_WER_IST_DRAN = 'SET_WER_IST_DRAN';
 export const SET_SPIELFIGUR_POSITIONEN = 'SET_SPIELFIGUR_POSITIONEN';
+export const SET_AKTION = 'SET_AKTION';

@@ -10,7 +10,8 @@ import {
   SET_FRAGE,
   SET_CLIENTS,
   SET_WER_IST_DRAN,
-  SET_SPIELFIGUR_POSITIONEN
+  SET_SPIELFIGUR_POSITIONEN,
+  SET_AKTION
 } from './types';
 
 export const actionSetPage = page => ({
@@ -71,4 +72,9 @@ export const actionSetWerIstDran = order => ({
 export const actionSetSpielfigurPositionen = object => ({
   type: SET_SPIELFIGUR_POSITIONEN,
   payload: object
+});
+
+export const actionSetAktion = aktion => ({
+  type: SET_AKTION,
+  payload: aktion
 });

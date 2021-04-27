@@ -10,7 +10,8 @@ import {
   SET_FRAGE,
   SET_CLIENTS,
   SET_WER_IST_DRAN,
-  SET_SPIELFIGUR_POSITIONEN
+  SET_SPIELFIGUR_POSITIONEN,
+  SET_AKTION
 } from '../actions/types';
 
 const initialState = {
@@ -28,8 +29,10 @@ const initialState = {
   gewuerfelteZahl: 0,
   // Fragen-Array
   fragen: [],
-  // Frage
+  // zufällige Frage vom Server
   frage: {},
+  // zufällige Aktion vom Server
+  aktion: {},
   // lokale Klient-Id
   clientId: null,
   // Spiel-Id
@@ -72,6 +75,8 @@ const spielReducer = (state = initialState, action) => {
         ...state.spielfigurPositionen,
         ...action.payload
       }};
+    case SET_AKTION:
+      return {...state, aktion: action.payload};
     default:
       return state;
   }

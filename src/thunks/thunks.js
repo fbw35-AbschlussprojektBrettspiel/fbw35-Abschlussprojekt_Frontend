@@ -10,7 +10,8 @@ import {
   actionSetFrage,
   actionSetClients,
   actionSetWerIstDran,
-  actionSetSpielfigurPositionen
+  actionSetSpielfigurPositionen,
+  actionSetAktion
 } from '../actions/actions';
 
 import axios from 'axios';
@@ -91,13 +92,16 @@ export const connectWebsocket = () => dispatch => {
       if (response.ende) {
         dispatch(actionSetPopup('ende'));
         console.log('Spielende erfolgreich übermittelt');
-      } else {
+      } else if (response.frage) {
         const frage = response.frage;
         dispatch(actionSetFrage(frage));
-        console.log('Einen Zug erfolgreich gemacht');
-        // später soll hier ermittelt werden, ob quizfrage- oder
-        // aktion-popup angezeigt werden soll
-      dispatch(actionSetPopup('quizfrage'));
+        console.log('Einen Zug erfolgreich gemacht und Frage vom Server bekommen');
+        dispatch(actionSetPopup('quizfrage'));
+      } else {
+        const aktion = response.aktion;
+        dispatch(actionSetAktion(aktion));
+        console.log('Einen Zug erfolgreich gemacht und Aktion vom Server bekommen');
+        dispatch(actionSetPopup('aktion'));
       }
     }
 

@@ -5,6 +5,7 @@ import './Spielseite.css';
 import AufrufAmZug from './AufrufAmZug';
 import SpielZuEnde from './SpielZuEnde';
 import QuizFrage from './QuizFrage';
+import Aktion from './Aktion';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   setPage,
@@ -61,6 +62,7 @@ const Spielseite = () => {
         {
           aufruf: <AufrufAmZug />,
           quizfrage: <QuizFrage />,
+          aktion: <Aktion />,
           ende: <SpielZuEnde />
         }[popup]
       }
