@@ -6,20 +6,20 @@
  ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 
-  **Wie weit reichen Ihre Programmierkenntnisse? Hier ist eine tolle Möglichkeit, das herauszufinden! Mit Brettspiel können Sie ganz einfach Ihr Wissen testen und Ihre IT-Fähigkeiten üben. Zusätzlich bietet Ihnen unsere Anwendung die Möglichkeit, online mit einer anderen Person zu spielen.**
+  **Wie weit reichen deine Programmierkenntnisse? Hier ist eine tolle Möglichkeit, dies herauszufinden! Mit diesem Brettspiel kannst du ganz einfach dein Wissen testen und deine IT-Fähigkeiten üben. Zusätzlich bietet unsere Anwendung die Möglichkeit, online mit einer anderen Person zu spielen.**
 
 # Beginn der Arbeiten
 
-  **Diese Anweisungen ermöglichen es Ihnen, eine Kopie des Projekts auf Ihrem lokalen Computer zu Entwicklungs- und Testzwecken zu erstellen.**
+  **Diese Anweisungen ermöglichen es dir, eine Kopie des Projekts auf deinem lokalen Computer zu Entwicklungs- und Testzwecken zu erstellen.**
 
 # Installation
 
-  **Vom Projektverzeichnis aus können Sie ausführen:**
+  **Vom Projektverzeichnis aus kannst du ausführen:**
 
 npm start
 
 Befehl startet die Anwendung im Entwicklungsmodus.
-Öffnen Sie http://localhost:3000, um es in Ihrem Browser anzuzeigen.
+Öffne http://localhost:3000, um es in deinem Browser anzuzeigen.
 Die Seite wird neu geladen, sobald die Änderungen vorgenommen wurden.
 
 
@@ -27,13 +27,13 @@ Die Seite wird neu geladen, sobald die Änderungen vorgenommen wurden.
 
 # Tests
 
-  **Um die automatisierten Tests auszuführen, geben Sie in der Konsole ein:**
+  **Um die automatisierten Tests auszuführen, gebe in der Konsole ein:**
 
 npm test
 
 Der Test-Runner im interaktiven Beobachtungsmodus wird gestartet.
 
-  **Eine weitere Möglichkeit, Ihre Anwendung zu testen, ist der End-to-End-Test.**
+  **Eine weitere Möglichkeit, die Anwendung zu testen, ist der End-to-End-Test.**
   
 * *Um dies zu tun: !!! . . . . . . . . . . . . . . !!!*
 
@@ -59,5 +59,6 @@ Der Test-Runner im interaktiven Beobachtungsmodus wird gestartet.
 * Corinna Hellmund
 
 # Lizenz
-Dieses Projekt ist unter den Bedingungen der MIT-Lizenz lizenziert. Wenn Sie die Details sehen möchten, lesen Sie bitte die Datei: LICENSE.md
+Dieses Projekt ist unter den Bedingungen der MIT-Lizenz lizenziert. Wenn du die Details sehen möchten, lese bitte die Datei: 
+LICENSE.md
 
