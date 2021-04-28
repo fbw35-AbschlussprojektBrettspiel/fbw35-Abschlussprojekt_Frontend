@@ -5,7 +5,7 @@
 ![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
 
 
-  **Wie weit reichen Ihre Programmierkenntnisse? Hier ist eine tolle Möglichkeit, das herauszufinden! Mit Brettspiel können Sie ganz einfach Ihr Wissen testen und Ihre IT-Fähigkeiten üben. Zusätzlich bietet Ihnen unsere Anwendung die Möglichkeit, online mit einer anderen Person zu spielen.**
+  **Wie weit reichen Ihre Web-Dev? Hier ist eine tolle Möglichkeit, das herauszufinden! Mit Brettspiel können Sie ganz einfach Ihr Wissen testen und Ihre IT-Fähigkeiten üben. Zusätzlich bietet Ihnen unsere Anwendung die Möglichkeit, online mit einer anderen Person zu spielen.**
 
 # Beginn der Arbeiten
 
@@ -43,4 +43,3 @@ Die Seite wird neu geladen, sobald die Änderungen vorgenommen wurden.
 * Christoph Bochniak
 * Sebastian Opaska 
 * Corinna Hellmund
-
