@@ -2,8 +2,7 @@
 ![logo](img/../src/img/LogoSpiel.png)
 
 
-![npm package](https://img.shields.io/badge/npm%20package-v1-brightgreen.svg) ![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg) ![Test passing](https://img.shields.io/badge/Tests-passing-brightgreen.svg)
- ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
+![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
 
 
   **Wie weit reichen Ihre Programmierkenntnisse? Hier ist eine tolle Möglichkeit, das herauszufinden! Mit Brettspiel können Sie ganz einfach Ihr Wissen testen und Ihre IT-Fähigkeiten üben. Zusätzlich bietet Ihnen unsere Anwendung die Möglichkeit, online mit einer anderen Person zu spielen.**
@@ -25,18 +24,6 @@ Die Seite wird neu geladen, sobald die Änderungen vorgenommen wurden.
 
 * *!!!! Hier sollten wir Beispiele zeigen !!!!!*
 
-# Tests
-
-  **Um die automatisierten Tests auszuführen, geben Sie in der Konsole ein:**
-
-npm test
-
-Der Test-Runner im interaktiven Beobachtungsmodus wird gestartet.
-
-  **Eine weitere Möglichkeit, Ihre Anwendung zu testen, ist der End-to-End-Test.**
-  
-* *Um dies zu tun: !!! . . . . . . . . . . . . . . !!!*
-
 
 # Implementierung
 
@@ -51,13 +38,9 @@ Der Test-Runner im interaktiven Beobachtungsmodus wird gestartet.
 > * Websocketund
 > * testing-library
 
-
 # Autoren
 * Anton Tun Huang
 * Christoph Bochniak
 * Sebastian Opaska 
 * Corinna Hellmund
-
-# Lizenz
-Dieses Projekt ist unter den Bedingungen der MIT-Lizenz lizenziert. Wenn Sie die Details sehen möchten, lesen Sie bitte die Datei: LICENSE.md
 
