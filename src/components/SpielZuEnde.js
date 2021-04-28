@@ -16,7 +16,6 @@ const SpielZuEnde = () => {
   const werIstDran = useSelector(state => state.werIstDran);
 
   return (
-
     <section className="zu-ende">
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
@@ -24,36 +23,9 @@ const SpielZuEnde = () => {
           <Modal.Title>Herzlichen Glückwunsch!!</Modal.Title>
         </Modal.Header>
 
-        {/* <Modal.Body>Du hast die Runde beendet, möchtest du auf diesem Spielfeld weiter üben?</Modal.Body>
-
-        <Modal.Footer>
-          <Button
-            variant="primary"
-            onClick={() => {
-              handleClose();
-              dispatch(setSpielfigurPosition(spielfigurPosition - spielfeldArray.length));
-              dispatch(setPopup('aufruf'));
-            }}
-          >
-            Weiterspielen
-          </Button>
-
-          <Button
-            variant="secondary"
-            onClick={() => {
-              handleClose();
-              dispatch(setPage('startseite'));
-              dispatch(setSpielfigurPosition(0));
-            }}
-          >
-            Zurück zur Startseite
-          </Button>
-        </Modal.Footer> */}
-
         <Modal.Body>{werIstDran}. Spieler hat das Ziel erreicht, Gratulation!</Modal.Body>
 
         <Modal.Footer>
-
           <Button
             variant="primary"
             onClick={() => {
@@ -67,7 +39,7 @@ const SpielZuEnde = () => {
 
       </Modal>
     </section>
-  )
-}
+  );
+};
 
 export default SpielZuEnde;

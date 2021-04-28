@@ -26,25 +26,25 @@ const QuizAntwort = props => {
       onClick={() => {
         if (istClientDran) {
           // Hier wird geprüft, ob die angeklickte Antwort falsch ist.
-          // Es wird ein Kommentart "falsch" vor die Zeile gesetzt
+          // Es wird ein Kommentar "falsch" vor die Zeile gesetzt
           // Dann wird die Spielfigur zurückgesetzt
           // aufruf-Modal wird (naechsterZug) angezeigt.
           if (props.index !== props.indexRichtigeAntwort) {
-            setAntwortKommentar("leider falsch!! ")
+            setAntwortKommentar("leider falsch!! ");
             setTimeout(() => {
               dispatch(verschiebeSpielfigur(clientId, spielId, spielfigurPositionen[werIstDran] - gewuerfelteZahl));
               dispatch(naechsterZug(clientId, spielId));
             }, 3000);
-            return clearTimeout(this)
+            return clearTimeout(this);
           } else {
             // Antwort war richtig
-            // Es wird ein Kommentart "richtig" vor die Zeile gesetzt
+            // Es wird ein Kommentar "richtig" vor die Zeile gesetzt
             // aufruf-Modal wird (naechsterZug) angezeigt.
-            setAntwortKommentar("super richtig!! ")
+            setAntwortKommentar("super richtig!! ");
             setTimeout(() => {
               dispatch(naechsterZug(clientId, spielId));
             }, 3000);
-            return clearTimeout(this)
+            return clearTimeout(this);
           }
         }
       }}

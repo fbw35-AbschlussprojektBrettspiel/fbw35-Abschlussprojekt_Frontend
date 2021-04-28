@@ -1,9 +1,7 @@
 import {
   actionSetPage,
-  actionSetSpielfigurPosition,
   actionSetPopup,
   actionSetGewuerfelteZahl,
-  actionFetchFragen,
   actionSetClientId,
   actionSetSpielId,
   actionSetSpielfeldArray,
@@ -15,15 +13,11 @@ import {
   actionSetAktion
 } from '../actions/actions';
 
-import axios from 'axios';
-
-const URL = 'http://localhost:3050/';
+// const URL = 'http://localhost:3050/';
 const WEBSOCKET_URL = 'ws://localhost:3050';
 const ws = new WebSocket(WEBSOCKET_URL);
 
 export const setPage = page => dispatch => dispatch(actionSetPage(page));
-
-export const setSpielfigurPosition = position => dispatch => dispatch(actionSetSpielfigurPosition(position));
 
 export const setPopup = popup => dispatch => dispatch(actionSetPopup(popup));
 
@@ -36,12 +30,6 @@ export const setSpielfigurPositionen = object => dispatch => dispatch(actionSetS
 // export const setSpielId = id => dispatch => dispatch(actionSetSpielId(id));
 
 // export const setSpielfeldArray = array => dispatch => dispatch(actionSetSpielfeldArray(array));
-
-// fragen werden hier mit einer GET-Anfrage vom Server geholt
-
-export const fetchFragen = () => dispatch => axios.get(URL + 'fragen/')
-.then(response => dispatch(actionFetchFragen(response.data)))
-.catch(error => console.error(error));
 
 // websocket
 

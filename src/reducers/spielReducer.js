@@ -1,9 +1,7 @@
 import {
   SET_PAGE,
-  SET_SPIELFIGUR_POSITION,
   SET_POPUP,
   SET_GEWUERFELTE_ZAHL,
-  FETCH_FRAGEN,
   SET_CLIENT_ID,
   SET_SPIEL_ID,
   SET_SPIELFELD_ARRAY,
@@ -20,16 +18,12 @@ const initialState = {
   page: 'startseite',
   // Spielfelder-Array. Die Elemente repräsentieren die Feldtypen
   spielfeldArray: [],
-  // Eine Zahl, die dem Index von spielfeldArray entspricht und die Position von Spielfigur angibt.
-  spielfigurPosition: 0,
   // Positionen der Spielfiguren, die dem Index von spielfeldArray entsprechen
   spielfigurPositionen: {},
   // Die Variable legt fest, welches Popup gerendert wird.
   popup: 'aufruf',
   // Die zuletzt gewürfelte Zahl. Sie wird gebraucht, um die Spielfigur zurückzusetzen.
   gewuerfelteZahl: 0,
-  // Fragen-Array
-  fragen: [],
   // zufällige Frage vom Server
   frage: {},
   // zufällige Aktion vom Server
@@ -48,17 +42,10 @@ const spielReducer = (state = initialState, action) => {
   switch(action.type) {
     case SET_PAGE:
       return {...state, page: action.payload};
-    case SET_SPIELFIGUR_POSITION:
-      return {...state, spielfigurPosition: action.payload};
     case SET_POPUP:
       return {...state, popup: action.payload};
     case SET_GEWUERFELTE_ZAHL:
       return {...state, gewuerfelteZahl: action.payload};
-    case FETCH_FRAGEN:
-      return {...state, fragen: [
-        ...state.fragen,
-        ...action.payload
-      ]};
     case SET_CLIENT_ID:
       return {...state, clientId: action.payload};
     case SET_SPIEL_ID:

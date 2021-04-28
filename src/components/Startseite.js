@@ -24,12 +24,9 @@ const Startseite = () => {
   return (
     <div className="Startseite">
       <h1>Willkommen auf die Startseite!</h1>
-      {/* <button onClick={() => dispatch(setPage('spielseite'))}>
-        Gehe zum Spiel!
-      </button><br/> */}
       <button onClick={() => dispatch(createSpiel(clientId))}>
         Neues Spiel erstellen
-      </button><br/>
+      </button><br />
       <button onClick={() => dispatch(joinSpiel(clientId, spielId || textInput))}>
         Spiel beitreten
       </button>
@@ -40,7 +37,7 @@ const Startseite = () => {
         placeholder="spiel-id"
         value={textInput}
         onChange={event => setTextInput(event.target.value)}
-      /><br/>
+      /><br />
       <button onClick={() => dispatch(startSpiel(clientId, spielId))}>
         Spiel starten
       </button>
