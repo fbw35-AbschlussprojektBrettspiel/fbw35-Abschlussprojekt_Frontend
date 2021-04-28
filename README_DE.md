@@ -56,7 +56,7 @@ Der Test-Runner im interaktiven Beobachtungsmodus wird gestartet.
 * Anton Tun Huang
 * Christoph Bochniak
 * Sebastian Opaska 
-* orinna Hellmund
+* Corinna Hellmund
 
 # Lizenz
 Dieses Projekt ist unter den Bedingungen der MIT-Lizenz lizenziert. Wenn Sie die Details sehen möchten, lesen Sie bitte die Datei: LICENSE.md
