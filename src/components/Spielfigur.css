@@ -1,0 +1,11 @@
+.spielfigur {
+  z-index: 10;
+}
+
+.spielfigur-0 {
+  color: chartreuse;
+}
+
+.spielfigur-1 {
+  color: magenta;
+}
