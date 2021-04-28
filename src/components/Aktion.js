@@ -25,13 +25,11 @@ const Aktion = () => {
   return (
     <section className="aktion">
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
-
+        
         <Modal.Header>
-
           <Modal.Title>
             <p>{aktion.beschreibung}</p>
           </Modal.Title>
-
         </Modal.Header>
 
         <Modal.Body>
@@ -47,6 +45,7 @@ const Aktion = () => {
             OK
           </Button>
         </Modal.Body>
+
       </Modal>
     </section>
   );
