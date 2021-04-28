@@ -11,6 +11,7 @@ import {
   SET_CLIENTS,
   SET_WER_IST_DRAN,
   SET_SPIELFIGUR_POSITIONEN,
+  RESET_SPIELFIGUR_POSITIONEN,
   SET_AKTION
 } from './types';
 
@@ -72,6 +73,10 @@ export const actionSetWerIstDran = order => ({
 export const actionSetSpielfigurPositionen = object => ({
   type: SET_SPIELFIGUR_POSITIONEN,
   payload: object
+});
+
+export const actionResetSpielfigurPositionen = () => ({
+  type: RESET_SPIELFIGUR_POSITIONEN
 });
 
 export const actionSetAktion = aktion => ({
