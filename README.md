@@ -1,72 +1,63 @@
-# fbw35-Abschlussprojekt_Frontend
+# DAS BRETTSPIEL - Das Online-Spiel
+![logo](img/../src/img/LogoSpiel.png)
 
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![npm package](https://img.shields.io/badge/npm%20package-v1-brightgreen.svg) ![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg) ![Test passing](https://img.shields.io/badge/Tests-passing-brightgreen.svg)
+ ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-## Available Scripts
 
-In the project directory, you can run:
+  **Wie weit reichen Ihre Programmierkenntnisse? Hier ist eine tolle Möglichkeit, das herauszufinden! Mit Brettspiel können Sie ganz einfach Ihr Wissen testen und Ihre IT-Fähigkeiten üben. Zusätzlich bietet Ihnen unsere Anwendung die Möglichkeit, online mit einer anderen Person zu spielen.**
 
-### `npm start`
+# Beginn der Arbeiten
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  **Diese Anweisungen ermöglichen es Ihnen, eine Kopie des Projekts auf Ihrem lokalen Computer zu Entwicklungs- und Testzwecken zu erstellen.**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Installation
 
-### `npm test`
+  **Vom Projektverzeichnis aus können Sie ausführen:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm start
 
-### `npm run build`
+Befehl startet die Anwendung im Entwicklungsmodus.
+Öffnen Sie http://localhost:3000, um es in Ihrem Browser anzuzeigen.
+Die Seite wird neu geladen, sobald die Änderungen vorgenommen wurden.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* *!!!! Hier sollten wir Beispiele zeigen !!!!!*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Tests
 
-### `npm run eject`
+  **Um die automatisierten Tests auszuführen, geben Sie in der Konsole ein:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+npm test
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Der Test-Runner im interaktiven Beobachtungsmodus wird gestartet.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  **Eine weitere Möglichkeit, Ihre Anwendung zu testen, ist der End-to-End-Test.**
+  
+* *Um dies zu tun: !!! . . . . . . . . . . . . . . !!!*
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# Implementierung
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* *!!! Hier sollten wir weitere Hinweise zur Implementierung unserer Anwendung im Live-System beschreiben*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Software und Freamworks:
 
-### Code Splitting
+> * React
+> * Redux
+> * Frotawesome
+> * npm-Packete (express,mongoose,mongodb,dotenv)
+> * Websocketund
+> * testing-library
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+# Autoren
+* Anton Tun Huang
+* Christoph Bochniak
+* Sebastian Opaska 
+* Corinna Hellmund
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Lizenz
+Dieses Projekt ist unter den Bedingungen der MIT-Lizenz lizenziert. Wenn Sie die Details sehen möchten, lesen Sie bitte die Datei: LICENSE.md
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
