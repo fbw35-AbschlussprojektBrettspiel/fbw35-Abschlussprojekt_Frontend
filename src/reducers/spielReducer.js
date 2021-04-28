@@ -11,6 +11,7 @@ import {
   SET_CLIENTS,
   SET_WER_IST_DRAN,
   SET_SPIELFIGUR_POSITIONEN,
+  RESET_SPIELFIGUR_POSITIONEN,
   SET_AKTION
 } from '../actions/types';
 
@@ -75,6 +76,8 @@ const spielReducer = (state = initialState, action) => {
         ...state.spielfigurPositionen,
         ...action.payload
       }};
+    case RESET_SPIELFIGUR_POSITIONEN:
+      return {...state, spielfigurPositionen: {}};
     case SET_AKTION:
       return {...state, aktion: action.payload};
     default:

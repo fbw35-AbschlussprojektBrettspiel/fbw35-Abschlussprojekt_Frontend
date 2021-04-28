@@ -11,6 +11,7 @@ import {
   actionSetClients,
   actionSetWerIstDran,
   actionSetSpielfigurPositionen,
+  actionResetSpielfigurPositionen,
   actionSetAktion
 } from '../actions/actions';
 
@@ -124,7 +125,16 @@ export const connectWebsocket = () => dispatch => {
 
     // beenden
     if (response.method === 'beenden') {
-      dispatch(setPage('startseite'));
+      dispatch(actionSetSpielId(''));
+      dispatch(actionSetPage('startseite'));
+      dispatch(actionSetSpielfeldArray([]));
+      dispatch(actionSetGewuerfelteZahl(0));
+      dispatch(actionResetSpielfigurPositionen());
+      dispatch(actionSetWerIstDran(0));
+      dispatch(actionSetFrage({}));
+      dispatch(actionSetAktion({}));
+      dispatch(actionSetClients({}));
+      dispatch(actionSetPopup('aufruf'));
       console.log('Spiel erfolgreich beendet');
     }
 
