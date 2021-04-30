@@ -29,6 +29,7 @@ const Aktion = () => {
         <Modal.Header>
           <Modal.Title>
             <p>{aktion.beschreibung}</p>
+            <p>Gehe {aktion.positionsAenderung > 0 ? aktion.positionsAenderung : String(aktion.positionsAenderung).slice(1)} {Math.abs(aktion.positionsAenderung) > 1 ? 'Felder' : 'Feld'} {aktion.positionsAenderung > 0 ? 'vor.' : 'zurück.'}</p>
           </Modal.Title>
         </Modal.Header>
 
