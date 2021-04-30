@@ -4,7 +4,6 @@ import {
   verschiebeSpielfigur,
   naechsterZug
 } from '../thunks/thunks';
-import { useState } from 'react';
 
 const QuizAntwort = props => {
   const spielfigurPositionen = useSelector(state => state.spielfigurPositionen);
@@ -18,42 +17,24 @@ const QuizAntwort = props => {
 
   const dispatch = useDispatch();
 
-  const [AntwortKommentar, setAntwortKommentar] = useState("");
-
   return (
     <li
       className="quizantwort"
       onClick={() => {
         if (istClientDran) {
           // Hier wird geprüft, ob die angeklickte Antwort falsch ist.
-          // Es wird ein Kommentar "falsch" vor die Zeile gesetzt
           // Dann wird die Spielfigur zurückgesetzt
-          // aufruf-Modal wird (naechsterZug) angezeigt.
           if (props.index !== props.indexRichtigeAntwort) {
-            setAntwortKommentar("leider falsch!! ");
-            setTimeout(() => {
-              dispatch(verschiebeSpielfigur(clientId, spielId, spielfigurPositionen[werIstDran] - gewuerfelteZahl));
-              dispatch(naechsterZug(clientId, spielId));
-            }, 3000);
-            return clearTimeout(this);
-          } else {
-            // Antwort war richtig
-            // Es wird ein Kommentar "richtig" vor die Zeile gesetzt
-            // aufruf-Modal wird (naechsterZug) angezeigt.
-            setAntwortKommentar("super richtig!! ");
-            setTimeout(() => {
-              dispatch(naechsterZug(clientId, spielId));
-            }, 3000);
-            return clearTimeout(this);
+            dispatch(verschiebeSpielfigur(clientId, spielId, spielfigurPositionen[werIstDran] - gewuerfelteZahl));
           }
+          // unabhängig davon, ob die Antwort richtig oder falsch war,
+          // wird als nächstes aufruf-popup angezeigt.
+          dispatch(naechsterZug(clientId, spielId));
         }
       }}
     >
-      {AntwortKommentar + props.antwort}
+      {props.antwort}
     </li>
-    //im Moment können zwar mehrere Antworten angeklickt werden, aber
-    //der Timer der zuerst angeklickten Antwort führt dass dispatch aus...
-    //oder kürzer: nur der erste Klick zählt!
   );
 };
 
