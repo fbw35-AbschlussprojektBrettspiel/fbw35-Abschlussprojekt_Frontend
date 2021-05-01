@@ -10,7 +10,8 @@ import {
   actionSetWerIstDran,
   actionSetSpielfigurPositionen,
   actionResetSpielfigurPositionen,
-  actionSetAktion
+  actionSetAktion,
+  actionSetStartseiteLog
 } from '../actions/actions';
 
 // const URL = 'http://localhost:3050/';
@@ -31,6 +32,8 @@ export const setSpielfigurPositionen = object => dispatch => dispatch(actionSetS
 
 // export const setSpielfeldArray = array => dispatch => dispatch(actionSetSpielfeldArray(array));
 
+// export const setStartseiteLog = string => dispatch => dispatch(actionSetStartseiteLog(string));
+
 // websocket
 
 export const connectWebsocket = () => dispatch => {
@@ -41,11 +44,13 @@ export const connectWebsocket = () => dispatch => {
     // connect
     if (response.method === 'connect') {
       dispatch(actionSetClientId(response.clientId));
+      dispatch(actionSetStartseiteLog(response.mitteilung));
     }
 
     // create
     if (response.method === 'create') {
       dispatch(actionSetSpielId(response.spiel.id));
+      dispatch(actionSetStartseiteLog(response.mitteilung));
       console.log('Spiel erfolgreich erstellt.');
     }
 
@@ -53,6 +58,7 @@ export const connectWebsocket = () => dispatch => {
     if (response.method === 'join') {
       dispatch(actionSetSpielId(response.spiel.id));
       dispatch(actionSetClients(response.spiel.clients));
+      dispatch(actionSetStartseiteLog(response.mitteilung));
       console.log('Spiel erfolgreich beitetreten');
     }
 

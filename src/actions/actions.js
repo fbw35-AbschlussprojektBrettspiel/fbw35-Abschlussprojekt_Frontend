@@ -10,7 +10,8 @@ import {
   SET_WER_IST_DRAN,
   SET_SPIELFIGUR_POSITIONEN,
   RESET_SPIELFIGUR_POSITIONEN,
-  SET_AKTION
+  SET_AKTION,
+  SET_STARTSEITE_LOG
 } from './types';
 
 export const actionSetPage = page => ({
@@ -70,4 +71,9 @@ export const actionResetSpielfigurPositionen = () => ({
 export const actionSetAktion = aktion => ({
   type: SET_AKTION,
   payload: aktion
+});
+
+export const actionSetStartseiteLog = string => ({
+  type: SET_STARTSEITE_LOG,
+  payload: string
 });

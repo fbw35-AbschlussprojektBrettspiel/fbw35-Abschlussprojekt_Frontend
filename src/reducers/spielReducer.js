@@ -10,7 +10,8 @@ import {
   SET_WER_IST_DRAN,
   SET_SPIELFIGUR_POSITIONEN,
   RESET_SPIELFIGUR_POSITIONEN,
-  SET_AKTION
+  SET_AKTION,
+  SET_STARTSEITE_LOG
 } from '../actions/types';
 
 const initialState = {
@@ -35,7 +36,9 @@ const initialState = {
   // array aus clients des Spiels, jeder client ist ein Objekt aus clientId und order
   clients: [],
   // wer (anhand von order) ist dran
-  werIstDran: 0
+  werIstDran: 0,
+  // log der Rückmeldungen vom Server auf Startseite
+  startseiteLog: ''
 };
 
 const spielReducer = (state = initialState, action) => {
@@ -67,6 +70,8 @@ const spielReducer = (state = initialState, action) => {
       return {...state, spielfigurPositionen: {}};
     case SET_AKTION:
       return {...state, aktion: action.payload};
+    case SET_STARTSEITE_LOG:
+      return {...state, startseiteLog: action.payload};
     default:
       return state;
   }
