@@ -18,6 +18,7 @@ const AufrufAmZug = () => {
   const clients = useSelector(state => state.clients);
 
   const istClientDran = clients.find(client => client.clientId === clientId).order === werIstDran;
+  const spielerName = clients.find(client => client.order === werIstDran).spielerName;
 
 
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const AufrufAmZug = () => {
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
         <Modal.Header>
-          <Modal.Title>{werIstDran}. Spieler, bitte einen Zug machen!</Modal.Title>
+          <Modal.Title>{spielerName}, bitte einen Zug machen!</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>{!gewuerfelteZahl ? 'Würfeln Sie 1-6' : `Sie haben ${gewuerfelteZahl} gewürfelt!`}</Modal.Body>

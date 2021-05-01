@@ -137,11 +137,12 @@ export const createSpiel = clientId => dispatch => {
   ws.send(JSON.stringify(payload));
 };
 
-export const joinSpiel = (clientId, spielId) => dispatch => {
+export const joinSpiel = (clientId, spielId, spielerName) => dispatch => {
   const payload = {
     method: 'join',
     clientId,
-    spielId
+    spielId,
+    spielerName
   };
   ws.send(JSON.stringify(payload));
 };
