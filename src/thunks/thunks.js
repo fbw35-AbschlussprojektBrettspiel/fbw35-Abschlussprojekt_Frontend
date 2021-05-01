@@ -70,6 +70,11 @@ export const connectWebsocket = () => dispatch => {
       console.log('Spiel erfolgreich gestartet');
     }
 
+    // startseiteWarnung
+    if (response.method === 'startseiteWarnung') {
+      dispatch(actionSetStartseiteLog(response.mitteilung));
+    }
+
     // wuerfeln
     if (response.method === 'wuerfeln') {
       dispatch(actionSetGewuerfelteZahl(response.gewuerfelteZahl));
