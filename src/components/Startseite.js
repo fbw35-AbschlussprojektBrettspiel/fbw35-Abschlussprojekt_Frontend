@@ -11,6 +11,7 @@ import {
 
 const Startseite = () => {
   const [textInput, setTextInput] = useState('');
+  const [nameTextInput, setNameTextInput] = useState('');
 
   const dispatch = useDispatch();
 
@@ -27,7 +28,7 @@ const Startseite = () => {
       <button onClick={() => dispatch(createSpiel(clientId))}>
         Neues Spiel erstellen
       </button><br />
-      <button onClick={() => dispatch(joinSpiel(clientId, spielId || textInput))}>
+      <button onClick={() => dispatch(joinSpiel(clientId, spielId || textInput, nameTextInput))}>
         Spiel beitreten
       </button>
       <input
@@ -37,6 +38,14 @@ const Startseite = () => {
         placeholder="spiel-id"
         value={textInput}
         onChange={event => setTextInput(event.target.value)}
+      />
+      <input
+        type="text"
+        name="spieler-name"
+        id="spieler-name"
+        placeholder="spieler-name"
+        value={nameTextInput}
+        onChange={event => setNameTextInput(event.target.value)}
       /><br />
       <button onClick={() => dispatch(startSpiel(clientId, spielId))}>
         Spiel starten
