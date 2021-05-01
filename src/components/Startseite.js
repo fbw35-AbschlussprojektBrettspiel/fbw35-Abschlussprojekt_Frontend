@@ -12,6 +12,7 @@ import {
 const Startseite = () => {
   const [textInput, setTextInput] = useState('');
   const [nameTextInput, setNameTextInput] = useState('');
+  const [logTextInput, setLogTextInput] = useState('')
 
   const dispatch = useDispatch();
 
@@ -19,11 +20,13 @@ const Startseite = () => {
 
   const clientId = useSelector(state => state.clientId);
   const spielId = useSelector(state => state.spielId);
+  const startseiteLog = useSelector(state => state.startseiteLog);
 
   useEffect(() => setTextInput(spielId), [spielId]);
+  useEffect(() => setLogTextInput(startseiteLog), [startseiteLog]);
 
   return (
-    <div className="Startseite">
+    <section className="Startseite">
       <h1>Willkommen auf die Startseite!</h1>
       <button onClick={() => dispatch(createSpiel(clientId))}>
         Neues Spiel erstellen
@@ -51,7 +54,15 @@ const Startseite = () => {
         Spiel starten
       </button>
       <Spielanleitung />
-    </div>
+      <textarea
+        name="startseite-log"
+        id="startseite-log"
+        cols="30"
+        rows="10"
+        value={logTextInput}
+        disabled>
+      </textarea>
+    </section>
   );
 };
 
