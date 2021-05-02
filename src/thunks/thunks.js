@@ -37,6 +37,9 @@ export const setSpielfigurPositionen = object => dispatch => dispatch(actionSetS
 // websocket
 
 export const connectWebsocket = () => dispatch => {
+  // Wenn es keine Verbindung zum websocket-Server gibt
+  ws.onclose = () => dispatch(actionSetStartseiteLog('Keine Verbindung zum Spielserver.'));
+  
   ws.onmessage = message => {
     const response = JSON.parse(message.data);
     console.log(response);
@@ -68,6 +71,11 @@ export const connectWebsocket = () => dispatch => {
       dispatch(actionSetSpielfigurPositionen(response.initialPositionen));
       dispatch(actionSetPage('spielseite'));
       console.log('Spiel erfolgreich gestartet');
+    }
+
+    // startseiteWarnung
+    if (response.method === 'startseiteWarnung') {
+      dispatch(actionSetStartseiteLog(response.mitteilung));
     }
 
     // wuerfeln
