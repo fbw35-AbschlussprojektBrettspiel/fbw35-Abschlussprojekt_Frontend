@@ -23,6 +23,7 @@
 .Spielseite {
   background-image: url("../img/Spielfeld1600x1024_Grid20x10.jpg");
   background-repeat:no-repeat;
+  background-size: 100% 100%;
   margin: auto;
   height: auto;
   width: var(--width);
