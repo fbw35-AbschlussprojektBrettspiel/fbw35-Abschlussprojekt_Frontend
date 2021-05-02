@@ -38,7 +38,7 @@ const Startseite = () => {
         type="text"
         name="spiel-id"
         id="spiel-id"
-        placeholder="spiel-id"
+        placeholder="Spiel-ID"
         value={textInput}
         onChange={event => setTextInput(event.target.value)}
       />
@@ -46,7 +46,7 @@ const Startseite = () => {
         type="text"
         name="spieler-name"
         id="spieler-name"
-        placeholder="spieler-name"
+        placeholder="Spielername (optional)"
         value={nameTextInput}
         onChange={event => setNameTextInput(event.target.value)}
       /><br />

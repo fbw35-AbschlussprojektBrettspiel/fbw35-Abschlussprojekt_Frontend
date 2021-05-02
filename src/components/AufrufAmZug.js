@@ -34,7 +34,7 @@ const AufrufAmZug = () => {
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
         <Modal.Header>
-          <Modal.Title>{spielerName}, bitte einen Zug machen!</Modal.Title>
+          <Modal.Title>{spielerName ? spielerName : `${werIstDran + 1}. Spieler`}, bitte einen Zug machen!</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>{!gewuerfelteZahl ? 'Würfeln Sie 1-6' : `Sie haben ${gewuerfelteZahl} gewürfelt!`}</Modal.Body>
