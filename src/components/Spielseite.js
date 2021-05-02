@@ -51,6 +51,7 @@ function setWidthVar() {
         Spiel beenden
       </button>
 
+
       {
         // Das Objekt imitiert ein switch-case
         {

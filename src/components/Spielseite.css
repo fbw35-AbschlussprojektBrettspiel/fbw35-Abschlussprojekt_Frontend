@@ -1,6 +1,5 @@
 :root {
   --width: 1024px; 
-  --blue : blue;
 }
 
 .grid-container > div {
@@ -22,11 +21,10 @@
 }
 
 .Spielseite {
-  /* background-image: url("../img/Spielfeld1600x1024_Grid20x10.jpg");
-  background-repeat:no-repeat; */
-  background-color: var(--blue);
+  background-image: url("../img/Spielfeld1600x1024_Grid20x10.jpg");
+  background-repeat:no-repeat;
   margin: auto;
-  height: 50%;
+  height: auto;
   width: var(--width);
 }
 
@@ -35,3 +33,4 @@
   /* z-index vom grauen Hintergrund von den Modals ist 1050, daher noch höher */
   z-index: 1060;
 }
+
