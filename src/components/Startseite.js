@@ -8,6 +8,7 @@ import {
   joinSpiel,
   startSpiel
 } from '../thunks/thunks';
+import { Button } from 'react-bootstrap'
 
 const Startseite = () => {
   const [textInput, setTextInput] = useState('');
@@ -28,12 +29,12 @@ const Startseite = () => {
   return (
     <section className="Startseite">
       <h1>Willkommen auf die Startseite!</h1>
-      <button onClick={() => dispatch(createSpiel(clientId))}>
+      <Button variant="primary" className="StartseiteButtons" onClick={() => dispatch(createSpiel(clientId))}>
         Neues Spiel erstellen
-      </button><br />
-      <button onClick={() => dispatch(joinSpiel(clientId, spielId || textInput, nameTextInput))}>
+      </Button><br />
+      <Button variant="primary" className="StartseiteButtons" onClick={() => dispatch(joinSpiel(clientId, spielId || textInput, nameTextInput))}>
         Spiel beitreten
-      </button>
+      </Button>
       <input
         type="text"
         name="spiel-id"
@@ -50,9 +51,9 @@ const Startseite = () => {
         value={nameTextInput}
         onChange={event => setNameTextInput(event.target.value)}
       /><br />
-      <button onClick={() => dispatch(startSpiel(clientId, spielId))}>
+      <Button variant="primary" className="StartseiteButtons" onClick={() => dispatch(startSpiel(clientId, spielId))}>
         Spiel starten
-      </button>
+      </Button>
       <Spielanleitung />
       <textarea
         name="startseite-log"

@@ -11,13 +11,13 @@ const Spielanleitung = props => {
   
     return (
       <div div class="spielanleitung">
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="primary" className="StartseiteButtons" onClick={handleShow}>
          Spielanleitung
         </Button>
   
         <Modal show={show} onHide={handleClose}>
   
-          <Modal.Header closeButton>
+          <Modal.Header>
             <Modal.Title>Einleitung und Spielregeln:</Modal.Title>
           </Modal.Header>
   
@@ -78,10 +78,6 @@ in dem Fall wird für euren Benutzernamen jedoch "guest_" angefügt, um
 keine Verwechslungen zu schaffen. Spaß macht es aber sogar so.
 </p>
           </Modal.Body>
-  
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>Close</Button>
-          </Modal.Footer>
   
         </Modal>
   
