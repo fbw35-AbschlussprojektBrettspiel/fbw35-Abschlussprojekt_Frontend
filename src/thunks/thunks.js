@@ -37,6 +37,9 @@ export const setSpielfigurPositionen = object => dispatch => dispatch(actionSetS
 // websocket
 
 export const connectWebsocket = () => dispatch => {
+  // Wenn es keine Verbindung zum websocket-Server gibt
+  ws.onclose = () => dispatch(actionSetStartseiteLog('Keine Verbindung zum Spielserver.'));
+  
   ws.onmessage = message => {
     const response = JSON.parse(message.data);
     console.log(response);
