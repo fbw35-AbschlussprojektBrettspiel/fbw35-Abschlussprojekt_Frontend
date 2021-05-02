@@ -6,6 +6,7 @@ import SpielZuEnde from './SpielZuEnde';
 import QuizFrage from './QuizFrage';
 import Aktion from './Aktion';
 import { useSelector } from 'react-redux';
+import { Button } from 'react-bootstrap'
 
 const Spielseite = () => {
   const spielfeldArray = useSelector(state => state.spielfeldArray);
@@ -42,14 +43,14 @@ function setWidthVar() {
       )}
 
       {/* Die Funktionalität fürs Erste rausgenommen */}
-      <button
-        className="SpielBeenden"
+      <Button
+        variant="primary" className="SpielBeenden"
       // onClick={() => {
       //   dispatch(setPage('startseite'));
       // }}
       >
         Spiel beenden
-      </button>
+      </Button>
 
 
       {

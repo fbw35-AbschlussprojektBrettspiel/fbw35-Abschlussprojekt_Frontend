@@ -33,5 +33,7 @@
   grid-area: 1 / 20 / span 1 / span 3;
   /* z-index vom grauen Hintergrund von den Modals ist 1050, daher noch höher */
   z-index: 1060;
+  margin-right: 10%;
+  border: 3px solid darkblue;
 }
 
