@@ -1,3 +1,7 @@
+.spielfeld-aktion {
+  background-color: rgb(255, 81, 0)
+}
+
 .spielfeld-0 {
   grid-area: 6 / 1 / span 1 / span 2;
 }

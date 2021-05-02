@@ -10,18 +10,22 @@ const Spielfeld = props => {
       {
         {
           html: <span className="fa-layers fa-fw">
-            <FontAwesomeIcon icon={faCircle} style={{ color: "red" }} />
+            <FontAwesomeIcon icon={faCircle} 
+            style={{ color: "red", backgroundColor:"white", borderRadius:"100%", border:"3px darkred solid" }} />
             <FontAwesomeIcon icon={faFileCode} inverse transform="shrink-6" />
           </span>,
           css: <span className="fa-layers fa-fw">
-            <FontAwesomeIcon icon={faCircle} style={{ color: "blue" }} />
+            <FontAwesomeIcon icon={faCircle} 
+            style={{ color: "blue", backgroundColor:"white", borderRadius:"100%", border:"3px darkblue solid" }} />
             <FontAwesomeIcon icon={faCss3} inverse transform="shrink-6" />
           </span>,
           javascript: <span className="fa-layers fa-fw">
-            <FontAwesomeIcon icon={faCircle} style={{ color: "orange" }} />
+            <FontAwesomeIcon icon={faCircle} 
+            style={{ color: "orange", backgroundColor:"white", borderRadius:"100%", border:"3px rgb(255, 81, 0) solid" }} />
             <FontAwesomeIcon icon={faJs} inverse transform="shrink-6" />
           </span>,
-          aktion: <FontAwesomeIcon icon={faQuestionCircle} style={{ color: "green" }} />
+          aktion: <FontAwesomeIcon icon={faQuestionCircle} 
+          style={{ color: "green", backgroundColor:"white", borderRadius:"100%", border:"3px darkgreen solid" }} />
         }[props.feldtyp]
       }
     </div>
