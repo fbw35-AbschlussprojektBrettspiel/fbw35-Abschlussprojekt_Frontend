@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap'
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 const Spielanleitung = props => {
   
@@ -18,7 +20,9 @@ const Spielanleitung = props => {
         <Modal show={show} onHide={handleClose}>
   
           <Modal.Header>
-            <Modal.Title>Einleitung und Spielregeln:</Modal.Title>
+            <Modal.Title>Einleitung und Spielregeln: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <FontAwesomeIcon icon={faBook} transform="grow-8" style={{ color: "darkgrey" }} />
+            </Modal.Title>
           </Modal.Header>
   
           <Modal.Body>
