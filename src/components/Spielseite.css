@@ -1,5 +1,6 @@
 :root {
   --width: 1024px; 
+  --height: 1600px;
 }
 
 .ausserhalbSpielseite {
@@ -33,7 +34,7 @@
   background-size: 100% 100%;
   border: 5px solid rgb(13, 99, 26);
   margin: auto;
-  height: auto;
+  height: var(--height);
   width: var(--width);
 }
 

@@ -14,20 +14,23 @@ const Spielseite = () => {
   const clients = useSelector(state => state.clients);
 
 //unter :root ist in der CSS eine Variable --width für die Breite des Spielfelds gespeichert
-var width = document.querySelector(':root');
+//                                         --height für die Höhe
+let width = document.querySelector(':root');
+let height = document.querySelector(':root');
 // 1600px/1024px ergibt 1.5625
 // es wird die Volle Höhe in der CSS verwendet, Breite angepasst,
 // da wir tendenziell ein Breiteres-Bildschirmverhältnis haben
 // damit bleiben wir immer im selben Seitenverhältnis
 // (beim Starten des Spiels, wird nicht Live/per State aktualisiert)
-function setWidthVar() {
-  width.style.setProperty('--width', parseInt(window.innerHeight*1.5625)+"px");
+function setCSSRatioVars() {
+  height.style.setProperty('--height', parseInt(window.innerHeight)+"px")
+  width.style.setProperty('--width',   parseInt(window.innerHeight*1.5625)+"px");
 }
 
   return (
   <div className="ausserhalbSpielseite">
     <div className="grid-container Spielseite">
-      {setWidthVar()}
+      {setCSSRatioVars()}
       {spielfeldArray.map((element, index) =>
         <Spielfeld
           key={index}
