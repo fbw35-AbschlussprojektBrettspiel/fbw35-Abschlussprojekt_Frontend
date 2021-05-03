@@ -42,23 +42,23 @@ wieder aufzufrischen.</p>
 <b>1.</b><br></br>
 <p>
 Eröffne dein eigenes Spielfeld, wählt dazu aus zu welchen
-Technologien Du Fragen erhalten möchtet und wie groß das Spielfeld sein soll.
+Technologien du Fragen erhalten möchtet und wie groß das Spielfeld sein soll.
 </p>
 <b>2.</b><br></br>
 <p>
  Es sind mehrere Spielvarianten möglich, du kannst als Einzelspieler
 für dich selbst üben, oder mit deinen Freunden um den Sieg kämpfen.
-Wartet in dem Fall bis sich alle  Mitspieler angemeldet haben und klickt
+Wartet in dem Fall bis sich alle Mitspieler angemeldet haben und klicke
 dann "Spiel starten".
 </p>
 <b>3.</b><br></br>
 <p>
-Du würfelst, wie weit deine Spielfigur voranschreitet
-Für eine Quiz-Frage bekommst du 15 Sekunden Zeit,
+Du würfelst, wie weit deine Spielfigur voranschreitet.
+Für eine Quiz-Frage bekommst du 15 Sekunden Zeit.
 Ist die Antwort richtig, starte der nächste Wurf des Würfels. 
 Entweder deiner, oder der des nächsten Mitspielers.
-Bei einer falschen Antwort reist es deine Spielfigur jedoch wieder
-zurück, auf das Feld von dem du gekommen seid.
+Bei einer falschen Antwort reist deine Spielfigur jedoch wieder
+zurück, auf das Feld von dem du gekommen bist.
 </p>
 <b>4.</b><br></br>
 <p>
@@ -79,8 +79,8 @@ richtig beantworteten Fragen gespeichert, und du kannst der Beste werden!
 <b>6.</b><br></br>
 <p>
 jeder der lernen und etwas Spass haben möchte kann natürlich mitmachen,
-in dem Fall wird für dich ein Benutzername jedoch "guest_" angefügt, um
-keine Verwechslungen zu schaffen. Spaß macht es aber sogar so.
+in dem Fall wird für dich ein Benutzername (oder "guest_") angefügt, um
+keine Verwechslungen zu schaffen. Spaß macht es auch so.
 </p>
           </Modal.Body>
   
