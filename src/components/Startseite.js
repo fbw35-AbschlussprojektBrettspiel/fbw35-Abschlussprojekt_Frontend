@@ -41,7 +41,6 @@ function setCSSRatioVars() {
 }
 
   return (
-  <div className="ausserhalbStartseite">
     <section className="Startseite">
       {setCSSRatioVars()}
       <h1>Willkommen auf die Startseite!</h1>
@@ -80,7 +79,6 @@ function setCSSRatioVars() {
         disabled>
       </textarea>
     </section>
-  </div>
   );
 };
 
