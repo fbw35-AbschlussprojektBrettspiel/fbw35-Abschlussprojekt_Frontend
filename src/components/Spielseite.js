@@ -19,12 +19,12 @@ var width = document.querySelector(':root');
 // es wird die Volle Höhe in der CSS verwendet, Breite angepasst,
 // da wir tendenziell ein Breiteres-Bildschirmverhältnis haben
 // damit bleiben wir immer im selben Seitenverhältnis
+// (beim Starten des Spiels, wird nicht Live/per State aktualisiert)
 function setWidthVar() {
   width.style.setProperty('--width', parseInt(window.innerHeight*1.5625)+"px");
 }
 
   return (
-    
     <div className="grid-container Spielseite">
       {setWidthVar()}
       {spielfeldArray.map((element, index) =>
