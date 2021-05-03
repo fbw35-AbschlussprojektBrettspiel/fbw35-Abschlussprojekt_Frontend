@@ -1,9 +1,7 @@
 import {
   SET_PAGE,
-  SET_SPIELFIGUR_POSITION,
   SET_POPUP,
   SET_GEWUERFELTE_ZAHL,
-  FETCH_FRAGEN,
   SET_CLIENT_ID,
   SET_SPIEL_ID,
   SET_SPIELFELD_ARRAY,
@@ -11,17 +9,14 @@ import {
   SET_CLIENTS,
   SET_WER_IST_DRAN,
   SET_SPIELFIGUR_POSITIONEN,
-  SET_AKTION
+  RESET_SPIELFIGUR_POSITIONEN,
+  SET_AKTION,
+  SET_STARTSEITE_LOG
 } from './types';
 
 export const actionSetPage = page => ({
   type: SET_PAGE,
   payload: page
-});
-
-export const actionSetSpielfigurPosition = position => ({
-  type: SET_SPIELFIGUR_POSITION,
-  payload: position
 });
 
 export const actionSetPopup = popup => ({
@@ -32,11 +27,6 @@ export const actionSetPopup = popup => ({
 export const actionSetGewuerfelteZahl = zahl => ({
   type: SET_GEWUERFELTE_ZAHL,
   payload: zahl
-});
-
-export const actionFetchFragen = fragen => ({
-  type: FETCH_FRAGEN,
-  payload: fragen
 });
 
 export const actionSetClientId = id => ({
@@ -74,7 +64,16 @@ export const actionSetSpielfigurPositionen = object => ({
   payload: object
 });
 
+export const actionResetSpielfigurPositionen = () => ({
+  type: RESET_SPIELFIGUR_POSITIONEN
+});
+
 export const actionSetAktion = aktion => ({
   type: SET_AKTION,
   payload: aktion
+});
+
+export const actionSetStartseiteLog = string => ({
+  type: SET_STARTSEITE_LOG,
+  payload: string
 });

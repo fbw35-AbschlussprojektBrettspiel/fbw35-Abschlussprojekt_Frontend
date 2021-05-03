@@ -1,3 +1,27 @@
+:root {
+    --width: 1024px;
+    --height: 1600px;
+}
+
+.ausserhalbStartseite {
+    background-image: url("../img/Grass_repeatable2.jpg");
+    background-repeat: repeat;
+  }
+
+.Startseite {
+    background-image: url("../img/Spielfeld1600x1024_Grid20x10_Startseite_Platzhalter.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    border: 5px solid rgb(13, 99, 26);
+    margin: auto;
+    height: var(--height);
+    width: var(--width);
+  }
+
+.StartseiteButtons {
+    border: 3px solid darkblue;
+}
+
 .modal-backdrop { background-color: transparent }
 
 .modal-content {

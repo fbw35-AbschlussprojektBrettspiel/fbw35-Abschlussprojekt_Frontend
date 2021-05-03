@@ -25,13 +25,12 @@ const Aktion = () => {
   return (
     <section className="aktion">
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
-
+        
         <Modal.Header>
-
           <Modal.Title>
             <p>{aktion.beschreibung}</p>
+            <p>Gehe {aktion.positionsAenderung > 0 ? aktion.positionsAenderung : String(aktion.positionsAenderung).slice(1)} {Math.abs(aktion.positionsAenderung) > 1 ? 'Felder' : 'Feld'} {aktion.positionsAenderung > 0 ? 'vor.' : 'zurück.'}</p>
           </Modal.Title>
-
         </Modal.Header>
 
         <Modal.Body>
@@ -47,6 +46,7 @@ const Aktion = () => {
             OK
           </Button>
         </Modal.Body>
+
       </Modal>
     </section>
   );

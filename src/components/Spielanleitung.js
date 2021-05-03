@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap'
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 const Spielanleitung = props => {
   
@@ -11,14 +13,16 @@ const Spielanleitung = props => {
   
     return (
       <div div class="spielanleitung">
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="primary" className="StartseiteButtons" onClick={handleShow}>
          Spielanleitung
         </Button>
   
         <Modal show={show} onHide={handleClose}>
   
-          <Modal.Header closeButton>
-            <Modal.Title>Einleitung und Spielregeln:</Modal.Title>
+          <Modal.Header>
+            <Modal.Title>Einleitung und Spielregeln: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <FontAwesomeIcon icon={faBook} transform="grow-8" style={{ color: "darkgrey" }} />
+            </Modal.Title>
           </Modal.Header>
   
           <Modal.Body>
@@ -78,10 +82,6 @@ in dem Fall wird für euren Benutzernamen jedoch "guest_" angefügt, um
 keine Verwechslungen zu schaffen. Spaß macht es aber sogar so.
 </p>
           </Modal.Body>
-  
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>Close</Button>
-          </Modal.Footer>
   
         </Modal>
   

@@ -8,6 +8,8 @@ import {
   wuerfeln,
   macheZug
 } from '../thunks/thunks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDice } from '@fortawesome/free-solid-svg-icons';
 
 const AufrufAmZug = () => {
   const gewuerfelteZahl = useSelector(state => state.gewuerfelteZahl);
@@ -18,6 +20,7 @@ const AufrufAmZug = () => {
   const clients = useSelector(state => state.clients);
 
   const istClientDran = clients.find(client => client.clientId === clientId).order === werIstDran;
+  const spielerName = clients.find(client => client.order === werIstDran).spielerName;
 
 
   const dispatch = useDispatch();
@@ -33,7 +36,11 @@ const AufrufAmZug = () => {
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
 
         <Modal.Header>
-          <Modal.Title>{werIstDran}. Spieler, bitte einen Zug machen!</Modal.Title>
+        {/* &nbsp; ist die Abkürzung/Lösung um ein Leerzeichen in HTML-Text einzufügen */}
+          <Modal.Title>{spielerName ? spielerName : `${werIstDran + 1}. Spieler`}, bitte einen Zug machen! &nbsp;&nbsp;&nbsp;    
+          <FontAwesomeIcon icon={faDice} transform="grow-8"
+            style={{ color: "darkgrey" }} />
+          </Modal.Title>
         </Modal.Header>
 
         <Modal.Body>{!gewuerfelteZahl ? 'Würfeln Sie 1-6' : `Sie haben ${gewuerfelteZahl} gewürfelt!`}</Modal.Body>

@@ -1,9 +1,7 @@
 import {
   actionSetPage,
-  actionSetSpielfigurPosition,
   actionSetPopup,
   actionSetGewuerfelteZahl,
-  actionFetchFragen,
   actionSetClientId,
   actionSetSpielId,
   actionSetSpielfeldArray,
@@ -11,18 +9,16 @@ import {
   actionSetClients,
   actionSetWerIstDran,
   actionSetSpielfigurPositionen,
-  actionSetAktion
+  actionResetSpielfigurPositionen,
+  actionSetAktion,
+  actionSetStartseiteLog
 } from '../actions/actions';
 
-import axios from 'axios';
-
-const URL = 'http://localhost:3050/';
+// const URL = 'http://localhost:3050/';
 const WEBSOCKET_URL = 'ws://localhost:3050';
 const ws = new WebSocket(WEBSOCKET_URL);
 
 export const setPage = page => dispatch => dispatch(actionSetPage(page));
-
-export const setSpielfigurPosition = position => dispatch => dispatch(actionSetSpielfigurPosition(position));
 
 export const setPopup = popup => dispatch => dispatch(actionSetPopup(popup));
 
@@ -36,15 +32,14 @@ export const setSpielfigurPositionen = object => dispatch => dispatch(actionSetS
 
 // export const setSpielfeldArray = array => dispatch => dispatch(actionSetSpielfeldArray(array));
 
-// fragen werden hier mit einer GET-Anfrage vom Server geholt
-
-export const fetchFragen = () => dispatch => axios.get(URL + 'fragen/')
-.then(response => dispatch(actionFetchFragen(response.data)))
-.catch(error => console.error(error));
+// export const setStartseiteLog = string => dispatch => dispatch(actionSetStartseiteLog(string));
 
 // websocket
 
 export const connectWebsocket = () => dispatch => {
+  // Wenn es keine Verbindung zum websocket-Server gibt
+  ws.onclose = () => dispatch(actionSetStartseiteLog('Keine Verbindung zum Spielserver.'));
+  
   ws.onmessage = message => {
     const response = JSON.parse(message.data);
     console.log(response);
@@ -52,11 +47,13 @@ export const connectWebsocket = () => dispatch => {
     // connect
     if (response.method === 'connect') {
       dispatch(actionSetClientId(response.clientId));
+      dispatch(actionSetStartseiteLog(response.mitteilung));
     }
 
     // create
     if (response.method === 'create') {
       dispatch(actionSetSpielId(response.spiel.id));
+      dispatch(actionSetStartseiteLog(response.mitteilung));
       console.log('Spiel erfolgreich erstellt.');
     }
 
@@ -64,6 +61,7 @@ export const connectWebsocket = () => dispatch => {
     if (response.method === 'join') {
       dispatch(actionSetSpielId(response.spiel.id));
       dispatch(actionSetClients(response.spiel.clients));
+      dispatch(actionSetStartseiteLog(response.mitteilung));
       console.log('Spiel erfolgreich beitetreten');
     }
 
@@ -73,6 +71,11 @@ export const connectWebsocket = () => dispatch => {
       dispatch(actionSetSpielfigurPositionen(response.initialPositionen));
       dispatch(actionSetPage('spielseite'));
       console.log('Spiel erfolgreich gestartet');
+    }
+
+    // startseiteWarnung
+    if (response.method === 'startseiteWarnung') {
+      dispatch(actionSetStartseiteLog(response.mitteilung));
     }
 
     // wuerfeln
@@ -124,7 +127,16 @@ export const connectWebsocket = () => dispatch => {
 
     // beenden
     if (response.method === 'beenden') {
-      dispatch(setPage('startseite'));
+      dispatch(actionSetSpielId(''));
+      dispatch(actionSetPage('startseite'));
+      dispatch(actionSetSpielfeldArray([]));
+      dispatch(actionSetGewuerfelteZahl(0));
+      dispatch(actionResetSpielfigurPositionen());
+      dispatch(actionSetWerIstDran(0));
+      dispatch(actionSetFrage({}));
+      dispatch(actionSetAktion({}));
+      dispatch(actionSetClients({}));
+      dispatch(actionSetPopup('aufruf'));
       console.log('Spiel erfolgreich beendet');
     }
 
@@ -139,11 +151,12 @@ export const createSpiel = clientId => dispatch => {
   ws.send(JSON.stringify(payload));
 };
 
-export const joinSpiel = (clientId, spielId) => dispatch => {
+export const joinSpiel = (clientId, spielId, spielerName) => dispatch => {
   const payload = {
     method: 'join',
     clientId,
-    spielId
+    spielId,
+    spielerName
   };
   ws.send(JSON.stringify(payload));
 };

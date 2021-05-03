@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Spielfeld from './Spielfeld';
 import Spielfigur from './Spielfigur';
 import './Spielseite.css';
@@ -6,33 +5,32 @@ import AufrufAmZug from './AufrufAmZug';
 import SpielZuEnde from './SpielZuEnde';
 import QuizFrage from './QuizFrage';
 import Aktion from './Aktion';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  setPage,
-  fetchFragen,
-  setSpielfigurPosition,
-  setSpielfigurPositionen
-} from '../thunks/thunks';
+import { useSelector } from 'react-redux';
+import { Button } from 'react-bootstrap'
 
 const Spielseite = () => {
   const spielfeldArray = useSelector(state => state.spielfeldArray);
   const popup = useSelector(state => state.popup);
   const clients = useSelector(state => state.clients);
 
-  const dispatch = useDispatch();
-
-  // Hier werden die Fragen einmalig beim Mounten des components geholt.
-  // useEffect(() => dispatch(fetchFragen()), [dispatch]);
-
-  // spielfigurPositionen werden einmalig beim Mounten des components auf 0 gesetzt.
-  // useEffect(() => {
-  //   const initialPositionen = {};
-  //   clients.forEach(client => initialPositionen[client.order] = 0);
-  //   dispatch(setSpielfigurPositionen(initialPositionen), [dispatch]);
-  // });
+//unter :root ist in der CSS eine Variable --width für die Breite des Spielfelds gespeichert
+//                                         --height für die Höhe
+let width = document.querySelector(':root');
+let height = document.querySelector(':root');
+// 1600px/1024px ergibt 1.5625
+// es wird die Volle Höhe in der CSS verwendet, Breite angepasst,
+// da wir tendenziell ein Breiteres-Bildschirmverhältnis haben
+// damit bleiben wir immer im selben Seitenverhältnis
+// (beim Starten des Spiels, wird nicht Live/per State aktualisiert)
+function setCSSRatioVars() {
+  height.style.setProperty('--height', parseInt(window.innerHeight)+"px")
+  width.style.setProperty('--width',   parseInt(window.innerHeight*1.5625)+"px");
+}
 
   return (
-    <div className="grid-container">
+  <div className="ausserhalbSpielseite">
+    <div className="grid-container Spielseite">
+      {setCSSRatioVars()}
       {spielfeldArray.map((element, index) =>
         <Spielfeld
           key={index}
@@ -48,14 +46,16 @@ const Spielseite = () => {
         />
       )}
 
-      <button
-        className="SpielBeenden"
-        onClick={() => {
-          dispatch(setPage('startseite'));
-        }}
+      {/* Die Funktionalität fürs Erste rausgenommen */}
+      <Button
+        variant="primary" className="SpielBeenden"
+      // onClick={() => {
+      //   dispatch(setPage('startseite'));
+      // }}
       >
         Spiel beenden
-      </button>
+      </Button>
+
 
       {
         // Das Objekt imitiert ein switch-case
@@ -67,6 +67,7 @@ const Spielseite = () => {
         }[popup]
       }
     </div>
+  </div>
   );
 };
 

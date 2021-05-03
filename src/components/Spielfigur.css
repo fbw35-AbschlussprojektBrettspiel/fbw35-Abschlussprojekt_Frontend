@@ -1,0 +1,58 @@
+.spielfigur-0,
+.spielfigur-1,
+.spielfigur-2,
+.spielfigur-3 {
+  z-index: 10;
+}
+
+.spielfigur-0 {
+  color: chartreuse;
+}
+
+.spielfigur-1 {
+  color: magenta;
+}
+
+.spielfigur-2 {
+  color: aqua;
+}
+
+.spielfigur-3 {
+  color: lightpink;
+}
+
+.positionVerschiebung-2-1 {
+  transform: translate(-30%);
+}
+
+.positionVerschiebung-2-2 {
+  transform: translate(30%);
+}
+
+.positionVerschiebung-3-1 {
+  transform: translate(-50%);
+}
+
+/* .positionVerschiebung-3-2 {
+  
+} */
+
+.positionVerschiebung-3-3 {
+  transform: translate(50%);
+}
+
+.positionVerschiebung-4-1 {
+  transform: translate(-30%, -30%);
+}
+
+.positionVerschiebung-4-2 {
+  transform: translate(30%, -30%);
+}
+
+.positionVerschiebung-4-3 {
+  transform: translate(-30%, 30%);
+}
+
+.positionVerschiebung-4-4 {
+  transform: translate(30%, 30%);
+}
