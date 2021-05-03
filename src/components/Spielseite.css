@@ -1,20 +1,13 @@
-:root {
-  --width: 1024px; 
-  --height: 1600px;
-}
-
-.ausserhalbSpielseite {
-  background-image: url("../img/Grass_repeatable2.jpg");
-  background-repeat: repeat;
-}
-
 .grid-container.Spielseite > div {
-  height: 50px;
-  width: 50px;
-  /* border: 4px solid gray;
-  background-color: lightgray;
-  border-radius: 50%; */
-  font-size: 2.4em;
+  width: 4.54vw;
+  height: 6.94vh;
+  /* Spielfeld ist 22x12 Felder groß daher zum gleichmäßigem aufteile:
+  100% durch 12 = 8.33 viewportHöhe zusätzlich minus dem padding von 2h
+  also (2/12)*2 =1.39 also endgültige Höhe 6.94vh
+  100% durch 22 = 4.54 viewportBreite */
+  font-size: 6vh;
+  /* in der Regel ist dass Fenster breiter als Hoch daher wird die viewportHöhe
+  als Maßstab für die Spielfeldergröße benutzt */
 }
 
 .grid-container.Spielseite {
@@ -23,19 +16,23 @@
   grid-template-rows: repeat(12, 1fr);
   text-align: center;
   /* Abstand der Spielfelder zum Fensterrand */
-  /* dass padding muss auf ein Element nochmal um den Grid-Container
-  herum sonst werden die Felder nur innerhalb des Spielfeldes verschoben
-  padding: 20px; */
+  /* vh steht für viewport-height in prozent, paddin also 2% der sichtbaren Bildhöhe */
+  height: 100vh;
+  width: 100vw;
+  padding: 2vh;
 }
 
 .Spielseite {
   background-image: url("../img/Spielfeld1600x1024_Grid20x10.jpg");
   background-repeat:no-repeat;
   background-size: 100% 100%;
-  border: 5px solid rgb(13, 99, 26);
+  /* border: 5px solid rgb(13, 99, 26); */
   margin: auto;
-  height: var(--height);
-  width: var(--width);
+  height: 100vh;
+  min-height: 490px;
+  width: 100vw;
+  min-width: 1030px;
+  /*1030px weil sonst der "Spiel beenden" Button zweizeilig wird :( sonst wären 900 perfekt */
 }
 
 .SpielBeenden {
@@ -43,7 +40,7 @@
   /* z-index vom grauen Hintergrund von den Modals ist 1050, daher noch höher */
   z-index: 1060;
   /* Shorthand im Uhrzeigersinn-> Top, Right, Button, Left */
-  margin: 5% 5% 0% 0%;
+  margin: 2vh 0% 0% 0%;
   border: 3px solid darkblue;
 }
 
