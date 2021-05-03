@@ -1,3 +1,9 @@
 .quizantwort {
   cursor: pointer;
 }
+
+.quizantwort:hover {
+  border: 2px darkgray solid;
+  border-radius: 5px;
+  background-color: lightgray;
+}

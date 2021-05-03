@@ -1,4 +1,14 @@
-.grid-container > div {
+:root {
+  --width: 1024px; 
+  --height: 1600px;
+}
+
+.ausserhalbSpielseite {
+  background-image: url("../img/Grass_repeatable2.jpg");
+  background-repeat: repeat;
+}
+
+.grid-container.Spielseite > div {
   height: 50px;
   width: 50px;
   /* border: 4px solid gray;
@@ -7,17 +17,33 @@
   font-size: 2.4em;
 }
 
-.grid-container {
+.grid-container.Spielseite {
   display: grid;
   grid-template-columns: repeat(22, 1fr);
   grid-template-rows: repeat(12, 1fr);
   text-align: center;
   /* Abstand der Spielfelder zum Fensterrand */
-  padding: 20px;
+  /* dass padding muss auf ein Element nochmal um den Grid-Container
+  herum sonst werden die Felder nur innerhalb des Spielfeldes verschoben
+  padding: 20px; */
+}
+
+.Spielseite {
+  background-image: url("../img/Spielfeld1600x1024_Grid20x10.jpg");
+  background-repeat:no-repeat;
+  background-size: 100% 100%;
+  border: 5px solid rgb(13, 99, 26);
+  margin: auto;
+  height: var(--height);
+  width: var(--width);
 }
 
 .SpielBeenden {
   grid-area: 1 / 20 / span 1 / span 3;
   /* z-index vom grauen Hintergrund von den Modals ist 1050, daher noch höher */
   z-index: 1060;
+  /* Shorthand im Uhrzeigersinn-> Top, Right, Button, Left */
+  margin: 5% 5% 0% 0%;
+  border: 3px solid darkblue;
 }
+
