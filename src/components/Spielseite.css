@@ -2,7 +2,12 @@
   --width: 1024px; 
 }
 
-.grid-container > div {
+.ausserhalbSpielseite {
+  background-image: url("../img/Grass_repeatable2.jpg");
+  background-repeat: repeat;
+}
+
+.grid-container.Spielseite > div {
   height: 50px;
   width: 50px;
   /* border: 4px solid gray;
@@ -11,7 +16,7 @@
   font-size: 2.4em;
 }
 
-.grid-container {
+.grid-container.Spielseite {
   display: grid;
   grid-template-columns: repeat(22, 1fr);
   grid-template-rows: repeat(12, 1fr);
@@ -26,7 +31,7 @@
   background-image: url("../img/Spielfeld1600x1024_Grid20x10.jpg");
   background-repeat:no-repeat;
   background-size: 100% 100%;
-  border: 5px solid black;
+  border: 5px solid rgb(13, 99, 26);
   margin: auto;
   height: auto;
   width: var(--width);

@@ -25,6 +25,7 @@ function setWidthVar() {
 }
 
   return (
+  <div className="ausserhalbSpielseite">
     <div className="grid-container Spielseite">
       {setWidthVar()}
       {spielfeldArray.map((element, index) =>
@@ -63,6 +64,7 @@ function setWidthVar() {
         }[popup]
       }
     </div>
+  </div>
   );
 };
 
