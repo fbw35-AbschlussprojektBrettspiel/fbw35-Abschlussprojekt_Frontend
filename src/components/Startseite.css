@@ -3,6 +3,11 @@
     --height: 1600px;
 }
 
+.ausserhalbStartseite {
+    background-image: url("../img/Grass_repeatable2.jpg");
+    background-repeat: repeat;
+  }
+
 .Startseite {
     background-image: url("../img/Spielfeld1600x1024_Grid20x10_Startseite_Platzhalter.jpg");
     background-repeat:no-repeat;
