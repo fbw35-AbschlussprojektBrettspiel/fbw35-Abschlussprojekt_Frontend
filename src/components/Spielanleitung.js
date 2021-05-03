@@ -48,14 +48,14 @@ Technologien du Fragen erhalten möchtet und wie groß das Spielfeld sein soll.
 <p>
  Es sind mehrere Spielvarianten möglich, du kannst als Einzelspieler
 für dich selbst üben, oder mit deinen Freunden um den Sieg kämpfen.
-Wartet in dem Fall bis sich alle Mitspieler angemeldet haben und klicke
+Warte in dem Fall bis sich alle Mitspieler angemeldet haben und klicke
 dann "Spiel starten".
 </p>
 <b>3.</b><br></br>
 <p>
 Du würfelst, wie weit deine Spielfigur voranschreitet.
 Für eine Quiz-Frage bekommst du 15 Sekunden Zeit.
-Ist die Antwort richtig, starte der nächste Wurf des Würfels. 
+Ist die Antwort richtig, kann der nächste Wurf des Würfels starten. 
 Entweder deiner, oder der des nächsten Mitspielers.
 Bei einer falschen Antwort reist deine Spielfigur jedoch wieder
 zurück, auf das Feld von dem du gekommen bist.
