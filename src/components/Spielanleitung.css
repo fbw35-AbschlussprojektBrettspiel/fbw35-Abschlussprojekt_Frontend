@@ -1,0 +1,25 @@
+.spiel {
+    color:darkblue ;
+
+}
+
+.spiel b {
+    border: 2px solid darkblue; 
+    border-radius: 5px ;
+
+}
+
+.spiel1 {
+   position: relative 30px 50px;
+
+            
+}
+
+.spiel1 li {
+    border: 1px solid darkblue ;
+    border-radius: 10px;
+    list-style-position: inside;
+    
+
+}
+

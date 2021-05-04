@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Spielanleitung.css';
 import { Modal, Button } from 'react-bootstrap'
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,16 +27,18 @@ const Spielanleitung = props => {
           </Modal.Header>
   
           <Modal.Body>
+<div className = "spiel">
 <p>Vielen Dank und Spaß an unserem Quiz-Game,
-es wird dir bestimmt helfen etwas zu lernen oder lange vergessenes
+es wird dir bestimmt helfen etwas zu lernen oder lange vergessenes   
 wieder aufzufrischen.</p>
 
-<ol>
+<ol className = "spiel1">
+<li>Spiel erstellen</li>  
 <li>Spiel starten</li>
 <li>allgemeine Regeln</li>
 <li>Felder des Spielfelds</li>
-<li>Registrieren und der Beste werden</li>
-<li>Spielen als Gast</li>
+<li>Benutzername</li>
+<li>Sieg</li>
 </ol>
 
 <b>1.</b><br></br>
@@ -46,10 +49,10 @@ Du kannst deinen Namen in das Feld ("Spielername") einfügen.
 </p>
 <b>2.</b><br></br>
 <p>
- Es sind mehrere Spielvarianten möglich, du kannst als Einzelspieler
+Es sind mehrere Spielvarianten möglich, du kannst als Einzelspieler
 für dich selbst üben, oder mit deinen Freunden um den Sieg kämpfen.
 Sende den Homepagelink und Spiel-ID an deine Freunde.
-Warte in dem Fall bis sich alle Mitspieler angemeldet haben und klicke
+Warte in dem Fall bis sich alle Mitspieler angemeldet haben und klicke  
 dann "Spiel starten".
 </p>
 <b>3.</b><br></br>
@@ -82,6 +85,8 @@ keine Verwechslungen zu schaffen. Spaß macht es auch so.
 <p>
 Gewonnen hat derjenige, der als Erster über das Ziel geht.
 </p>
+</div>
+
           </Modal.Body>
   
         </Modal>
