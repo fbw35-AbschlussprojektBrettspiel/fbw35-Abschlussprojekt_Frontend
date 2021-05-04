@@ -30,17 +30,6 @@ const Spielseite = () => {
         />
       )}
 
-      {/* Die Funktionalität fürs Erste rausgenommen */}
-      <Button
-        variant="primary" className="SpielBeenden"
-      // onClick={() => {
-      //   dispatch(setPage('startseite'));
-      // }}
-      >
-        Spiel beenden
-      </Button>
-
-
       {
         // Das Objekt imitiert ein switch-case
         {
