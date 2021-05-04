@@ -17,9 +17,10 @@
 
 .spiel1 li {
     border: 1px solid darkblue ;
+    
     border-radius: 10px;
     list-style-position: inside;
-    
+
 
 }
 
