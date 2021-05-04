@@ -8,6 +8,7 @@ import Aktion from './Aktion';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import { beendeSpiel } from '../thunks/thunks';
+import SpielerListe from './SpielerListe';
 
 const Spielseite = () => {
   const spielfeldArray = useSelector(state => state.spielfeldArray);
@@ -34,6 +35,8 @@ const Spielseite = () => {
           order={element.order}
         />
       )}
+
+      <SpielerListe />
 
       <Button
         variant="primary"
