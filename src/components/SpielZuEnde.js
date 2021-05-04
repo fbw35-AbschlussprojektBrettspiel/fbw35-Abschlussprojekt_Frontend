@@ -14,6 +14,9 @@ const SpielZuEnde = () => {
   const spielId = useSelector(state => state.spielId);
   const dispatch = useDispatch();
   const werIstDran = useSelector(state => state.werIstDran);
+  const clients = useSelector(state => state.clients);
+
+  const spielerName = clients.find(client => client.order === werIstDran).spielerName;
 
   return (
     <section className="zu-ende">
@@ -23,7 +26,7 @@ const SpielZuEnde = () => {
           <Modal.Title>Herzlichen Glückwunsch!!</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body>{werIstDran}. Spieler hat das Ziel erreicht, Gratulation!</Modal.Body>
+        <Modal.Body>{spielerName ? spielerName : `${werIstDran + 1}. Spieler`} hat das Ziel erreicht, Gratulation!</Modal.Body>
 
         <Modal.Footer>
           <Button

@@ -6,7 +6,6 @@ import SpielZuEnde from './SpielZuEnde';
 import QuizFrage from './QuizFrage';
 import Aktion from './Aktion';
 import { useSelector } from 'react-redux';
-import { Button } from 'react-bootstrap'
 
 const Spielseite = () => {
   const spielfeldArray = useSelector(state => state.spielfeldArray);
