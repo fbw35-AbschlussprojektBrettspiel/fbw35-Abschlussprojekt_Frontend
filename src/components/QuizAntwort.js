@@ -1,5 +1,6 @@
 import './QuizAntwort.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
 import {
   verschiebeSpielfigur,
   naechsterZug
@@ -17,23 +18,49 @@ const QuizAntwort = props => {
 
   const dispatch = useDispatch();
 
+  const [AntwortKommentar, setAntwortKommentar] = useState("");
+
   return (
     <li
       className="quizantwort"
       onClick={() => {
-        if (istClientDran) {
+        props.setTimer(false); //setzt den langen 12+3sek timer von quizfrage auf false
+        if (istClientDran && !props.bereitsGeantwortet) {
+          props.setGeantwortet(true);
+          //all dass wird nur ausgeführt wenn noch keine Antwort abgegeben wurde
+          //setzt hier also auf "true" um zu verhindern dass andere Antworten/klicks "ausgewertet werden"
+          //direkt vor dem dispatch bzw. beim timeout wird wieder false gesetzt
+          //-->nicht vergessen false wird erst nach den 2.5sek gesetzt(sonst etwas verwirrend)
+
           // Hier wird geprüft, ob die angeklickte Antwort falsch ist.
           // Dann wird die Spielfigur zurückgesetzt
           if (props.index !== props.indexRichtigeAntwort) {
-            dispatch(verschiebeSpielfigur(clientId, spielId, spielfigurPositionen[werIstDran] - gewuerfelteZahl));
-          }
-          // unabhängig davon, ob die Antwort richtig oder falsch war,
-          // wird als nächstes aufruf-popup angezeigt.
-          dispatch(naechsterZug(clientId, spielId));
+            console.log("ANTWORT FALSCH abgegeben");
+            setAntwortKommentar("leider falsch!! ")
+            setTimeout( () =>{
+              clearTimeout(props.myTimer);
+              props.setGeantwortet(false);
+              dispatch(verschiebeSpielfigur(clientId, spielId, spielfigurPositionen[werIstDran] - gewuerfelteZahl));
+              dispatch(naechsterZug(clientId, spielId));
+            }, 2500);
+            return clearTimeout(this)
+          } else {
+            // Antwort war richtig:
+            // Es wird ein Kommentart "richtig" vor die Zeile gesetzt
+            // aufruf-Modal wird (naechsterZug) angezeigt.
+            console.log("ANTWORT RICHTIG abgegeben");
+            setAntwortKommentar("super richtig!! ")
+            const richtigeAntwortTimer = setTimeout(() => {
+                clearTimeout(props.myTimer);
+                props.setGeantwortet(false);
+                dispatch(naechsterZug(clientId, spielId));
+              }, 2500);
+              return clearTimeout(this)
+            }
         }
       }}
     >
-      {props.antwort}
+      {AntwortKommentar + props.antwort}
     </li>
   );
 };
