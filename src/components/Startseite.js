@@ -28,7 +28,6 @@ const Startseite = () => {
 
   return (
     <section className="Startseite">
-      {setCSSRatioVars()}
       <h1>Willkommen auf die Startseite!</h1>
       <Button variant="primary" className="StartseiteButtons" onClick={() => dispatch(createSpiel(clientId))}>
         Neues Spiel erstellen
