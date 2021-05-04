@@ -10,6 +10,15 @@
   als Maßstab für die Spielfeldergröße benutzt */
 }
 
+.startfeld {
+  /* height: 50px;
+  width: 50px; */
+  /* border: 4px solid gray;
+  background-color: lightgray;
+  border-radius: 50%; */
+  font-size: 2.4em;
+  }
+
 .grid-container.Spielseite {
   display: grid;
   grid-template-columns: repeat(22, 1fr);
