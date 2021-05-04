@@ -7,6 +7,8 @@ Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, dies
 
 [Beispiel-Deployment auf Heroku](https://webdev-brettspiel-frontend.herokuapp.com/)
 
+[Die Spielanleitung](SPIELANLEITUNG.md)
+
 [Link zum Backend-Repository](https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend)
 
 ## Instalation
@@ -32,8 +34,9 @@ Du kannst eine `.env` Datei im Root-Verzeichnes anlegen. Darin können die Umgeb
 
 ```bash
 # Skripts starten, um Fragen und Aktionen aus den JSON-Dateien in public-Ordner in die Datenbank zu schreiben
+# Du kannst auch eigene json-Dateien benutzen
 $ npm run pushFragen fragendatei.json
-$ npm run pushAktionen actiondatei.json
+$ npm run pushAktionen aktiondatei.json
 
 # Starte den Server
 $ npm start
