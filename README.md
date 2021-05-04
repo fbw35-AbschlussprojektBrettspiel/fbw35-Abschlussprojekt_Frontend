@@ -1,74 +1,61 @@
-# DAS BRETTSPIEL - Das Online-Spiel
+# WebDev - Das ~~Brett~~ Onlinespiel
 ![logo](img/../public/img/LogoSpiel.png)
 
-
-![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
-
-  **Wie weit reichen deine Dev-Web? Hier ist eine tolle Möglichkeit, dies herauszufinden! 
-  Mit diesem Brettspiel kannst du ganz einfach dein Wissen testen und deine IT-Fähigkeiten üben. Zusätzlich bietet unsere Anwendung die Möglichkeit, online mit einer anderen Person zu spielen.**
+Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, dies herauszufinden! Mit diesem Brettspiel kannst du alleine oder online mit anderen zusammen ganz einfach euer Wissen testen. Zusätzlich gibt es noch Witze und Anekdoten aus einem WebDev-Kurs.
 
 ![screen](img/../public/img/ScreenSpiel.png)
 
-# Spielanleitung
+[Beispiel-Deployment auf Heroku](https://webdev-brettspiel-frontend.herokuapp.com/)
 
-  **Neues Spiel erstellen**
-  **Du bekommst eine Spieler-id**
-  **möchtest du mit deinen Freunden spielen, versende diese ID**
-  **wir empfehlen bis 4 Spieler in einem Spielfeld**
-  **wartet bis alle Mitspieler eingeloggt sind**
-  **dann "Spiel starten"**
-  **mit Hilfe eines Pop-Up-Fenster erscheinen Würfel oder Fage**
-  **durch anklicken wird die Funktion ausgelöst**
-  **nach dem Würfeln bewegt sich deine Figur nach vorn und die Frage wird angezeigt**
-  **du wählst deine Antwort, und deine Figur bleit bei der richtigen Antwort stehn**
-  **zum Anderen gibt es ein Zeit-Limit von 15s, welches zu beachten ist**
-  **Antwortest du falsch, geht deine Figur wieder auf die Ausgangsposition zurück**
-  **nun ist der nächste Spieler dran**
-  **nur ein "aktivierter" Spieler kann die Button nutzen**
-  **der Spieler, der als Erster im Ziel ist, hat gewonnen**
+## Instalation
 
-# Beginn der Arbeiten
+Um das Spiel zu clonen und zu starten, müssen [Git](https://git-scm.com) und [Node.js](https://nodejs.org/en/download/) (mit dem Paketmanager [npm](http://npmjs.com)) auf dem Rechner installiert sein. Außerdem muss entweder [MongoDB](https://www.mongodb.com/) auf dem Rechner installiert sein, oder du benötigst einen Link zu einer MongoDB-Datenbank (wie z.B. [MongoDB Atlas](https://www.mongodb.com/cloud/atlas2)).
 
-  **Diese Anweisungen ermöglichen es Ihnen, eine Kopie des Projekts auf Ihrem lokalen Computer zu Entwicklungs- und Testzwecken zu erstellen.**
-  
-  Als Beispiel zum Anschauen nutzt Du bitte: https://webdev-brettspiel-frontend.herokuapp.com/
+### Backend
 
-# Instalation
+Aus der Kommandozeile:
 
-Du hast 2 Möglichkeiten dieses Spiel zu spielen: Online oder lokal.
+```bash
+# Clone das Backend-Repository
+$ git clone https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend.git
 
-Für das lokale Spiel:
+# Gehe in das Verzeichnis
+cd fbw35-Abschlussprojekt_Backend/
 
-1.  musst Du Frontend und Backend runter laden. 
-2.  Nach npm instalation, Back- und Frontend muss gestartet werden. Backend muss erst gestartet werden!
+# Installiere Dependencies
+$ npm install
+```
 
-Hier findest Du link zum unserer [Backend](https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend)
+Du kannst eine `.env` Datei im Root-Verzeichnes anlegen. Darin können die Umgebungsvariablen `PORT` für den benutzten Port und `DB` für die MongoDB angegeben werden. Ohne sie werden die Standardwerte sind `3050` und `mongodb://localhost:27017/quizfragen` benutzt.
 
-### `npm install`
+```bash
+# Skripts starten, um Fragen und Aktionen aus den JSON-Dateien in public-Ordner in die Datenbank zu schreiben
+$ npm run pushFragen fragendatei.json
+$ npm run pushAktionen actiondatei.json
 
-### `npm start`
+# Starte den Server
+$ npm start
+```
+### Frontend
+Aus einer anderen Kommandozeile:
+```bash
+# Clone dieses Frontend-Repository
+$ git clone https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Frontend.git
 
-* Befehl startet die Anwendung im Entwicklungsmodus.
-Öffne http://localhost:3000, um es in deinem Browser anzuzeigen.
-Die Seite wird neu geladen, sobald die Änderungen vorgenommen wurden.
+# Gehe in das Verzeichnis
+$ cd fbw35-Abschlussprojekt_Frontend/
 
+# Installiere Dependencies
+$ npm install
 
-Wenn du das Spiel online spielen möchtes, dann benötigst du eine eigene .env-Datei.
+# Starte das Spiel
+$ npm start
+```
+## Technologien
+Im Laufe des Webentwicklung-Jahreskurses haben den MERN-Stack gelernt, und diese vier (und mehr) Technologien finden auch alle im Projekt ihre Anwendungen.
 
+Das Spiel ist eine interaktive Webanwendung mit Zustandsänderungen (states). Dafür bietet sich React als Webframework an. Für eine zentrale Zustandsverwaltung benutzen wir das Paket Redux. Wegen der asynchronen Anfrangen an das Backend benutzen wir außerdem das Middleware-Paket redux-thunk.
 
-# Software und Freamworks:
+Im Backend laufen Express.js-Framework und Websocket, beide innerhalb eines Node.js-Servers. Das Spiel ist ein rundenbasiertes Onlinespiel in quasi-Echtzeit. Alle Spieler sehen sofort Änderungen im Spiel, die jeweils vom Spieler, der gerade dran ist, ausgelöst werden. Dafür benötigen wir eine bidirektionale Verbindung zwischen dem React-App und dem Server. Dafür eignet sich Websocket, das mittlerweile auch von allen modernen Browsern unterstützt werden.
 
-> * React
-> * Redux
-> * Frotawesome
-> * npm-Packete (express,dotenv)
-> * MongoDB
-
-# Autoren
-* [Anton Tun Huang](https://github.com/TunHuang)
-* [Christoph Bochniak](https://github.com/Christoph86)
-* [Sebastian Opaska](https://github.com/sopaska)
-* [Corinna Hellmund](https://github.com/CoraHell)
-
-
-
+Die Quizfragen (und 'Aktionen') werden in MongoDB gespeichert und jedes Mal, wenn ein Spiel gestartet wird, vom Server abgefragt. Für die Abfrage benutzen wir Mongoose.
