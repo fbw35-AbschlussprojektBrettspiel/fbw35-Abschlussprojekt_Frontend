@@ -137,6 +137,7 @@ export const connectWebsocket = () => dispatch => {
       dispatch(actionSetAktion({}));
       dispatch(actionSetClients({}));
       dispatch(actionSetPopup('aufruf'));
+      dispatch(actionSetStartseiteLog('Das letzte Spiel erfolgreich beendet.'));
       console.log('Spiel erfolgreich beendet');
     }
 

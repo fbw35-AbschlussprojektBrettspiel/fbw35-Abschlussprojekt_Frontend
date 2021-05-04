@@ -6,7 +6,7 @@ import SpielZuEnde from './SpielZuEnde';
 import QuizFrage from './QuizFrage';
 import Aktion from './Aktion';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button } from 'bootstrap';
+import { Button } from 'react-bootstrap';
 import { beendeSpiel } from '../thunks/thunks';
 
 const Spielseite = () => {
