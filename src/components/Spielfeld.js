@@ -25,7 +25,8 @@ const Spielfeld = props => {
             <FontAwesomeIcon icon={faJs} inverse transform="shrink-6" />
           </span>,
           aktion: <FontAwesomeIcon icon={faQuestionCircle} 
-          style={{ color: "green", backgroundColor:"white", borderRadius:"100%", border:"3px darkgreen solid" }} />
+          style={{ color: "green", backgroundColor:"white", borderRadius:"100%", border:"3px darkgreen solid" }} />,
+          startfeld: <span>START</span>
         }[props.feldtyp]
       }
     </div>
