@@ -1,5 +1,5 @@
 # WebDev - Das ~~Brett~~ Onlinespiel
-![logo](img/../public/img/LogoSpiel.png)
+![logo](./public/LogoSpiel.png)
 
 Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, dies herauszufinden! Mit diesem Brettspiel kannst du alleine oder online mit anderen zusammen ganz einfach euer Wissen testen. Zusätzlich gibt es noch Witze und Anekdoten aus einem WebDev-Kurs.
 
@@ -52,10 +52,10 @@ $ npm install
 $ npm start
 ```
 ## Technologien
-Im Laufe des Webentwicklung-Jahreskurses haben den MERN-Stack gelernt, und diese vier (und mehr) Technologien finden auch alle im Projekt ihre Anwendungen.
+Im Laufe des Webentwicklung-Jahreskurses haben den **MERN-Stack** gelernt, und diese vier (und mehr) Technologien finden auch alle im Projekt ihre Anwendungen.
 
-Das Spiel ist eine interaktive Webanwendung mit Zustandsänderungen (states). Dafür bietet sich React als Webframework an. Für eine zentrale Zustandsverwaltung benutzen wir das Paket Redux. Wegen der asynchronen Anfrangen an das Backend benutzen wir außerdem das Middleware-Paket redux-thunk.
+Das Spiel ist eine interaktive Webanwendung mit Zustandsänderungen (states). Dafür bietet sich **React** als Webframework an. Für eine zentrale Zustandsverwaltung benutzen wir das Paket **Redux**. Wegen der asynchronen Anfrangen an das Backend benutzen wir außerdem das Middleware-Paket **redux-thunk**.
 
-Im Backend laufen Express.js-Framework und Websocket, beide innerhalb eines Node.js-Servers. Das Spiel ist ein rundenbasiertes Onlinespiel in quasi-Echtzeit. Alle Spieler sehen sofort Änderungen im Spiel, die jeweils vom Spieler, der gerade dran ist, ausgelöst werden. Dafür benötigen wir eine bidirektionale Verbindung zwischen dem React-App und dem Server. Dafür eignet sich Websocket, das mittlerweile auch von allen modernen Browsern unterstützt werden.
+Im Backend laufen **Express.js-Framework** und **Websocket** innerhalb eines **Node.js**-Servers. Das Spiel ist ein rundenbasiertes Onlinespiel in quasi-Echtzeit. Alle Spieler sehen sofort Änderungen im Spiel, die jeweils vom Spieler, der gerade dran ist, ausgelöst werden. Dafür benötigen wir eine bidirektionale Verbindung zwischen dem React-App und dem Server. Dafür eignet sich **Websocket**, das mittlerweile auch von allen modernen Browsern unterstützt werden.
 
-Die Quizfragen (und 'Aktionen') werden in MongoDB gespeichert und jedes Mal, wenn ein Spiel gestartet wird, vom Server abgefragt. Für die Abfrage benutzen wir Mongoose.
+Die Quizfragen (und 'Aktionen') werden in **MongoDB** gespeichert und jedes Mal, wenn ein Spiel gestartet wird, vom Server abgefragt. Für die Abfrage benutzen wir **Mongoose**.
