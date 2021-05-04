@@ -60,4 +60,6 @@ Das Spiel ist eine interaktive Webanwendung mit Zustandsänderungen (states). Da
 
 Im Backend läuft **Websocket** innerhalb eines **Node.js**-Servers. Das Spiel ist ein rundenbasiertes Onlinespiel in quasi-Echtzeit. Alle Spieler sehen sofort Änderungen im Spiel, die jeweils vom Spieler, der gerade dran ist, ausgelöst werden. Dafür benötigen wir eine bidirektionale Verbindung zwischen dem React-App und dem Server. Dafür eignet sich **Websocket**, das mittlerweile auch von allen modernen Browsern unterstützt werden.
 
-Die Quizfragen (und 'Aktionen') werden in **MongoDB** gespeichert und jedes Mal, wenn ein Spiel gestartet wird, vom Server abgefragt. Für die Abfragen benutzen wir **Mongoose**.
+Die Quizfragen (und 'Aktionen') werden in **MongoDB** über **Mongoose** gespeichert und jedes Mal, wenn ein Spiel gestartet wird, vom Server abgefragt.
+
+Für die Modal-Fenster benutzen wir **Bootstrap** bzw. **react-bootstrap**, da die Funktionalität des Komponents ausreichend ist und wir so Entwicklungszeit sparen können. Die Icons nehmen wir von **Font awesome**, sie sind sehr gut skalierbar und lassen sich auch leicht farblich anpassen.
