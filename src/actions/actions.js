@@ -11,7 +11,8 @@ import {
   SET_SPIELFIGUR_POSITIONEN,
   RESET_SPIELFIGUR_POSITIONEN,
   SET_AKTION,
-  SET_STARTSEITE_LOG
+  SET_STARTSEITE_LOG,
+  SET_ANTWORT_FEEDBACK
 } from './types';
 
 export const actionSetPage = page => ({
@@ -76,4 +77,9 @@ export const actionSetAktion = aktion => ({
 export const actionSetStartseiteLog = string => ({
   type: SET_STARTSEITE_LOG,
   payload: string
+});
+
+export const actionSetAntwortFeedback = array => ({
+  type: SET_ANTWORT_FEEDBACK,
+  payload: array
 });
