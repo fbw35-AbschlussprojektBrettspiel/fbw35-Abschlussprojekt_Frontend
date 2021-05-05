@@ -35,6 +35,8 @@ export const setSpielfigurPositionen = object => dispatch => dispatch(actionSetS
 
 // export const setStartseiteLog = string => dispatch => dispatch(actionSetStartseiteLog(string));
 
+export const setAntwortFeedback = array => dispatch => dispatch(actionSetAntwortFeedback(array));
+
 // websocket
 
 export const connectWebsocket = () => dispatch => {
