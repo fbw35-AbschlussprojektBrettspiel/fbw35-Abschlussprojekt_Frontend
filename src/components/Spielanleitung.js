@@ -13,9 +13,13 @@ const Spielanleitung = props => {
 
   return (
     <section className="spielanleitung">
-      <Button variant="primary" className="StartseiteButtons" onClick={handleShow}>
+      <Button
+        variant="success"
+        onClick={handleShow}
+        className="float-right"
+      >
         Spielanleitung
-        </Button>
+      </Button>
 
       <Modal show={show} onHide={handleClose}>
 
