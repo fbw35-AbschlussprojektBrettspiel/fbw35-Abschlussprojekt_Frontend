@@ -1,5 +1,4 @@
 import './AufrufAmZug.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap'
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';

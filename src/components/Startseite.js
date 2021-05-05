@@ -28,10 +28,13 @@ const Startseite = () => {
 
   return (
     <section className="Startseite">
-      <h1>Willkommen auf die Startseite!</h1>
+      <h1>WebDev das Onlinebrettspiel</h1>
+      <p>Möchtest du ein neues Spiel erstellen? Dann erstelle es hier</p>
       <Button variant="primary" className="StartseiteButtons" onClick={() => dispatch(createSpiel(clientId))}>
         Neues Spiel erstellen
       </Button><br />
+      <p>Und trete dem Spiel bei</p>
+      <p>Oder möchtest du einem von deinen Freunden erstellten Spiel beitreten? Dann trage die Spiel-ID ein und trete dem Spiel bei</p>
       <Button variant="primary" className="StartseiteButtons" onClick={() => dispatch(joinSpiel(clientId, spielId || textInput, nameTextInput))}>
         Spiel beitreten
       </Button>
@@ -51,6 +54,7 @@ const Startseite = () => {
         value={nameTextInput}
         onChange={event => setNameTextInput(event.target.value)}
       /><br />
+      <p>Sind alle Mitspieler dem Spiel beigetreten? Dann lasst uns das Spiel starten!</p>
       <Button variant="primary" className="StartseiteButtons" onClick={() => dispatch(startSpiel(clientId, spielId))}>
         Spiel starten
       </Button>

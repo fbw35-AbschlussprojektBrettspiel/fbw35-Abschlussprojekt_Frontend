@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './QuizFrage.css';
 import { Modal, Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
