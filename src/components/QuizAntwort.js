@@ -4,6 +4,8 @@ import {
   verschiebeSpielfigur,
   klickeAntwort
 } from '../thunks/thunks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const QuizAntwort = props => {
   const spielfigurPositionen = useSelector(state => state.spielfigurPositionen);
@@ -20,7 +22,9 @@ const QuizAntwort = props => {
 
   const istBeantwortet = antwortFeedback.length > 0;
 
-  const antwortKommentar = antwortFeedback[0] === props.index && antwortFeedback[1] === true ? 'Richtig! ' : antwortFeedback[0] === props.index && antwortFeedback[1] === false ? 'Falsch! ' : '';
+  const antwortKommentar = antwortFeedback[0] === props.index && antwortFeedback[1] === true ? <FontAwesomeIcon icon={faCheck} color="green"/> :
+    antwortFeedback[0] === props.index && antwortFeedback[1] === false ? <FontAwesomeIcon icon={faTimes} color="red"/> :
+    '';
 
   return (
     <li
