@@ -11,7 +11,8 @@ import {
   actionSetSpielfigurPositionen,
   actionResetSpielfigurPositionen,
   actionSetAktion,
-  actionSetStartseiteLog
+  actionSetStartseiteLog,
+  actionSetAntwortFeedback
 } from '../actions/actions';
 
 // const URL = 'http://localhost:3050/';
@@ -33,6 +34,8 @@ export const setSpielfigurPositionen = object => dispatch => dispatch(actionSetS
 // export const setSpielfeldArray = array => dispatch => dispatch(actionSetSpielfeldArray(array));
 
 // export const setStartseiteLog = string => dispatch => dispatch(actionSetStartseiteLog(string));
+
+export const setAntwortFeedback = array => dispatch => dispatch(actionSetAntwortFeedback(array));
 
 // websocket
 
@@ -82,6 +85,12 @@ export const connectWebsocket = () => dispatch => {
     if (response.method === 'wuerfeln') {
       dispatch(actionSetGewuerfelteZahl(response.gewuerfelteZahl));
       console.log('Erfolgreich gewürfelt');
+    }
+
+    // klickeAntwort
+    if (response.method === 'klickeAntwort') {
+      dispatch(actionSetAntwortFeedback(response.antwortFeedback));
+      console.log('Erfolgreich auf eine Antwort geklickt');
     }
 
     // macheZug
@@ -214,6 +223,17 @@ export const beendeSpiel = (clientId, spielId) => dispatch => {
     method: 'beenden',
     clientId,
     spielId
+  };
+  ws.send(JSON.stringify(payload));
+};
+
+export const klickeAntwort = (clientId, spielId, indexAntwort, istKorrekt) => dispatch => {
+  const payload = {
+    method: 'klickeAntwort',
+    clientId,
+    spielId,
+    indexAntwort,
+    istKorrekt
   };
   ws.send(JSON.stringify(payload));
 };

@@ -11,7 +11,8 @@ import {
   SET_SPIELFIGUR_POSITIONEN,
   RESET_SPIELFIGUR_POSITIONEN,
   SET_AKTION,
-  SET_STARTSEITE_LOG
+  SET_STARTSEITE_LOG,
+  SET_ANTWORT_FEEDBACK
 } from '../actions/types';
 
 const initialState = {
@@ -38,7 +39,9 @@ const initialState = {
   // wer (anhand von order) ist dran
   werIstDran: 0,
   // log der Rückmeldungen vom Server auf Startseite
-  startseiteLog: ''
+  startseiteLog: '',
+  // für die Anzeige, ob die angeklickte Antwort richtig oder falsch ist
+  antwortFeedback: []
 };
 
 const spielReducer = (state = initialState, action) => {
@@ -72,6 +75,8 @@ const spielReducer = (state = initialState, action) => {
       return {...state, aktion: action.payload};
     case SET_STARTSEITE_LOG:
       return {...state, startseiteLog: action.payload};
+    case SET_ANTWORT_FEEDBACK:
+      return {...state, antwortFeedback: action.payload};
     default:
       return state;
   }
