@@ -12,7 +12,9 @@
   margin-top: 30px;
 }
 
-.modal-backdrop { background-color: transparent }
+.modal-backdrop {
+  display: none;
+}
 
 .modal-content {
 border: 8px double gray;
