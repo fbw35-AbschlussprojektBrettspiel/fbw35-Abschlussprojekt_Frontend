@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './Spielanleitung.css';
 import { Modal, Button } from 'react-bootstrap'
 import { useState } from 'react';
@@ -14,9 +13,13 @@ const Spielanleitung = props => {
 
   return (
     <section className="spielanleitung">
-      <Button variant="primary" className="StartseiteButtons" onClick={handleShow}>
+      <Button
+        variant="success"
+        onClick={handleShow}
+        className="float-right"
+      >
         Spielanleitung
-        </Button>
+      </Button>
 
       <Modal show={show} onHide={handleClose}>
 

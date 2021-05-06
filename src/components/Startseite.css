@@ -1,13 +1,15 @@
-.Startseite {
-    margin: auto;
-    height: 100vh;
-    min-height: 490px;
-    width: 100vw;
-    min-width: 1030px;
-  }
+.startseite h1 {
+  text-align: center;
+}
 
-.StartseiteButtons {
-    border: 3px solid darkblue;
+.startseite input,
+.startseite textarea {
+  width: 100%;
+  margin: 4px 0;
+}
+
+.button-platz {
+  margin-top: 30px;
 }
 
 .modal-backdrop { background-color: transparent }
