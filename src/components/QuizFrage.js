@@ -4,7 +4,9 @@ import { useState, useEffect } from 'react';
 import QuizAntwort from './QuizAntwort';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faFileCode } from '@fortawesome/free-regular-svg-icons';
+import { faCircle, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCss3, faJs } from '@fortawesome/free-brands-svg-icons';
 import {
   naechsterZug,
   setAntwortFeedback
@@ -30,15 +32,46 @@ const QuizFrage = () => {
 
   const istBeantwortet = antwortFeedback.length > 0;
 
+  let iconColor="";
+  let iconBorder="";
+
+  switch (frage.thema) {
+    case "html":
+      iconColor = "red"
+      iconBorder="3px darkred solid"
+      break;
+    case "css":
+      iconColor = "blue"
+      iconBorder="3px darkblue solid"
+      break;
+    case "javascript":
+      iconColor = "orange"
+      iconBorder="3px rgb(255, 81, 0) solid"
+      break;
+    default:
+      iconColor = "grey";
+      iconBorder=""
+      break;
+  }
+
   return (
     <section className="quizfrage">
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
         {/* &nbsp; ist die Abkürzung/Lösung um ein Leerzeichen in HTML-Text einzufügen */}
         <Modal.Header>
-          <Modal.Title><p>{frage.frage} &nbsp;&nbsp;&nbsp;
-                          <FontAwesomeIcon icon={faQuestionCircle} transform="grow-8"
-              style={{ color: "darkgrey" }} />
-          </p></Modal.Title >
+          <Modal.Title className="ModalTitle">
+
+          <span className="fa-layers fa-fw quizIcon">
+            <FontAwesomeIcon icon={faCircle}
+            style={{ color: iconColor, backgroundColor:"white", borderRadius:"100%", border: iconBorder }} />
+            <FontAwesomeIcon 
+            icon={frage.thema === "html" ? faFileCode: 
+                    frage.thema === "css" ? faCss3 :
+                      frage.thema === "javascript" ? faJs : faQuestionCircle} 
+            inverse transform="shrink-6" />
+          </span>
+            <p>{frage.frage}</p>
+          </Modal.Title >
         </Modal.Header>
 
         <Modal.Body>
