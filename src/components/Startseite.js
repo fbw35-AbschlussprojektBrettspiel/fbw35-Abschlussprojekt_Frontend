@@ -39,7 +39,7 @@ const Startseite = () => {
         <Row>
           <Col xs={12} md={6}>
             <Card className="mb-2">
-              <Card.Body className="test2">
+              <Card.Body>
                 <Card.Text className="lead">
                   Möchtest du ein neues Spiel erstellen? Dann erstelle es hier und gib die Spiel-ID an deine Mitspieler weiter.
                 </Card.Text>

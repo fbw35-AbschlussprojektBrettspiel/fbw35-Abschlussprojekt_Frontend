@@ -12,12 +12,6 @@
   margin-top: 30px;
 }
 
-.test2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .modal-backdrop { background-color: transparent }
 
 .modal-content {
