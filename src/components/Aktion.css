@@ -1,0 +1,9 @@
+.ModalTitle {
+    text-align: center;
+}
+
+.ModalBody {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: -.5em;
+}
