@@ -1,11 +1,5 @@
-.grid-container.Spielseite > div {
-  width: 4.54vw;
-  height: 6.94vh;
-  /* Spielfeld ist 22x12 Felder groß daher zum gleichmäßigem aufteile:
-  100% durch 12 = 8.33 viewportHöhe zusätzlich minus dem padding von 2h
-  also (2/12)*2 =1.39 also endgültige Höhe 6.94vh
-  100% durch 22 = 4.54 viewportBreite */
-  font-size: 6vh;
+.grid-container > div {
+  /* font-size: 6vh; */
   /* in der Regel ist dass Fenster breiter als Hoch daher wird die viewportHöhe
   als Maßstab für die Spielfeldergröße benutzt */
 }
@@ -19,29 +13,19 @@
   font-size: 2.4em;
   }
 
-.grid-container.Spielseite {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(22, 1fr);
   grid-template-rows: repeat(12, 1fr);
   text-align: center;
-  /* Abstand der Spielfelder zum Fensterrand */
-  /* vh steht für viewport-height in prozent, paddin also 2% der sichtbaren Bildhöhe */
-  height: 100vh;
-  width: 100vw;
-  padding: 2vh;
-}
-
-.Spielseite {
+  height: 100%;
+  width: 100%;
+  padding: 2%;
   background-image: url("../img/Spielfeld1600x1024_Grid20x10.jpg");
   background-repeat:no-repeat;
-  background-size: 100% 100%;
-  /* border: 5px solid rgb(13, 99, 26); */
-  margin: auto;
-  height: 100vh;
-  min-height: 490px;
-  width: 100vw;
-  min-width: 1030px;
-  /*1030px weil sonst der "Spiel beenden" Button zweizeilig wird :( sonst wären 900 perfekt */
+  background-size: cover;
+  background-position: center;
+  margin: 0;
 }
 
 .SpielBeenden {
@@ -49,7 +33,7 @@
   /* z-index vom grauen Hintergrund von den Modals ist 1050, daher noch höher */
   z-index: 1060;
   /* Shorthand im Uhrzeigersinn-> Top, Right, Button, Left */
-  margin: 2vh 0% 0% 0%;
-  border: 3px solid darkblue;
+  /* margin: 2vh 0% 0% 0%;
+  border: 3px solid darkblue; */
 }
 

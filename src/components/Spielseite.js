@@ -20,7 +20,7 @@ const Spielseite = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="grid-container Spielseite">
+    <div className="grid-container">
       {spielfeldArray.map((element, index) =>
         <Spielfeld
           key={index}
