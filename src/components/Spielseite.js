@@ -6,9 +6,9 @@ import SpielZuEnde from './SpielZuEnde';
 import QuizFrage from './QuizFrage';
 import Aktion from './Aktion';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button } from 'react-bootstrap';
 import { beendeSpiel } from '../thunks/thunks';
 import SpielerListe from './SpielerListe';
+import beenden from '../img/157x72_Beenden.png';
 
 const Spielseite = () => {
   const spielfeldArray = useSelector(state => state.spielfeldArray);
@@ -38,15 +38,15 @@ const Spielseite = () => {
 
       <SpielerListe />
 
-      <Button
-        variant="primary"
+      <input
+        type="image"
+        src={beenden}
+        alt="spiel beenden"
         className="SpielBeenden"
         onClick={() => {
           dispatch(beendeSpiel(clientId, spielId));
         }}
-      >
-        Spiel beenden (für alle!)
-      </Button>
+      />
 
       {
         // Das Objekt imitiert ein switch-case

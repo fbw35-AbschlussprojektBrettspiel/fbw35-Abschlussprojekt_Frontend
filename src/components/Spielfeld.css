@@ -1,8 +1,10 @@
 .spielfeld-0 {
   grid-area: 6 / 1 / span 1 / span 2;
-  background-color: grey;
-  color: goldenrod;
-  border: darkgrey 2px solid;
+}
+
+.startfeld-img {
+  width: 100%;
+  height: auto;
 }
 
 .spielfeld-1 {
