@@ -16,6 +16,8 @@
   margin-top: 30px;
 }
 
+/* Styling für alle Modals */
+
 .modal-backdrop {
   display: none;
 }

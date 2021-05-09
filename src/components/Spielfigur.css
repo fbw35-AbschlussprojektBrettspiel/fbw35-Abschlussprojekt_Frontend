@@ -1,7 +1,4 @@
-.spielfigur-0,
-.spielfigur-1,
-.spielfigur-2,
-.spielfigur-3 {
+[class|="spielfigur"] {
   z-index: 10;
 }
 

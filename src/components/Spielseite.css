@@ -1,9 +1,3 @@
-.grid-container > div {
-  /* font-size: 6vh; */
-  /* in der Regel ist dass Fenster breiter als Hoch daher wird die viewportHöhe
-  als Maßstab für die Spielfeldergröße benutzt */
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: repeat(22, 1fr);
