@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileCode } from '@fortawesome/free-regular-svg-icons';
 import { faCircle, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCss3, faJs } from '@fortawesome/free-brands-svg-icons';
+import startfeld from '../img/174x81_Start.png';
 
 const Spielfeld = props => {
   return (
@@ -26,7 +27,7 @@ const Spielfeld = props => {
           </span>,
           aktion: <FontAwesomeIcon icon={faQuestionCircle} 
           style={{ color: "green", backgroundColor:"white", borderRadius:"100%", border:"3px darkgreen solid" }} />,
-          startfeld: <span>START</span>
+          startfeld: <img src={startfeld} alt="startfeld" className="startfeld-img"/>
         }[props.feldtyp]
       }
     </div>

@@ -13,8 +13,10 @@ import {
   Card,
   Col,
   Container,
-  Row
-} from 'react-bootstrap'
+  Row,
+  Image
+} from 'react-bootstrap';
+import logo from '../img/LogoSpiel.png';
 
 const Startseite = () => {
   const [textInput, setTextInput] = useState('');
@@ -34,11 +36,14 @@ const Startseite = () => {
 
   return (
     <section className="startseite">
-      <h1>WebDev das Onlinebrettspiel</h1>
+      <Container className="text-center mt-3">
+        <Image src={logo} fluid />
+      </Container>
+      <h1>Das Onlinebrettspiel</h1>
       <Container>
         <Row>
           <Col xs={12} md={6}>
-            <Card className="mb-2">
+            <Card className="mb-2" border="info">
               <Card.Body>
                 <Card.Text className="lead">
                   Möchtest du ein neues Spiel erstellen? Dann erstelle es hier und gib die Spiel-ID an deine Mitspieler weiter.
@@ -56,7 +61,7 @@ const Startseite = () => {
           </Col>
   
           <Col xs={12} md={6}>
-            <Card className="mb-2">
+            <Card className="mb-2" border="info">
               <Card.Body>
                 <Card.Text className="lead">
                   Hier kannst du dem Spiel beitreten.
@@ -93,7 +98,7 @@ const Startseite = () => {
         </Row>
         <Row>
           <Col xs={12} md={6}>
-            <Card className="mb-2">
+            <Card className="mb-2" border="info">
               <Card.Body>
                 <Card.Text className="lead">
                   Sind alle Mitspieler dem Spiel beigetreten? Dann lasst uns das Spiel starten!
@@ -111,7 +116,7 @@ const Startseite = () => {
           </Col>
   
           <Col xs={12} md={6}>
-            <Card className="mb-2">
+            <Card className="mb-2" border="info">
               <Card.Body>
                 <textarea
                   name="startseite-log"
@@ -126,10 +131,6 @@ const Startseite = () => {
           </Col>
         </Row>
       </Container>
-
-
-
-      
     </section>
   );
 };

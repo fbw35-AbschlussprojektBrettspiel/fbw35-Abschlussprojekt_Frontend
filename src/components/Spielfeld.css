@@ -1,8 +1,10 @@
 .spielfeld-0 {
   grid-area: 6 / 1 / span 1 / span 2;
-  background-color: grey;
-  color: goldenrod;
-  border: darkgrey 2px solid;
+}
+
+.startfeld-img {
+  width: 100%;
+  height: auto;
 }
 
 .spielfeld-1 {
@@ -243,4 +245,38 @@
 
 .spielfeld-60 {
   grid-area: 7 / 1 / span 1 / span 1;
+}
+
+[class|="spielfeld"] {
+  font-size: 1em;
+}
+
+@media (min-width: 576px) {
+  [class|="spielfeld"] {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 768px) {
+  [class|="spielfeld"] {
+    font-size: 1.4em;
+  }
+}
+
+@media (min-width: 992px) {
+  [class|="spielfeld"] {
+    font-size: 1.8em;
+  }
+}
+
+@media (min-width: 1200px) {
+  [class|="spielfeld"] {
+    font-size: 2.2em;
+  }
+}
+
+@media (min-width: 1400px) {
+  [class|="spielfeld"] {
+    font-size: 2.4em;
+  }
 }
