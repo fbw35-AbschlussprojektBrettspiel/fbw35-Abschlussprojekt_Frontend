@@ -1,5 +1,6 @@
 [class*="spielfigur"] {
   z-index: 10;
+  filter: drop-shadow(4px 4px black);
 }
 
 .spielfigur-0 {
