@@ -1,4 +1,3 @@
-import './Spielfeld.css';
 import './Spielfigur.css';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

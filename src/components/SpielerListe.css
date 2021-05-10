@@ -1,3 +1,17 @@
 .spieler-liste {
   grid-area: 1 / 1 / span 3 / span 2;
+  list-style-type: none;
+  margin: 0;
+  padding: 10% 0 10% 0;
+  background-image: url(../img/InfoFenster_141x168.png);
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.liste-name {
+  color: goldenrod;
 }
