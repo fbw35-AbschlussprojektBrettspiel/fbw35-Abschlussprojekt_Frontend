@@ -1,9 +1,9 @@
 # WebDev - Das ~~Brett~~ Onlinespiel
-![logo](./public/LogoSpiel.png)
+![logo](./src/img/LogoSpiel.png)
 
-Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, dies herauszufinden! Mit diesem Brettspiel kannst du alleine oder online mit anderen zusammen ganz einfach euer Wissen testen. Zusätzlich gibt es noch Witze und Anekdoten aus einem WebDev-Kurs.
+Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, es herauszufinden! Mit diesem Brettspiel kannst du alleine oder online mit anderen zusammen ganz einfach euer Wissen testen. Zusätzlich gibt es noch Witze und Anekdoten aus einem WebDev-Kurs.
 
-![screenshot](img/../public/img/screenshot.jpg)
+![screenshot](./public/screenshot.jpg)
 
 [Beispiel-Deployment auf Heroku](https://webdev-brettspiel-frontend.herokuapp.com/)
 
@@ -40,6 +40,9 @@ $ npm run pushAktionen aktiondatei.json
 
 # Starte den Server
 $ npm start
+
+# Oder starte den Server mit nodemon
+$ npm run watch
 ```
 ### Frontend
 Aus einer anderen Kommandozeile:
@@ -65,4 +68,4 @@ Im Backend läuft **Websocket** innerhalb eines **Node.js**-Servers. Das Spiel i
 
 Die Quizfragen (und 'Aktionen') werden in **MongoDB** über **Mongoose** gespeichert und jedes Mal, wenn ein Spiel gestartet wird, vom Server abgefragt.
 
-Für die Modal-Fenster benutzen wir **Bootstrap** bzw. **react-bootstrap**, da die Funktionalität des Komponents ausreichend ist und wir so Entwicklungszeit sparen können. Die Icons nehmen wir von **Font awesome**, sie sind sehr gut skalierbar und lassen sich auch leicht farblich anpassen.
+Für einige web-Komponente benutzen wir **Bootstrap** bzw. **react-bootstrap**, da ihre Funktionalität ausreichend sind und wir so Entwicklungszeit sparen können. Die Icons nehmen wir von **Font awesome**, sie sind gut skalierbar und lassen sich auch leicht farblich anpassen.
