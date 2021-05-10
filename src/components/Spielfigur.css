@@ -1,4 +1,4 @@
-[class|="spielfigur"] {
+[class*="spielfigur"] {
   z-index: 10;
 }
 
