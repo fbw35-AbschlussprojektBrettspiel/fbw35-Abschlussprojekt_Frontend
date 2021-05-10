@@ -3,7 +3,7 @@
   grid-template-columns: repeat(22, 1fr);
   grid-template-rows: repeat(12, 1fr);
   text-align: center;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   padding: 2%;
   background-image: url("../img/Spielfeld1600x1024_Grid20x10.jpg");
