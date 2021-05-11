@@ -23,7 +23,7 @@ const Spielanleitung = props => {
 
       <Modal className="spielanleitung-modal" show={show} onHide={handleClose}>
 
-        <Modal.Header>
+        <Modal.Header closeButton>
           <Modal.Title>Anleitung und Spielregeln: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <FontAwesomeIcon icon={faBook} size="2x" color="darkgrey" />
           </Modal.Title>
@@ -46,6 +46,12 @@ const Spielanleitung = props => {
           </div>
 
         </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Schließen
+          </Button>
+        </Modal.Footer>
 
       </Modal>
 
