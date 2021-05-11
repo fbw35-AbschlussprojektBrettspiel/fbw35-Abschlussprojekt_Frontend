@@ -11,7 +11,7 @@ Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, es h
 
 [Link zum Backend-Repository](https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Backend)
 
-## Instalation
+## Installation
 
 Um das Spiel zu clonen und zu starten, müssen [Git](https://git-scm.com) und [Node.js](https://nodejs.org/en/download/) auf dem Rechner installiert sein. Außerdem muss entweder [MongoDB](https://www.mongodb.com/) auf dem Rechner installiert sein, oder du benötigst einen Link zu einer MongoDB-Datenbank (wie z.B. [MongoDB Atlas](https://www.mongodb.com/cloud/atlas2)).
 
@@ -64,7 +64,7 @@ Im Laufe des Webentwicklung-Jahreskurses haben den **MERN-Stack** gelernt, und d
 
 Das Spiel ist eine interaktive Webanwendung mit Zustandsänderungen (states). Dafür bietet sich **React** als Webframework an. Für eine zentrale Zustandsverwaltung benutzen wir das Paket **Redux**. Wegen der asynchronen Anfrangen an das Backend benutzen wir außerdem das Middleware-Paket **redux-thunk**.
 
-Im Backend läuft **Websocket** innerhalb eines **Node.js**-Servers. Das Spiel ist ein rundenbasiertes Onlinespiel in quasi-Echtzeit. Alle Spieler sehen sofort Änderungen im Spiel, die jeweils vom Spieler, der gerade dran ist, ausgelöst werden. Dafür benötigen wir eine bidirektionale Verbindung zwischen dem React-App und dem Server. Dafür eignet sich **Websocket**, das mittlerweile auch von allen modernen Browsern unterstützt wird.
+Im Backend läuft **Websocket** innerhalb eines **Node.js**-Servers. Das Spiel ist ein rundenbasiertes Onlinespiel in quasi-Echtzeit. Alle Spieler sehen sofort Änderungen im Spiel, die jeweils vom Spieler, der gerade dran ist, ausgelöst werden. Dafür benötigen wir eine bidirektionale Verbindung zwischen dem React-App und dem Server. Dafür eignet sich **Websocket**, das von allen modernen Browsern unterstützt wird.
 
 Die Quizfragen (und 'Aktionen') werden in **MongoDB** über **Mongoose** gespeichert und jedes Mal, wenn ein Spiel gestartet wird, vom Server abgefragt.
 
