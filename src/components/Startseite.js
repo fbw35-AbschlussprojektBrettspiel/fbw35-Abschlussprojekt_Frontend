@@ -82,6 +82,7 @@ const Startseite = () => {
                   name="spieler-name"
                   id="spieler-name"
                   placeholder="Spielername (optional)"
+                  maxLength="9"
                   value={nameTextInput}
                   onChange={event => setNameTextInput(event.target.value)}
                 />
