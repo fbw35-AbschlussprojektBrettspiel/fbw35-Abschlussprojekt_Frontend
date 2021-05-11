@@ -16,7 +16,7 @@ import {
 } from '../actions/actions';
 
 // const URL = 'http://localhost:3050/';
-const WEBSOCKET_URL = 'ws://localhost:3050';
+const WEBSOCKET_URL = 'wss://webdev-brettspiel-backend.herokuapp.com/';
 const ws = new WebSocket(WEBSOCKET_URL);
 
 export const setPage = page => dispatch => dispatch(actionSetPage(page));
