@@ -31,6 +31,9 @@ margin-bottom: 20%;
   .modal-dialog {
     opacity: 0.7;
   }
+  .spielanleitung-modal .modal-dialog {
+    opacity: 1.0;
+  }
   .modal-title.h4 {
     font-size: 1rem;
   }

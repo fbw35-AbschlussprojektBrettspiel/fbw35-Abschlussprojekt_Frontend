@@ -21,7 +21,7 @@ const Spielanleitung = props => {
         Spielanleitung
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal className="spielanleitung-modal" show={show} onHide={handleClose}>
 
         <Modal.Header>
           <Modal.Title>Anleitung und Spielregeln: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
