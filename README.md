@@ -62,7 +62,7 @@ $ npm start
 ## Technologien
 Im Laufe des Webentwicklung-Jahreskurses haben wir den **MERN-Stack** gelernt, und drei von diesen Technologien finden im Projekt Anwendung. Zusätzlich verwenden wir **Websocket**, das wir für das Projekt selbst gelernt und umgesetzt haben.
 
-Das Spiel ist eine interaktive Webanwendung mit Zustandsänderungen (states). Dafür bietet sich **React** als Webframework an. Für eine zentrale Zustandsverwaltung benutzen wir das Paket **Redux**. Wegen der asynchronen Anfrangen an das Backend benutzen wir außerdem das Middleware-Paket **redux-thunk**.
+Das Spiel ist eine interaktive Webanwendung mit Zustandsänderungen (states). Dafür bietet sich **React** als Webframework an. Für eine zentrale Zustandsverwaltung benutzen wir das Paket **Redux**. Wegen der asynchronen Anfragen an das Backend benutzen wir außerdem das Middleware-Paket **redux-thunk**.
 
 Im Backend läuft **Websocket** innerhalb eines **Node.js**-Servers. Das Spiel ist ein rundenbasiertes Onlinespiel in quasi-Echtzeit. Alle Spieler sehen sofort Änderungen im Spiel, die jeweils vom Spieler, der gerade dran ist, ausgelöst werden. Dafür benötigen wir eine bidirektionale Verbindung zwischen dem React-App und dem Server. Dafür eignet sich **Websocket**, das von allen modernen Browsern unterstützt wird.
 
