@@ -60,7 +60,7 @@ $ npm install
 $ npm start
 ```
 ## Technologien
-Im Laufe des Webentwicklung-Jahreskurses haben den **MERN-Stack** gelernt, und drei von diesen Technologien finden im Projekt ihre Anwendungen. Zusätzlich verwenden wir **Websocket**, das wir für das Projekt selbst gelernt und umgesetzt haben.
+Im Laufe des Webentwicklung-Jahreskurses haben wir den **MERN-Stack** gelernt, und drei von diesen Technologien finden im Projekt Anwendung. Zusätzlich verwenden wir **Websocket**, das wir für das Projekt selbst gelernt und umgesetzt haben.
 
 Das Spiel ist eine interaktive Webanwendung mit Zustandsänderungen (states). Dafür bietet sich **React** als Webframework an. Für eine zentrale Zustandsverwaltung benutzen wir das Paket **Redux**. Wegen der asynchronen Anfrangen an das Backend benutzen wir außerdem das Middleware-Paket **redux-thunk**.
 
