@@ -1,11 +1,12 @@
 # WebDev - Das ~~Brett~~ Onlinespiel
+
 ![logo](./src/img/LogoSpiel.png)
 
 Wie weit reichen deine WebDev-Kenntnisse? Hier ist eine tolle Möglichkeit, es herauszufinden! Mit diesem Brettspiel kannst du alleine oder online mit anderen zusammen ganz einfach euer Wissen testen. Zusätzlich gibt es noch Witze und Anekdoten aus einem WebDev-Kurs.
 
 ![screenshot](./public/screenshot.jpg)
 
-[Beispiel-Deployment auf Heroku](https://webdev-brettspiel-frontend.herokuapp.com/)
+[Beispiel-Deployment auf Render](https://webdev-onlinebrettspiel-frontend.onrender.com/)
 
 [Die Spielanleitung](SPIELANLEITUNG.md)
 
@@ -44,8 +45,11 @@ $ npm start
 # Oder starte den Server mit nodemon
 $ npm run watch
 ```
+
 ### Frontend
+
 Aus einer anderen Kommandozeile:
+
 ```bash
 # Clone dieses Frontend-Repository
 $ git clone https://github.com/fbw35-AbschlussprojektBrettspiel/fbw35-Abschlussprojekt_Frontend.git
@@ -59,7 +63,9 @@ $ npm install
 # Starte das Spiel
 $ npm start
 ```
+
 ## Technologien
+
 Im Laufe des Webentwicklung-Jahreskurses haben wir den **MERN-Stack** gelernt, und drei von diesen Technologien finden im Projekt Anwendung. Zusätzlich verwenden wir **Websocket**, das wir für das Projekt selbst gelernt und umgesetzt haben.
 
 Das Spiel ist eine interaktive Webanwendung mit Zustandsänderungen (states). Dafür bietet sich **React** als Webframework an. Für eine zentrale Zustandsverwaltung benutzen wir das Paket **Redux**. Wegen der asynchronen Anfragen an das Backend benutzen wir außerdem das Middleware-Paket **redux-thunk**.
