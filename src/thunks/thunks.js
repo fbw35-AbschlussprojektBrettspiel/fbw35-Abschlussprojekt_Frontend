@@ -12,20 +12,23 @@ import {
   actionResetSpielfigurPositionen,
   actionSetAktion,
   actionSetStartseiteLog,
-  actionSetAntwortFeedback
+  actionSetAntwortFeedback,
 } from '../actions/actions';
 
-// const URL = 'http://localhost:3050/';
-const WEBSOCKET_URL = 'ws://localhost:3050';
+const WEBSOCKET_URL =
+  process.env.REACT_APP_WEBSOCKET_URL || 'ws://localhost:3050';
 const ws = new WebSocket(WEBSOCKET_URL);
 
-export const setPage = page => dispatch => dispatch(actionSetPage(page));
+export const setPage = (page) => (dispatch) => dispatch(actionSetPage(page));
 
-export const setPopup = popup => dispatch => dispatch(actionSetPopup(popup));
+export const setPopup = (popup) => (dispatch) =>
+  dispatch(actionSetPopup(popup));
 
-export const setGewuerfelteZahl = zahl => dispatch => dispatch(actionSetGewuerfelteZahl(zahl));
+export const setGewuerfelteZahl = (zahl) => (dispatch) =>
+  dispatch(actionSetGewuerfelteZahl(zahl));
 
-export const setSpielfigurPositionen = object => dispatch => dispatch(actionSetSpielfigurPositionen(object));
+export const setSpielfigurPositionen = (object) => (dispatch) =>
+  dispatch(actionSetSpielfigurPositionen(object));
 
 // export const setClientId = id => dispatch => dispatch(actionSetClientId(id));
 
@@ -35,15 +38,17 @@ export const setSpielfigurPositionen = object => dispatch => dispatch(actionSetS
 
 // export const setStartseiteLog = string => dispatch => dispatch(actionSetStartseiteLog(string));
 
-export const setAntwortFeedback = array => dispatch => dispatch(actionSetAntwortFeedback(array));
+export const setAntwortFeedback = (array) => (dispatch) =>
+  dispatch(actionSetAntwortFeedback(array));
 
 // websocket
 
-export const connectWebsocket = () => dispatch => {
+export const connectWebsocket = () => (dispatch) => {
   // Wenn es keine Verbindung zum websocket-Server gibt
-  ws.onclose = () => dispatch(actionSetStartseiteLog('Keine Verbindung zum Spielserver.'));
-  
-  ws.onmessage = message => {
+  ws.onclose = () =>
+    dispatch(actionSetStartseiteLog('Keine Verbindung zum Spielserver.'));
+
+  ws.onmessage = (message) => {
     const response = JSON.parse(message.data);
     console.log(response);
 
@@ -107,12 +112,16 @@ export const connectWebsocket = () => dispatch => {
       } else if (response.frage) {
         const frage = response.frage;
         dispatch(actionSetFrage(frage));
-        console.log('Einen Zug erfolgreich gemacht und Frage vom Server bekommen');
+        console.log(
+          'Einen Zug erfolgreich gemacht und Frage vom Server bekommen'
+        );
         dispatch(actionSetPopup('quizfrage'));
       } else {
         const aktion = response.aktion;
         dispatch(actionSetAktion(aktion));
-        console.log('Einen Zug erfolgreich gemacht und Aktion vom Server bekommen');
+        console.log(
+          'Einen Zug erfolgreich gemacht und Aktion vom Server bekommen'
+        );
         dispatch(actionSetPopup('aktion'));
       }
     }
@@ -149,91 +158,92 @@ export const connectWebsocket = () => dispatch => {
       dispatch(actionSetStartseiteLog('Das letzte Spiel erfolgreich beendet.'));
       console.log('Spiel erfolgreich beendet');
     }
-
   };
 };
 
-export const createSpiel = clientId => dispatch => {
+export const createSpiel = (clientId) => (dispatch) => {
   const payload = {
     method: 'create',
-    clientId
+    clientId,
   };
   ws.send(JSON.stringify(payload));
 };
 
-export const joinSpiel = (clientId, spielId, spielerName) => dispatch => {
+export const joinSpiel = (clientId, spielId, spielerName) => (dispatch) => {
   const payload = {
     method: 'join',
     clientId,
     spielId,
-    spielerName
+    spielerName,
   };
   ws.send(JSON.stringify(payload));
 };
 
-export const startSpiel = (clientId, spielId) => dispatch => {
+export const startSpiel = (clientId, spielId) => (dispatch) => {
   const payload = {
     method: 'start',
     clientId,
-    spielId
+    spielId,
   };
   ws.send(JSON.stringify(payload));
 };
 
-export const wuerfeln = (clientId, spielId) => dispatch => {
+export const wuerfeln = (clientId, spielId) => (dispatch) => {
   const payload = {
     method: 'wuerfeln',
     clientId,
-    spielId
+    spielId,
   };
   ws.send(JSON.stringify(payload));
 };
 
-export const macheZug = (clientId, spielId, neuePosition) => dispatch => {
+export const macheZug = (clientId, spielId, neuePosition) => (dispatch) => {
   const payload = {
     method: 'macheZug',
     clientId,
     spielId,
-    neuePosition
+    neuePosition,
   };
   ws.send(JSON.stringify(payload));
 };
 
-export const verschiebeSpielfigur = (clientId, spielId, neuePosition) => dispatch => {
-  const payload = {
-    method: 'verschieben',
-    clientId,
-    spielId,
-    neuePosition
+export const verschiebeSpielfigur =
+  (clientId, spielId, neuePosition) => (dispatch) => {
+    const payload = {
+      method: 'verschieben',
+      clientId,
+      spielId,
+      neuePosition,
+    };
+    ws.send(JSON.stringify(payload));
   };
-  ws.send(JSON.stringify(payload));
-};
 
-export const naechsterZug = (clientId, spielId) => dispatch => {
+export const naechsterZug = (clientId, spielId) => (dispatch) => {
   const payload = {
     method: 'naechsterZug',
     clientId,
-    spielId
+    spielId,
   };
   ws.send(JSON.stringify(payload));
 };
 
-export const beendeSpiel = (clientId, spielId) => dispatch => {
+export const beendeSpiel = (clientId, spielId) => (dispatch) => {
   const payload = {
     method: 'beenden',
     clientId,
-    spielId
+    spielId,
   };
   ws.send(JSON.stringify(payload));
 };
 
-export const klickeAntwort = (clientId, spielId, indexAntwort, istKorrekt) => dispatch => {
-  const payload = {
-    method: 'klickeAntwort',
-    clientId,
-    spielId,
-    indexAntwort,
-    istKorrekt
+export const klickeAntwort =
+  (clientId, spielId, indexAntwort, istKorrekt) => (dispatch) => {
+    const payload = {
+      method: 'klickeAntwort',
+      clientId,
+      spielId,
+      indexAntwort,
+      istKorrekt,
+    };
+    ws.send(JSON.stringify(payload));
   };
-  ws.send(JSON.stringify(payload));
-};
