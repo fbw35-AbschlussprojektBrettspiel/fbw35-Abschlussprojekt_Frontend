@@ -59,9 +59,11 @@ $ cd fbw35-Abschlussprojekt_Frontend/
 
 # Installiere Dependencies
 $ npm install
+```
 
 Du kannst eine `.env` Datei im Root-Verzeichnes anlegen. Darin kann die Umgebungsvariable `REACT_APP_WEBSOCKET_URL` für für den Websocket-Server angegeben werden. Ohne sie wird der Standardwert `ws://localhost:3050` benutzt.
 
+```bash
 # Starte das Spiel
 $ npm start
 ```
